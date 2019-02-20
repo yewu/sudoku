@@ -21,12 +21,13 @@ def draw():
 	blue = 190, 210, 230
 	purple = 229, 194, 237
 	black = 0, 0, 0
+	white = 255, 255, 255
 
 	if CREDITS != 0:
 		HOME = 2
 		screen.clear()
 		screen.fill((255, 255, 255))
-		#credits titles tingky
+		#credits title
 		credits = Rect ((50, 50), (350, 100))
 		screen.draw.filled_rect(credits, purple)
 		screen.draw.rect(credits, black)
@@ -35,6 +36,12 @@ def draw():
 		screen.draw.filled_rect(back_button, blue)
 		screen.draw.rect(back_button, black)
 		screen.draw.text("BACK", (850, 78), color = "black", fontname = "arial", fontsize = 42)
+       		#text
+		credits_text = Rect ((50, 180), (1000, 450))
+		screen.draw.filled_rect(credits_text, white)
+		screen.draw.rect(credits_text, black)
+		screen.draw.text("- Home screen image: https://tinyurl.com/y9cbazvx\n- Play screen examples: https://tinyurl.com/ybzp7bjw\n- Boards: https://tinyurl.com/y9onnnsp\n- Inspiration: https://tinyurl.com/ycw6n2hv", (75, 200), color = "black", fontname = "arial", fontsize = 38)
+		screen.draw.text("Made by: Elina Lee, Sophia Liang, Celine Wu", (270, 550), color = "black", fontname = "arial", fontsize = 38)
 	
 	elif PLAY != 0:
 		HOME = 4
