@@ -132,7 +132,8 @@ def draw():
 		screen.draw.filled_rect(ragequit_button, blue)
 		screen.draw.rect(ragequit_button, black)
 		#text on butttons and title
-		screen.draw.text("NORMAL", (815, 78), color = "black", fontname = "arial", fontsize = 42)
+		screen.draw.text("NORMAL", (815, 75), color = "black", fontname = "arial", fontsize = 42)
+		screen.draw.text("ENTER THE\n  NUMBER", (755, 180), color = "black", fontname = "arial", fontsize = 30)
 		screen.draw.text("HINT", (855, 300), color = "black", fontname = "arial", fontsize = 42)
 		screen.draw.text("CHECK", (832, 425), color = "black", fontname = "arial", fontsize = 42)
 		screen.draw.text("RAGE QUIT", (785, 550), color = "black", fontname = "arial", fontsize = 42)
