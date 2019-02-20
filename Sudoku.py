@@ -177,4 +177,4 @@ def on_mouse_down(pos):
 		EXIT = 1
 	if pos[0] > 50 and pos[0] < 350 and pos[1] > 200 and pos[1] < 350 and LEVEL == 1:
 		EASY = 1
-
+		PLAY = 1
