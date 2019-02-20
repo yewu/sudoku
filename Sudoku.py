@@ -6,6 +6,8 @@ HOWTO = 0
 EXIT = 0
 BACK = 0
 PLAY = 0
+LEVEL = 0
+EASY = 0
 #it has to be 650 for the screen to fit on the size of the computer screen
 #each box will be 66x66 in the board
 
@@ -99,6 +101,10 @@ def draw():
 		screen.draw.text("BACK", (850, 78), color = "black", fontname = "arial", fontsize = 42)
 		screen.draw.text("1. Each row and column must contain the numbers from\n1-9 (cannot repeat numbers).\n2. Each 3x3 box with a darker outline must also contain the numbers\nfrom 1-9 (cannot repeat numbers).\n3. In the shaded boxes, the number must be even. In the unshaded\nboxes, the numbers have to be odd.\n4. If you need a hint, click the 'Hint' button.\n5. If you want to check your answers after you are finished, press\nthe 'Check' button.\n6. If you feel as if you cannot continue, please hit the 'Rage Quit'\nbutton.", (75, 200), color = "black", fontname = "arial", fontsize = 32)
 	
+	elif EASY != 0:
+		screen.clear()
+		screen.fill((255, 255, 255))
+	
 	elif BACK != 0 or CREDITS == 0 or HOWTO == 0:
 		HOME = 1
 		screen.clear()
@@ -147,6 +153,10 @@ def on_mouse_down(pos):
 	global EXIT
 	global BACK
 	global PLAY
+	global LEVEL
+	global EASY
+	print(pos)
+	print(LEVEL)
 	if pos[0]> 750 and pos[0] < 1050 and pos[1] > 50 and pos[1] < 150 and HOME == 1:
 		PLAY = 1
 	if pos[0]> 750 and pos[0] < 1050 and pos[1] > 50 and pos[1] < 150 and HOME == 2:
@@ -158,11 +168,12 @@ def on_mouse_down(pos):
 	if pos[0]> 750 and pos[0] < 1050 and pos[1] > 50 and pos[1] < 150 and HOME == 4:
 		BACK = 1
 		PLAY = 0
-	if pos[0]> 750 and pos[0] < 1050 and pos[1] > 200 and pos[1] < 300 and HOME == 1:
-		print ("How to play button clicked")
+	if pos[0]> 750 and pos[0] < 1050 and pos[1] > 200 and pos[1] < 300 and HOME == 1 and LEVEL == 0:
 		HOWTO = 1
-	if pos[0]> 750 and pos[0] < 1050 and pos[1] > 350 and pos[1] < 450 and HOME == 1:
+	if pos[0]> 750 and pos[0] < 1050 and pos[1] > 350 and pos[1] < 450 and HOME == 1 and LEVEL == 0:
 		CREDITS = 1
 	if pos[0]> 750 and pos[0] < 1050 and pos[1] > 500 and pos[1] < 600 and HOME == 1:
 		EXIT = 1
+	if pos[0] > 50 and pos[0] < 350 and pos[1] > 200 and pos[1] < 350 and LEVEL == 1:
+		EASY = 1
 
