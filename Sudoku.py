@@ -164,7 +164,31 @@ def draw():
 		
 	elif EXTREME != 0:
 		screen.clear()
-		screen.fill((255, 255, 255))	
+		screen.fill((255, 255, 255))
+		extreme_title = Rect((750, 50), (300, 100))
+		screen.draw.filled_rect(extreme_title, purple)
+		screen.draw.rect(extreme_title, black)
+		enter_number = Rect((750, 175), (175, 75))
+		screen.draw.filled_rect(enter_number, white)
+		screen.draw.rect(enter_number, black)
+		number = Rect((950, 175), (100, 75))
+		screen.draw.filled_rect(number, white)
+		screen.draw.rect(number, black)
+		hint_button = Rect((750, 275), (300, 100))
+		screen.draw.filled_rect(hint_button, blue)
+		screen.draw.rect(hint_button, black)
+		check_button = Rect((750, 400), (300, 100))
+		screen.draw.filled_rect(check_button, blue)
+		screen.draw.rect(check_button, black)
+		ragequit_button = Rect((750, 525), (300, 100))
+		screen.draw.filled_rect(ragequit_button, blue)
+		screen.draw.rect(ragequit_button, black)
+		#text on butttons and title
+		screen.draw.text("EXTREME", (800, 75), color = "black", fontname = "arial", fontsize = 42)
+		screen.draw.text("ENTER THE\n  NUMBER", (755, 180), color = "black", fontname = "arial", fontsize = 30)
+		screen.draw.text("HINT", (855, 300), color = "black", fontname = "arial", fontsize = 42)
+		screen.draw.text("CHECK", (832, 425), color = "black", fontname = "arial", fontsize = 42)
+		screen.draw.text("RAGE QUIT", (785, 550), color = "black", fontname = "arial", fontsize = 42)
 	
 	elif BACK != 0 or CREDITS == 0 or HOWTO == 0:
 		HOME = 1
