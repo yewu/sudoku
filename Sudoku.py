@@ -8,6 +8,8 @@ BACK = 0
 PLAY = 0
 LEVEL = 0
 EASY = 0
+NORMAL = 0
+EXTREME = 0
 #it has to be 650 for the screen to fit on the size of the computer screen
 #each box will be 66x66 in the board
 
@@ -18,6 +20,10 @@ def draw():
 	global EXIT
 	global BACK
 	global PlAY
+	global LEVEL
+	global EASY
+	global NORMAL
+	global EXTREME
 
 	screen.fill((255, 255, 255))
 	blue = 190, 210, 230
@@ -38,7 +44,7 @@ def draw():
 		screen.draw.filled_rect(back_button, blue)
 		screen.draw.rect(back_button, black)
 		screen.draw.text("BACK", (850, 78), color = "black", fontname = "arial", fontsize = 42)
-       		#text
+       	#text
 		credits_text = Rect ((50, 180), (1000, 450))
 		screen.draw.filled_rect(credits_text, white)
 		screen.draw.rect(credits_text, black)
@@ -79,11 +85,9 @@ def draw():
 		board = Actor('easy')
 		board.pos = 200, 500
 		board.draw()
-		'''
 		board = Actor('normal')
 		board.pos = 500, 500
 		board.draw()
-		'''
 	elif HOWTO != 0:
 		HOME = 3
 		screen.clear()
@@ -105,6 +109,14 @@ def draw():
 	elif EASY != 0:
 		screen.clear()
 		screen.fill((255, 255, 255))
+		
+	elif NORMAL != 0:
+		screen.clear()
+		screen.fill((255, 255, 255))
+		
+	elif EXTREME != 0:
+		screen.clear()
+		screen.fill((255, 255, 255))	
 	
 	elif BACK != 0 or CREDITS == 0 or HOWTO == 0:
 		HOME = 1
@@ -156,8 +168,9 @@ def on_mouse_down(pos):
 	global PLAY
 	global LEVEL
 	global EASY
-	print(pos)
-	print(LEVEL)
+	global NORMAL
+	global EXTREME
+	
 	if pos[0]> 750 and pos[0] < 1050 and pos[1] > 50 and pos[1] < 150 and HOME == 1:
 		PLAY = 1
 	if pos[0]> 750 and pos[0] < 1050 and pos[1] > 50 and pos[1] < 150 and HOME == 2:
@@ -169,12 +182,18 @@ def on_mouse_down(pos):
 	if pos[0]> 750 and pos[0] < 1050 and pos[1] > 50 and pos[1] < 150 and HOME == 4:
 		BACK = 1
 		PLAY = 0
-	if pos[0]> 750 and pos[0] < 1050 and pos[1] > 200 and pos[1] < 300 and HOME == 1:
+	if pos[0]> 750 and pos[0] < 1050 and pos[1] > 200 and pos[1] < 300 and HOME == 1 and LEVEL == 0:
 		HOWTO = 1
-	if pos[0]> 750 and pos[0] < 1050 and pos[1] > 350 and pos[1] < 450 and HOME == 1:
+	if pos[0]> 750 and pos[0] < 1050 and pos[1] > 350 and pos[1] < 450 and HOME == 1 and LEVEL == 0:
 		CREDITS = 1
 	if pos[0]> 750 and pos[0] < 1050 and pos[1] > 500 and pos[1] < 600 and HOME == 1:
 		EXIT = 1
 	if pos[0] > 50 and pos[0] < 350 and pos[1] > 200 and pos[1] < 350 and LEVEL == 1:
 		EASY = 1
-		PLAY = 1
+		PLAY = 0
+	if pos[0] > 400 and pos[0] < 700 and pos[1] > 200 and pos[1] < 350 and LEVEL == 1:
+		NORMAL = 1
+		PLAY = 0
+	if pos[0] > 750 and pos[0] < 1050 and pos[1] > 200 and pos[1] < 350 and LEVEL == 1:
+		EXTREME = 1
+		PLAY = 0
