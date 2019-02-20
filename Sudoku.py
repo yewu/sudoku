@@ -21,6 +21,7 @@ def draw():
 	blue = 190, 210, 230
 	purple = 229, 194, 237
 	black = 0, 0, 0
+
 	if CREDITS != 0:
 		HOME = 2
 		screen.clear()
@@ -35,7 +36,8 @@ def draw():
 		screen.draw.rect(back_button, black)
 		screen.draw.text("BACK", (850, 78), color = "black", fontname = "arial", fontsize = 42)
 	
-	elif PLAY !=0:
+	elif PLAY != 0:
+		HOME = 4
 		screen.clear()
 		screen.fill((255,255,255))
 		heading = Rect((50,50), (650,100))
@@ -66,16 +68,18 @@ def draw():
 		screen.draw.text("(EXAMPLE BELOW)", (751, 300), color = "black", fontname = "arial", fontsize = 32)	
 		board = Actor('easy')
 		board.pos = 200, 500
-		board.draw()	
+		board.draw()
+		'''
 		board = Actor('normal')
 		board.pos = 500, 500
-		board.draw()		
+		board.draw()
+		'''
 	elif HOWTO != 0:
 		HOME = 3
 		screen.clear()
 		screen.fill((255, 255, 255))
 		#credits titles tingky
-		credits = Rect ((50, 50), (350, 100))
+		credits = Rect ((50, 50), (500, 100))
 		screen.draw.filled_rect(credits, purple)
 		screen.draw.rect(credits, black)
 		screen.draw.text("HOW TO PLAY", (75, 67), color = "black", fontname = "arial", fontsize = 65)
@@ -140,6 +144,9 @@ def on_mouse_down(pos):
 	if pos[0]> 750 and pos[0] < 1050 and pos[1] > 50 and pos[1] < 150 and HOME == 3:
 		BACK = 1
 		HOWTO = 0
+	if pos[0]> 750 and pos[0] < 1050 and pos[1] > 50 and pos[1] < 150 and HOME == 4:
+		BACK = 1
+		PLAY = 0
 	if pos[0]> 750 and pos[0] < 1050 and pos[1] > 200 and pos[1] < 300 and HOME == 1:
 		print ("How to play button clicked")
 		HOWTO = 1
