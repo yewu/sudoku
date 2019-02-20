@@ -89,11 +89,15 @@ def draw():
 		credits = Rect ((50, 50), (500, 100))
 		screen.draw.filled_rect(credits, purple)
 		screen.draw.rect(credits, black)
-		screen.draw.text("HOW TO PLAY", (75, 67), color = "black", fontname = "arial", fontsize = 65)
 		back_button = Rect((750, 50), (300, 100))
 		screen.draw.filled_rect(back_button, blue)
 		screen.draw.rect(back_button, black)
+		howto_text = Rect ((50, 180), (1000, 450))
+		screen.draw.filled_rect(howto_text, white)
+		screen.draw.rect(howto_text, black)
+		screen.draw.text("HOW TO PLAY", (75, 67), color = "black", fontname = "arial", fontsize = 65)
 		screen.draw.text("BACK", (850, 78), color = "black", fontname = "arial", fontsize = 42)
+		screen.draw.text("1. Each row and column must contain the numbers from\n1-9 (cannot repeat numbers).\n2. Each 3x3 box with a darker outline must also contain the numbers\nfrom 1-9 (cannot repeat numbers).\n3. In the shaded boxes, the number must be even. In the unshaded\nboxes, the numbers have to be odd.\n4. If you need a hint, click the 'Hint' button.\n5. If you want to check your answers after you are finished, press\nthe 'Check' button.\n6. If you feel as if you cannot continue, please hit the 'Rage Quit'\nbutton.", (75, 200), color = "black", fontname = "arial", fontsize = 32)
 	
 	elif BACK != 0 or CREDITS == 0 or HOWTO == 0:
 		HOME = 1
