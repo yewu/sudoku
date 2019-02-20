@@ -47,6 +47,7 @@ def draw():
 	
 	elif PLAY != 0:
 		HOME = 4
+		LEVEL = 1
 		screen.clear()
 		screen.fill((255,255,255))
 		heading = Rect((50,50), (650,100))
