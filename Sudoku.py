@@ -67,7 +67,9 @@ def draw():
 		board = Actor('easy')
 		board.pos = 200, 500
 		board.draw()	
-		board = Actor('normal')		
+		board = Actor('normal')
+		board.pos = 500, 500
+		board.draw()		
 	elif HOWTO != 0:
 		HOME = 3
 		screen.clear()
