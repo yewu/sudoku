@@ -113,6 +113,23 @@ def draw():
 	elif NORMAL != 0:
 		screen.clear()
 		screen.fill((255, 255, 255))
+		easy_title = Rect((750, 50), (300, 100))
+		screen.draw.filled_rect(play_button, blue)
+		screen.draw.rect(play_button, black)
+		hint_button = Rect((750, 200), (300, 100))
+		screen.draw.filled_rect(instructions_button, blue)
+		screen.draw.rect(instructions_button, black)
+		check_button = Rect((750, 350), (300, 100))
+		screen.draw.filled_rect(credits_button, blue)
+		screen.draw.rect(credits_button, black)
+		ragequit_button = Rect((750, 500), (300, 100))
+		screen.draw.filled_rect(exit_button, blue)
+		screen.draw.rect(exit_button, black)
+		#text on butttons and title
+		screen.draw.text("EASY", (845, 78), color = "black", fontname = "arial", fontsize = 42)
+		screen.draw.text("HINT", (755, 225), color = "black", fontname = "arial", fontsize = 42)
+		screen.draw.text("CHECK", (806, 375), color = "black", fontname = "arial", fontsize = 42)
+		screen.draw.text("RAGE QUIT", (858, 525), color = "black", fontname = "arial", fontsize = 42)
 		
 	elif EXTREME != 0:
 		screen.clear()
