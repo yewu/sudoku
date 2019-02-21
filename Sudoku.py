@@ -1,3 +1,5 @@
+import pgzrun #run pygame zero w/o using terminal!
+
 WIDTH = 1100
 HEIGHT = 650
 HOME = 0
@@ -163,6 +165,7 @@ def draw():
 		screen.draw.rect(ragequit_button, black)
 		#text on butttons and title
 		screen.draw.text("NORMAL", (815, 78), color = "black", fontname = "arial", fontsize = 42)
+		screen.draw.text("ENTER THE\n  NUMBER", (755, 180), color = "black", fontname = "arial", fontsize = 30)
 		screen.draw.text("HINT", (855, 300), color = "black", fontname = "arial", fontsize = 42)
 		screen.draw.text("CHECK", (832, 425), color = "black", fontname = "arial", fontsize = 42)
 		screen.draw.text("RAGE QUIT", (785, 550), color = "black", fontname = "arial", fontsize = 42)
@@ -281,3 +284,5 @@ def on_mouse_down(pos):
 		LEVEL = 0
 		PLAY = 0
 		BACK = 1
+
+pgzrun.go()  #run pygame zero w/o using terminal!
