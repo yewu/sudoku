@@ -19,7 +19,7 @@ def draw():
 	global HOWTO
 	global EXIT
 	global BACK
-	global PlAY
+	global PLAY
 	global LEVEL
 	global EASY
 	global NORMAL
