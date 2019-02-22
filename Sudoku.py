@@ -219,7 +219,25 @@ def draw():
 				screen.draw.rect(b, (0,0,0))
 				x += z
 			y += z
-			
+		
+		#shaded boxes
+		m = 79
+		n = 29
+		p = 64
+		q = 66
+		
+		grey_box = Rect((m + 2 * q, n), (p, p))
+		screen.draw.filled_rect(grey_box, grey)
+		grey_box = Rect((m + 5 * q, n), (p, p))
+		screen.draw.filled_rect(grey_box, grey)
+		grey_box = Rect((m + 7 * q, n), (p, p))
+		screen.draw.filled_rect(grey_box, grey)
+		grey_box = Rect((m + 8 * q, n), (p, p))
+		screen.draw.filled_rect(grey_box, grey)
+		grey_box = Rect((m + 2 * q, n + q), (p, p))
+		screen.draw.filled_rect(grey_box, grey)
+		grey_box = Rect((m + 2 * q, n + 2* q), (p, p))
+		
 	elif EXTREME != 0:
 		HOME = 7
 		screen.clear()
