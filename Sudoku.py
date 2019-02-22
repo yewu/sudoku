@@ -139,7 +139,7 @@ def draw():
 		screen.draw.text("RAGE QUIT", (785, 550), color = "black", fontname = "arial", fontsize = 42)
 		
 		#draw 81 boxes
-		y = 10; z = 66
+		y = 28; z = 66
 		for i in range(9):
 			x = 10
 			for j in range(9):
@@ -149,7 +149,7 @@ def draw():
 			y += z
 
 		#draw gridlines
-		y = 10; z *= 3
+		y = 28; z *= 3
     
 		for k in range(3):
 			x = 10
@@ -189,7 +189,7 @@ def draw():
 		screen.draw.text("RAGE QUIT", (785, 550), color = "black", fontname = "arial", fontsize = 42)
 		
 		#draw 81 boxes
-		y = 10; z = 66
+		y = 28; z = 66
 
 		for i in range(9):
 			x = 10
@@ -200,7 +200,7 @@ def draw():
 			y += z
 
 		#draw gridlines
-		y = 10; z *= 3
+		y = 28; z *= 3
     
 		for k in range(3):
 			x = 10
@@ -240,7 +240,7 @@ def draw():
 		screen.draw.text("RAGE QUIT", (785, 550), color = "black", fontname = "arial", fontsize = 42)
 		
 		#draw 81 boxes
-		y = 10; z = 66
+		y = 28; z = 66
 
 		for i in range(9):
 			x = 10
@@ -251,7 +251,7 @@ def draw():
 			y += z
 
 		#draw gridlines
-		y = 10; z *= 3
+		y = 28; z *= 3
     
 		for k in range(3):
 			x = 10
