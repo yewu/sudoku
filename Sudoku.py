@@ -32,6 +32,7 @@ def draw():
 	purple = 229, 194, 237
 	black = 0, 0, 0
 	white = 255, 255, 255
+	grey = 238, 238, 238
 
 	if CREDITS != 0:
 		HOME = 2
@@ -158,6 +159,15 @@ def draw():
 				screen.draw.rect(b, (0,0,0))
 				x += z
 			y += z
+		
+		#shaded boxes
+		m = 79
+		n = 29
+		p = 64
+		q = 66
+		grey_box = Rect((m + q, n), (p, p))
+		screen.draw.filled_rect(grey_box, grey)
+		
 		
 	elif NORMAL != 0:
 		HOME = 6
@@ -348,5 +358,6 @@ def on_mouse_down(pos):
 		LEVEL = 0
 		PLAY = 0
 		BACK = 1
+		
 
 pgzrun.go()
