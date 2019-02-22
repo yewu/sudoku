@@ -50,8 +50,8 @@ def draw():
 		credits_text = Rect ((50, 180), (1000, 450))
 		screen.draw.filled_rect(credits_text, white)
 		screen.draw.rect(credits_text, black)
-		screen.draw.text("- Home screen image: https://tinyurl.com/y9cbazvx\n- Play screen examples: https://tinyurl.com/ybzp7bjw\n- Boards: https://tinyurl.com/y9onnnsp\n- Inspiration: https://tinyurl.com/ycw6n2hv", (75, 200), color = "black", fontname = "arial", fontsize = 38)
-		screen.draw.text("Made by: Elina Lee, Sophia Liang, Celine Wu", (270, 550), color = "black", fontname = "arial", fontsize = 38)
+		screen.draw.text("-  Home screen image: https://tinyurl.com/y9cbazvx\n-  Play screen examples: https://tinyurl.com/ybzp7bjw\n-  Boards: https://tinyurl.com/y9onnnsp\n-  Inspiration: https://tinyurl.com/ycw6n2hv", (75, 200), color = "black", fontname = "arial", fontsize = 38)
+		screen.draw.text("Made by: Elina Lee, Sophia Liang, Celine Wu (c)2019", (270, 550), color = "black", fontname = "arial", fontsize = 38)
 	
 	elif PLAY != 0:
 		HOME = 4
@@ -110,7 +110,7 @@ def draw():
 		screen.draw.rect(howto_text, black)
 		screen.draw.text("HOW TO PLAY", (75, 67), color = "black", fontname = "arial", fontsize = 65)
 		screen.draw.text("BACK", (850, 78), color = "black", fontname = "arial", fontsize = 42)
-		screen.draw.text("1. Each row and column must contain the numbers from\n1-9 (cannot repeat numbers).\n2. Each 3x3 box with a darker outline must also contain the numbers\nfrom 1-9 (cannot repeat numbers).\n3. In the shaded boxes, the number must be even. In the unshaded\nboxes, the numbers have to be odd.\n4. If you need a hint, click the 'Hint' button.\n5. If you want to check your answers after you are finished, press\nthe 'Check' button.\n6. If you feel as if you cannot continue, please hit the 'Rage Quit'\nbutton.", (75, 200), color = "black", fontname = "arial", fontsize = 32)
+		screen.draw.text("1.  Each row and column must contain the numbers from\n1-9 (cannot repeat numbers).\n2.  Each 3x3 box with a darker outline must also contain the numbers\nfrom 1-9 (cannot repeat numbers).\n3.  In the shaded boxes, the number must be even. In the unshaded\nboxes, the numbers have to be odd.\n4.  If you need a hint, click the 'Hint' button.\n5.  If you want to check your answers after you are finished, press\nthe 'Check' button.\n6.  If you feel as if you cannot continue, please hit the 'Rage Quit'\nbutton.", (75, 200), color = "black", fontname = "arial", fontsize = 32)
 	
 	elif EASY != 0:
 		HOME = 5
@@ -236,7 +236,8 @@ def draw():
 			exit_popup = Rect((320, 170), (500, 350))
 			screen.draw.filled_rect(exit_popup, blue)
 			screen.draw.rect(exit_popup,black)
-			screen.draw.text("CLICK ANYWHERE\nTO CONTINUE\nPRESS CONTROL-Q\nCOMMAND-Q ON MAC\nTO EXIT THE GAME", (350,220), color = "black", fontname = "arial", fontsize = 42)
+			#Mom said all caps is LOOKING DUMB
+			screen.draw.text("Click anywhere\nto continue\npress control-Q\ncommand-Q on Mac\nto exit the game.", (350,220), color = "black", fontname = "arial", fontsize = 42)
 			EXIT = 0
 			
 			
