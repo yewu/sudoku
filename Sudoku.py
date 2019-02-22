@@ -96,10 +96,9 @@ def draw():
 		HOME = 3
 		screen.clear()
 		screen.fill((255, 255, 255))
-		#credits titles tingky
-		credits = Rect ((50, 50), (500, 100))
-		screen.draw.filled_rect(credits, purple)
-		screen.draw.rect(credits, black)
+		howto = Rect ((50, 50), (500, 100))
+		screen.draw.filled_rect(howto, purple)
+		screen.draw.rect(howto, black)
 		back_button = Rect((750, 50), (300, 100))
 		screen.draw.filled_rect(back_button, blue)
 		screen.draw.rect(back_button, black)
