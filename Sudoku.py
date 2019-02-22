@@ -288,25 +288,37 @@ def draw():
 				screen.draw.rect(b, (0,0,0))
 				x += z
 			y += z
-		
-		#shaded boxes
+		data_no = [[9, 0, 0, 7, 0, 6, 3, 2, 0],
+			[3, 0, 0, 0, 0, 5, 0, 9, 0],
+			[1, 0, 8, 0, 0, 0, 0, 0, 0],
+			[0, 0, 0, 0, 8, 9, 0, 0, 0],
+			[0, 0, 9, 0, 0, 2, 4, 0, 0],
+			[6, 0, 2, 5, 0, 0, 0, 0, 0],
+			[2, 6, 0, 0, 0, 8, 9, 0, 0],
+			[0, 9, 0, 0, 2, 0, 0, 0, 1],
+			[8, 0, 0, 0, 0, 1, 5, 0, 0]]
+
+		data_no_shade = [[0, 0, 1, 0, 0, 1, 0, 1, 1],
+				[0, 1, 1, 1, 1, 0, 0, 0, 0],
+				[0, 0, 1, 1, 0, 0, 1, 0, 1],
+				[0, 1, 0, 1, 1, 0, 1, 0, 0],
+				[0, 1, 0, 0, 0, 1, 1, 0, 1],
+				[1, 0, 1, 0, 0, 1, 0, 1, 0],
+				[1, 1, 0, 1, 0, 1, 0, 0, 0],
+				[1, 0, 0, 0, 1, 0, 1, 1, 0],
+				[1, 0, 0, 0, 1, 0, 0, 1, 1]]
+
 		m = 79
 		n = 29
 		p = 64
 		q = 66
 		
-		grey_box = Rect((m + 2 * q, n), (p, p))
-		screen.draw.filled_rect(grey_box, grey)
-		grey_box = Rect((m + 5 * q, n), (p, p))
-		screen.draw.filled_rect(grey_box, grey)
-		grey_box = Rect((m + 7 * q, n), (p, p))
-		screen.draw.filled_rect(grey_box, grey)
-		grey_box = Rect((m + 8 * q, n), (p, p))
-		screen.draw.filled_rect(grey_box, grey)
-		grey_box = Rect((m + 2 * q, n + q), (p, p))
-		screen.draw.filled_rect(grey_box, grey)
-		grey_box = Rect((m + 2 * q, n + 2* q), (p, p))
-		
+		for x in range (9):
+			for y in range (9):
+				if data_no_shade[x][y] == 1 :
+					grey_box = Rect((m + y*q, n + x*q), (p, p))
+					screen.draw.filled_rect(grey_box, grey)
+				#if data_ex[x][y] > 0:		
 	elif EXTREME != 0:
 		HOME = 7
 		screen.clear()
@@ -357,7 +369,7 @@ def draw():
 				screen.draw.rect(b, (0,0,0))
 				x += z
 			y += z
-		data_ex = [ [0, 0, 0, 0, 0, 0, 0, 7, 5],
+		data_ex = [[0, 0, 0, 0, 0, 0, 0, 7, 5],
 			[4, 0, 0, 0, 6, 0, 0, 0, 0],
 			[0, 0, 0, 0, 6, 0, 0, 1, 0],
 			[0, 0, 2, 1, 0, 5, 0, 0, 0],
@@ -376,6 +388,11 @@ def draw():
 				[0, 1, 0, 0, 0, 1, 1, 1, 0],
 				[1, 0, 0, 1, 0, 1, 0, 0, 1],
 				[0, 1, 1, 0, 0, 1, 1, 0, 0]]					
+
+		m = 79
+		n = 29
+		p = 64
+		q = 66
 		
 		for x in range (9):
 			for y in range (9):
@@ -383,6 +400,7 @@ def draw():
 					grey_box = Rect((m + y*q, n + x*q), (p, p))
 					screen.draw.filled_rect(grey_box, grey)
 				#if data_ex[x][y] > 0:
+					
 	elif BACK != 0 or CREDITS == 0 or HOWTO == 0 or PLAY ==0 or LEVEL == 0:
 		HOME = 1
 		screen.clear()
