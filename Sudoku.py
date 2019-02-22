@@ -348,3 +348,5 @@ def on_mouse_down(pos):
 		LEVEL = 0
 		PLAY = 0
 		BACK = 1
+
+pgzrun.go()
