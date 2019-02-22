@@ -159,84 +159,37 @@ def draw():
 				screen.draw.rect(b, (0,0,0))
 				x += z
 			y += z
-		
-		#shaded boxes
+		data_ea = [[0, 0, 0, 3, 4, 0, 8, 7, 6],
+			[9, 0, 0, 1, 0, 0, 5, 0, 0],
+			[0, 0, 0, 0, 5, 7, 0, 0, 0],
+			[1, 0, 2, 0, 0, 0, 0, 3, 0],
+			[0, 0, 0, 0, 0, 5, 0, 0, 0],
+			[8, 7, 0, 0, 0, 0, 0, 2, 4],
+			[0, 5, 8, 0, 7, 3, 0, 0, 1],
+			[3, 0, 9, 6, 1, 8, 0, 0, 7],
+			[0, 0, 0, 0, 0, 0, 4, 0, 0]]
+
+		data_ea_shade = [[0, 1, 0, 0, 1, 0, 1, 0, 1],
+				[0, 0, 0, 0, 1, 1, 0, 1, 1],
+				[1, 1, 1, 1, 0, 0, 0, 0, 0],
+				[0, 0, 1, 1, 1, 1, 0, 0, 0],
+				[1, 1, 0, 0, 1, 0, 0, 0, 1],
+				[1, 0, 0, 0, 0, 0, 1, 1, 1],
+				[1, 0, 1, 1, 0, 0, 0, 1, 0],
+				[0, 1, 0, 1, 0, 1, 1, 0, 0],
+				[0, 0, 1, 0, 0, 1, 1, 1, 0]]
+
 		m = 79
 		n = 29
 		p = 64
 		q = 66
-		grey_box = Rect((m + q, n), (p, p)) #box
-		screen.draw.filled_rect(grey_box, grey)
-		grey_box = Rect((m + 4*q, n), (p, p))
-		screen.draw.filled_rect(grey_box, grey)
-		grey_box = Rect((m + 6*q, n), (p, p))
-		screen.draw.filled_rect(grey_box, grey)
-		grey_box = Rect((m + 8*q, n), (p, p))
-		screen.draw.filled_rect(grey_box, grey)
-		grey_box = Rect((m, n + 2*q), (p, p))
-		screen.draw.filled_rect(grey_box, grey)
-		grey_box = Rect((m + q, n + 2*q), (p, p))
-		screen.draw.filled_rect(grey_box, grey)
-		grey_box = Rect((m + 2*q, n + 2*q), (p, p))
-		screen.draw.filled_rect(grey_box, grey)
-		grey_box = Rect((m + 4*q, n + q), (p, p)) #box
-		screen.draw.filled_rect(grey_box, grey)
-		grey_box = Rect((m + 5*q, n + q), (p, p))
-		screen.draw.filled_rect(grey_box, grey)
-		grey_box = Rect((m + 3*q, n + 2*q), (p, p))
-		screen.draw.filled_rect(grey_box, grey)
-		grey_box = Rect((m + 7*q, n + q), (p, p))
-		screen.draw.filled_rect(grey_box, grey)
-		grey_box = Rect((m + 8*q, n + q), (p, p))
-		screen.draw.filled_rect(grey_box, grey)
-		grey_box = Rect((m, n + 4*q), (p, p))
-		screen.draw.filled_rect(grey_box, grey)
-		grey_box = Rect((m, n + 5*q), (p, p))
-		screen.draw.filled_rect(grey_box, grey)
-		grey_box = Rect((m + q, n + 4*q), (p, p))
-		screen.draw.filled_rect(grey_box, grey)
-		grey_box = Rect((m + 2*q, n + 3*q), (p, p))
-		screen.draw.filled_rect(grey_box, grey)
-		grey_box = Rect((m + 3*q, n + 3*q), (p, p))
-		screen.draw.filled_rect(grey_box, grey)
-		grey_box = Rect((m + 4*q, n + 3*q), (p, p))
-		screen.draw.filled_rect(grey_box, grey)
-		grey_box = Rect((m + 5*q, n + 3*q), (p, p))
-		screen.draw.filled_rect(grey_box, grey)
-		grey_box = Rect((m + 4*q, n + 4*q), (p, p))
-		screen.draw.filled_rect(grey_box, grey)
-		grey_box = Rect((m + 8*q, n + 4*q), (p, p))
-		screen.draw.filled_rect(grey_box, grey)
-		grey_box = Rect((m + 6*q, n + 5*q), (p, p))
-		screen.draw.filled_rect(grey_box, grey)
-		grey_box = Rect((m + 7*q, n + 5*q), (p, p))
-		screen.draw.filled_rect(grey_box, grey)
-		grey_box = Rect((m + 8*q, n + 5*q), (p, p))
-		screen.draw.filled_rect(grey_box, grey)
-		grey_box = Rect((m, n + 6*q), (p, p))
-		screen.draw.filled_rect(grey_box, grey)
-		grey_box = Rect((m + 2*q, n + 6*q), (p, p))
-		screen.draw.filled_rect(grey_box, grey)
-		grey_box = Rect((m + 3*q, n + 6*q), (p, p))
-		screen.draw.filled_rect(grey_box, grey)
-		grey_box = Rect((m + 7*q, n + 6*q), (p, p))
-		screen.draw.filled_rect(grey_box, grey)
-		grey_box = Rect((m + q, n + 7*q), (p, p))
-		screen.draw.filled_rect(grey_box, grey)
-		grey_box = Rect((m + 3*q, n + 7*q), (p, p))
-		screen.draw.filled_rect(grey_box, grey)
-		grey_box = Rect((m + 5*q, n + 7*q), (p, p))
-		screen.draw.filled_rect(grey_box, grey)
-		grey_box = Rect((m + 6*q, n + 7*q), (p, p))
-		screen.draw.filled_rect(grey_box, grey)
-		grey_box = Rect((m + 2*q, n + 8*q), (p, p))
-		screen.draw.filled_rect(grey_box, grey)
-		grey_box = Rect((m + 6*q, n + 8*q), (p, p))
-		screen.draw.filled_rect(grey_box, grey)
-		grey_box = Rect((m + 7*q, n + 8*q), (p, p))
-		screen.draw.filled_rect(grey_box, grey)
-		grey_box = Rect((m + 8*q, n + 8*q), (p, p))
-		screen.draw.filled_rect(grey_box, grey)
+		
+		for x in range (9):
+			for y in range (9):
+				if data_ea_shade[x][y] == 1 :
+					grey_box = Rect((m + y*q, n + x*q), (p, p))
+					screen.draw.filled_rect(grey_box, grey)
+				#if data_ex[x][y] > 0:	
 		
 	elif NORMAL != 0:
 		HOME = 6
