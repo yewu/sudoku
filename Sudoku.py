@@ -96,7 +96,6 @@ def draw():
 		HOME = 3
 		screen.clear()
 		screen.fill((255, 255, 255))
-		print("howto")
 		#credits titles tingky
 		credits = Rect ((50, 50), (500, 100))
 		screen.draw.filled_rect(credits, purple)
