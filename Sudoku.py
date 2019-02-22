@@ -46,7 +46,6 @@ def draw():
 		screen.draw.filled_rect(back_button, blue)
 		screen.draw.rect(back_button, black)
 		screen.draw.text("BACK", (850, 78), color = "black", fontname = "arial", fontsize = 42)
-       	#text
 		credits_text = Rect ((50, 180), (1000, 450))
 		screen.draw.filled_rect(credits_text, white)
 		screen.draw.rect(credits_text, black)
