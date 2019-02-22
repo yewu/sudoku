@@ -261,6 +261,7 @@ def on_mouse_down(pos):
 	if pos[0]> 750 and pos[0] < 1050 and pos[1] > 50 and pos[1] < 150 and HOME == 4:
 		BACK = 1
 		PLAY = 0
+		LEVEL = 0
 	if pos[0]> 750 and pos[0] < 1050 and pos[1] > 200 and pos[1] < 300 and HOME == 1 and LEVEL == 0:
 		HOWTO = 1
 	if pos[0]> 750 and pos[0] < 1050 and pos[1] > 350 and pos[1] < 450 and HOME == 1 and LEVEL == 0:
