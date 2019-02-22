@@ -74,7 +74,7 @@ def draw():
 		screen.draw.rect(Easy,(0,0,0))
 		screen.draw.text("CHOOSE A LEVEL", (95, 67), color = "black", fontname = "arial", fontsize = 65)
 		screen.draw.text("BACK", (850, 78), color = "black", fontname = "arial", fontsize = 42)
-		screen.draw.text("Easy", (150, 210), color = "black", fontname = "arial", fontsize = 50)	
+		screen.draw.text("EASY", (150, 210), color = "black", fontname = "arial", fontsize = 50)	
 		screen.draw.text("SOPHIA", (140, 262), color = "black", fontname = "arial", fontsize = 35)
 		screen.draw.text("(EXAMPLE BELOW)", (51, 300), color = "black", fontname = "arial", fontsize = 32)	
 		screen.draw.text("NORMAL", (450, 210), color = "black", fontname = "arial", fontsize = 50)	
