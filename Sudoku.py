@@ -140,25 +140,24 @@ def draw():
 		
 		#draw 81 boxes
 		y = 10; z = 66
+		for i in range(9):
+			x = 10
+			for j in range(9):
+				b = Rect((x,y), (z,z))
+				screen.draw.rect(b, (200,200,200))
+				x += z
+			y += z
 
-    for i in range(9):
-        x = 10
-        for j in range(9):
-            b = Rect((x,y), (z,z))
-            screen.draw.rect(b, (200,200,200))
-            x += z
-        y += z
-
-    #draw gridlines
-    y = 10; z *= 3
+		#draw gridlines
+		y = 10; z *= 3
     
-    for k in range(3):
-        x = 10
-        for l in range(3):
-            b = Rect((x,y), (z,z))
-            screen.draw.rect(b, (0,0,0))
-            x += z
-        y += z
+		for k in range(3):
+			x = 10
+			for l in range(3):
+				b = Rect((x,y), (z,z))
+				screen.draw.rect(b, (0,0,0))
+				x += z
+			y += z
 		
 	elif NORMAL != 0:
 		HOME = 6
@@ -190,26 +189,26 @@ def draw():
 		screen.draw.text("RAGE QUIT", (785, 550), color = "black", fontname = "arial", fontsize = 42)
 		
 		#draw 81 boxes
-    y = 10; z = 66
+		y = 10; z = 66
 
-    for i in range(9):
-        x = 10
-        for j in range(9):
-            b = Rect((x,y), (z,z))
-            screen.draw.rect(b, (200,200,200))
-            x += z
-        y += z
+		for i in range(9):
+			x = 10
+			for j in range(9):
+				b = Rect((x,y), (z,z))
+				screen.draw.rect(b, (200,200,200))
+				x += z
+			y += z
 
-    #draw gridlines
-    y = 10; z *= 3
+		#draw gridlines
+		y = 10; z *= 3
     
-    for k in range(3):
-        x = 10
-        for l in range(3):
-            b = Rect((x,y), (z,z))
-            screen.draw.rect(b, (0,0,0))
-            x += z
-        y += z
+		for k in range(3):
+			x = 10
+			for l in range(3):
+				b = Rect((x,y), (z,z))
+				screen.draw.rect(b, (0,0,0))
+				x += z
+			y += z
 			
 	elif EXTREME != 0:
 		HOME = 7
@@ -241,26 +240,26 @@ def draw():
 		screen.draw.text("RAGE QUIT", (785, 550), color = "black", fontname = "arial", fontsize = 42)
 		
 		#draw 81 boxes
-    y = 10; z = 66
+		y = 10; z = 66
 
-    for i in range(9):
-        x = 10
-        for j in range(9):
-            b = Rect((x,y), (z,z))
-            screen.draw.rect(b, (200,200,200))
-            x += z
-        y += z
+		for i in range(9):
+			x = 10
+			for j in range(9):
+				b = Rect((x,y), (z,z))
+				screen.draw.rect(b, (200,200,200))
+				x += z
+			y += z
 
-    #draw gridlines
-    y = 10; z *= 3
+		#draw gridlines
+		y = 10; z *= 3
     
-    for k in range(3):
-        x = 10
-        for l in range(3):
-            b = Rect((x,y), (z,z))
-            screen.draw.rect(b, (0,0,0))
-            x += z
-        y += z
+		for k in range(3):
+			x = 10
+			for l in range(3):
+				b = Rect((x,y), (z,z))
+				screen.draw.rect(b, (0,0,0))
+				x += z
+			y += z
 
 	elif BACK != 0 or CREDITS == 0 or HOWTO == 0 or PLAY ==0 or LEVEL == 0:
 		HOME = 1
@@ -349,5 +348,3 @@ def on_mouse_down(pos):
 		LEVEL = 0
 		PLAY = 0
 		BACK = 1
-
-pgzrun.go()  #run pygame zero w/o using terminal!
