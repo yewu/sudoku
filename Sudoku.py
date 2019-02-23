@@ -75,7 +75,7 @@ def draw():
 		screen.draw.rect(Easy,(0,0,0))
 		screen.draw.text("CHOOSE A LEVEL", (95, 67), color = "black", fontname = "arial", fontsize = 65)
 		screen.draw.text("BACK", (850, 78), color = "black", fontname = "arial", fontsize = 42)
-		screen.draw.text("EASY", (150, 210), color = "black", fontname = "arial", fontsize = 50)	
+		screen.draw.text("EASY", (140, 210), color = "black", fontname = "arial", fontsize = 50)	
 		screen.draw.text("SOPHIA", (140, 262), color = "black", fontname = "arial", fontsize = 35)
 		screen.draw.text("(EXAMPLE BELOW)", (51, 300), color = "black", fontname = "arial", fontsize = 32)	
 		screen.draw.text("NORMAL", (450, 210), color = "black", fontname = "arial", fontsize = 50)	
@@ -93,6 +93,7 @@ def draw():
 		board = Actor('extreme')
 		board.pos = 900, 500
 		board.draw()
+		
 	elif HOWTO != 0:
 		HOME = 3
 		screen.clear()
@@ -241,6 +242,7 @@ def draw():
 				screen.draw.rect(b, (0,0,0))
 				x += z
 			y += z
+		
 		data_no = [[9, 0, 0, 7, 0, 6, 3, 2, 0],
 			[3, 0, 0, 0, 0, 5, 0, 9, 0],
 			[1, 0, 8, 0, 0, 0, 0, 0, 0],
@@ -265,15 +267,17 @@ def draw():
 		n = 29
 		p = 64
 		q = 66
+		r = 50
 		
 		for x in range (9):
 			for y in range (9):
 				if data_no_shade[x][y] == 1 :
 					grey_box = Rect((m + y*q, n + x*q), (p, p))
 					screen.draw.filled_rect(grey_box, grey)
-				#if data_ex[x][y] > 0:		
-	elif EXTREME != 0:
-		HOME = 7
+				if data_no[x][y] > 0:
+                                        screen.draw.text(data_no[x][y], (m + y*q, n + x*q), color = "black", fontname = "arial", fontsize = r)
+        elif EXTREME != 0:
+                HOME = 7
 		screen.clear()
 		screen.fill((255, 255, 255))
 		extreme_title = Rect((750, 50), (300, 100))
