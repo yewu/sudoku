@@ -357,6 +357,7 @@ def draw():
 					grey_box = Rect((m + y*q, n + x*q), (p, p))
 					screen.draw.filled_rect(grey_box, grey)
 				#if data_ex[x][y] > 0:
+					#screen.draw.text("data_ex[", (some position, some position), color = "black", fontname = "arial", fontsize = 20)
 					
 	elif BACK != 0 or CREDITS == 0 or HOWTO == 0 or PLAY ==0 or LEVEL == 0:
 		HOME = 1
