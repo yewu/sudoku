@@ -241,10 +241,11 @@ def draw():
 		#text on butttons and title
 		screen.draw.text("EASY", (845, 78), color = "black", fontname = "arial", fontsize = 42)
 		for number in range(9):
+			num = number + 1
 			if number <= 4:
-				screen.draw.text(str(number), (765 + number * 60, 165), color = "black", fontname = "arial", fontsize = 36)
+				screen.draw.text(str(num), (765 + number * 60, 165), color = "black", fontname = "arial", fontsize = 36)
 			else:
-				screen.draw.text(str(number), (765 + (number-5) * 60, 220), color = "black", fontname = "arial", fontsize = 36)    
+				screen.draw.text(str(num), (765 + (number-5) * 60, 220), color = "black", fontname = "arial", fontsize = 36)    
 		screen.draw.text("HINT", (855, 300), color = "black", fontname = "arial", fontsize = 42)
 		screen.draw.text("CHECK", (832, 425), color = "black", fontname = "arial", fontsize = 42)
 		screen.draw.text("RAGE QUIT", (785, 550), color = "black", fontname = "arial", fontsize = 42)
@@ -288,6 +289,8 @@ def draw():
 		screen.clear()
 		screen.fill((255, 255, 255))
 		normal_title = Rect((750, 50), (300, 100))
+		screen.draw.filled_rect(normal_title, purple)
+		screen.draw.rect(normal_title, black)
 		for count in range(9):
 			if count <= 4:
 				button_box = Rect((750 + count * 60, 160), (50, 50))
@@ -307,10 +310,11 @@ def draw():
 		#text on butttons and title
 		screen.draw.text("NORMAL", (815, 78), color = "black", fontname = "arial", fontsize = 42)
 		for number in range(9):
+			num = number + 1
 			if number <= 4:
-				screen.draw.text(str(number), (765 + number * 60, 165), color = "black", fontname = "arial", fontsize = 36)
+				screen.draw.text(str(num), (765 + number * 60, 165), color = "black", fontname = "arial", fontsize = 36)
 			else:
-				screen.draw.text(str(number), (765 + (number-5) * 60, 220), color = "black", fontname = "arial", fontsize = 36)     
+				screen.draw.text(str(num), (765 + (number-5) * 60, 220), color = "black", fontname = "arial", fontsize = 36)     
 		screen.draw.text("HINT", (855, 300), color = "black", fontname = "arial", fontsize = 42)
 		screen.draw.text("CHECK", (832, 425), color = "black", fontname = "arial", fontsize = 42)
 		screen.draw.text("RAGE QUIT", (785, 550), color = "black", fontname = "arial", fontsize = 42)
@@ -377,10 +381,11 @@ def draw():
 		#text on butttons and title
 		screen.draw.text("EXTREME", (800, 75), color = "black", fontname = "arial", fontsize = 42)
 		for number in range(9):
+			num = number + 1
 			if number <= 4:
-				screen.draw.text(str(number), (765 + number * 60, 165), color = "black", fontname = "arial", fontsize = 36)
+				screen.draw.text(str(num), (765 + number * 60, 165), color = "black", fontname = "arial", fontsize = 36)
 			else:
-				screen.draw.text(str(number), (765 + (number-5) * 60, 220), color = "black", fontname = "arial", fontsize = 36)    
+				screen.draw.text(str(num), (765 + (number-5) * 60, 220), color = "black", fontname = "arial", fontsize = 36)    
 		screen.draw.text("HINT", (855, 300), color = "black", fontname = "arial", fontsize = 42)
 		screen.draw.text("CHECK", (832, 425), color = "black", fontname = "arial", fontsize = 42)
 		screen.draw.text("RAGE QUIT", (785, 550), color = "black", fontname = "arial", fontsize = 42)
@@ -535,47 +540,47 @@ def on_mouse_down(pos):
 	if HOME == 5 and pos[0]> 79 and pos[0] < 673 and pos[1] > 29 and pos[1] < 623:
 		x_pos = pos[0]
 		y_pos = pos[1]
-	if HOME == 5 and pos[0]> ___ and pos[0] < ___ and pos[1] > ___ and pos[2] < ___:#number 1 button
+	if HOME == 5 and pos[0]> 750 and pos[0] < 800 and pos[1] > 160 and pos[1] < 210:#number 1 button
 		if x_pos!= 0 and y_pos!= 0:
 			y = int((x_pos-79)/66)
 			x = int((y_pos-29)/66)
 			current_board[x][y]=1
-	if HOME == 5 and pos[0]> ___ and pos[0] < ___ and pos[1] > ___ and pos[2] < ___:#number 2 button
+	if HOME == 5 and pos[0]> 810 and pos[0] < 860 and pos[1] > 160 and pos[1] < 210:#number 2 button
 		if x_pos!= 0 and y_pos!= 0:
 			y = int((x_pos-79)/66)
 			x = int((y_pos-29)/66)
 			current_board[x][y]=2
-	if HOME == 5 and pos[0]> ___ and pos[0] < ___ and pos[1] > ___ and pos[2] < ___:#number 3 button
+	if HOME == 5 and pos[0]> 870 and pos[0] < 920 and pos[1] > 160 and pos[1] < 210:#number 3 button
 		if x_pos!= 0 and y_pos!= 0:
 			y = int((x_pos-79)/66)
 			x = int((y_pos-29)/66)
 			current_board[x][y]=3
-	if HOME == 5 and pos[0]> ___ and pos[0] < ___ and pos[1] > ___ and pos[2] < ___:#number 4 button
+	if HOME == 5 and pos[0]> 930 and pos[0] < 980 and pos[1] > 160 and pos[1] < 210:#number 4 button
 		if x_pos!= 0 and y_pos!= 0:
 			y = int((x_pos-79)/66)
 			x = int((y_pos-29)/66)
 			current_board[x][y]=4
-	if HOME == 5 and pos[0]> ___ and pos[0] < ___ and pos[1] > ___ and pos[2] < ___:#number 5 button
+	if HOME == 5 and pos[0]> 750 and pos[0] < 800 and pos[1] > 215 and pos[1] < 265:#number 5 button
 		if x_pos!= 0 and y_pos!= 0:
 			y = int((x_pos-79)/66)
 			x = int((y_pos-29)/66)
 			current_board[x][y]=5
-	if HOME == 5 and pos[0]> ___ and pos[0] < ___ and pos[1] > ___ and pos[2] < ___:#number 6 button
+	if HOME == 5 and pos[0]> 810 and pos[0] < 860 and pos[1] > 215 and pos[1] < 265:#number 6 button
 		if x_pos!= 0 and y_pos!= 0:
 			y = int((x_pos-79)/66)
 			x = int((y_pos-29)/66)
 			current_board[x][y]=6
-	if HOME == 5 and pos[0]> ___ and pos[0] < ___ and pos[1] > ___ and pos[2] < ___:#number 7 button
+	if HOME == 5 and pos[0]> 870 and pos[0] < 920 and pos[1] > 215 and pos[1] < 265:#number 7 button
 		if x_pos!= 0 and y_pos!= 0:
 			y = int((x_pos-79)/66)
 			x = int((y_pos-29)/66)
 			current_board[x][y]=7
-	if HOME == 5 and pos[0]> ___ and pos[0] < ___ and pos[1] > ___ and pos[2] < ___:#number 8 button
+	if HOME == 5 and pos[0]> 930 and pos[0] < 980 and pos[1] > 215 and pos[1] < 265:#number 8 button
 		if x_pos!= 0 and y_pos!= 0:
 			y = int((x_pos-79)/66)
 			x = int((y_pos-29)/66)
 			current_board[x][y]=8
-	if HOME == 5 and pos[0]> ___ and pos[0] < ___ and pos[1] > ___ and pos[2] < ___:#number 9 button
+	if HOME == 5 and pos[0]> 990 and pos[0] < 1040 and pos[1] > 215 and pos[1] < 265:#number 9 button
 		if x_pos!= 0 and y_pos!= 0:
 			y = int((x_pos-79)/66)
 			x = int((y_pos-29)/66)
