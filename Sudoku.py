@@ -430,8 +430,7 @@ def draw():
 			exit_popup = Rect((320, 170), (480, 350))
 			screen.draw.filled_rect(exit_popup, blue)
 			screen.draw.rect(exit_popup,black)
-			#Mom said all caps is LOOKING DUMB
-			screen.draw.text("Click anywhere\nto continue\npress control-Q;\ncommand-Q on Mac;\nto exit the game.", (360, 220), color = "black", fontname = "arial", fontsize = 42)
+			screen.draw.text("Click anywhere\nto continue.\nPress control-Q;\ncommand-Q on Mac;\nto exit the game.", (360, 220), color = "black", fontname = "arial", fontsize = 42)
 			EXIT = 0
 			
 			
