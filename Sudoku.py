@@ -470,6 +470,9 @@ def on_mouse_down(pos):
 		LEVEL = 0
 		PLAY = 0
 		BACK = 1
-		
+		#one single box is 66x66
+	if HOME = 5 and pos[0]> 79 and pos[0] < 673 and pos[1] > 29 and pos[1] < 623:
+		x_pos = pos[0]
+		y_pos = pos[1]	
 
 pgzrun.go()
