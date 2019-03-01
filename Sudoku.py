@@ -184,13 +184,14 @@ def draw():
 		n = 29
 		p = 64
 		q = 66
-		
+		r = 50		
 		for x in range (9):
 			for y in range (9):
 				if data_ea_shade[x][y] == 1 :
 					grey_box = Rect((m + y*q, n + x*q), (p, p))
 					screen.draw.filled_rect(grey_box, grey)
-				#if data_ex[x][y] > 0:	
+				if data_ea[x][y] > 0:
+					screen.draw.text(str(data_ea[x][y]), (m + y*q + 16, n + x*q + 2), color = "black", fontname = "arial", fontsize = r)	
 		
 	elif NORMAL != 0:
 		HOME = 6
@@ -275,9 +276,9 @@ def draw():
 					grey_box = Rect((m + y*q, n + x*q), (p, p))
 					screen.draw.filled_rect(grey_box, grey)
 				if data_no[x][y] > 0:
-                                        screen.draw.text(data_no[x][y], (m + y*q, n + x*q), color = "black", fontname = "arial", fontsize = r)
-        elif EXTREME != 0:
-                HOME = 7
+					screen.draw.text(str(data_no[x][y]), (m + y*q + 16, n + x*q + 2), color = "black", fontname = "arial", fontsize = r)
+	elif EXTREME != 0:
+		HOME = 7
 		screen.clear()
 		screen.fill((255, 255, 255))
 		extreme_title = Rect((750, 50), (300, 100))
@@ -350,14 +351,15 @@ def draw():
 		n = 29
 		p = 64
 		q = 66
+		r = 50
 		
 		for x in range (9):
 			for y in range (9):
 				if data_ex_shade[x][y] == 1 :
 					grey_box = Rect((m + y*q, n + x*q), (p, p))
 					screen.draw.filled_rect(grey_box, grey)
-				#if data_ex[x][y] > 0:
-					#screen.draw.text("data_ex[", (some position, some position), color = "black", fontname = "arial", fontsize = 20)
+				if data_ex[x][y] > 0:
+					screen.draw.text(str(data_ex[x][y]), (m + y*q + 16, n + x*q + 2), color = "black", fontname = "arial", fontsize = r)
 					
 	elif BACK != 0 or CREDITS == 0 or HOWTO == 0 or PLAY ==0 or LEVEL == 0:
 		HOME = 1
