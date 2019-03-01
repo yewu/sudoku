@@ -222,23 +222,13 @@ def draw():
 		easy_title = Rect((750, 50), (300, 100))
 		screen.draw.filled_rect(easy_title, purple)
 		screen.draw.rect(easy_title, black)
-		one = Rect((750, 160), (50, 50),)
-		screen.draw.rect(one, black)
-		two = Rect((810, 160), (50, 50),)
-		screen.draw.rect(two, black)
-		three = Rect((870, 160), (50, 50),)
-		screen.draw.rect(three, black)
-		four = Rect((930, 160), (50, 50),)
-		screen.draw.rect(four, black)
-		five = Rect((750, 215), (50, 50),)
-		screen.draw.rect(five, black)
-		six = Rect((810, 215), (50, 50),)
-		screen.draw.rect(six, black)
-		seven = Rect((870, 215), (50, 50),)
-		screen.draw.rect(seven, black)
-		eight = Rect((930, 215), (50, 50),)
-		screen.draw.rect(eight, black)
-		nine = Rect((990, 215), (50, 50),)
+		for count in range(9):
+			if count <= 4:
+				button_box = Rect((750 + count * 60, 160), (50, 50))
+				screen.draw.rect(button_box, black)
+			else:
+				button_box = Rect((750 + (count-5) * 60, 215), (50, 50))
+				screen.draw.rect(button_box, black)
 		hint_button = Rect((750, 275), (300, 100))
 		screen.draw.filled_rect(hint_button, blue)
 		screen.draw.rect(hint_button, black)
@@ -250,15 +240,11 @@ def draw():
 		screen.draw.rect(ragequit_button, black)
 		#text on butttons and title
 		screen.draw.text("EASY", (845, 78), color = "black", fontname = "arial", fontsize = 42)
-		screen.draw.text("1", (765, 165), color = "black", fontname = "arial", fontsize = 36)
-		screen.draw.text("2", (825, 165), color = "black", fontname = "arial", fontsize = 36)
-		screen.draw.text("3", (885, 165), color = "black", fontname = "arial", fontsize = 36)
-		screen.draw.text("4", (945, 165), color = "black", fontname = "arial", fontsize = 36)
-		screen.draw.text("5", (765, 220), color = "black", fontname = "arial", fontsize = 36)
-		screen.draw.text("6", (825, 220), color = "black", fontname = "arial", fontsize = 36)
-		screen.draw.text("7", (886, 220), color = "black", fontname = "arial", fontsize = 36)
-		screen.draw.text("8", (945, 220), color = "black", fontname = "arial", fontsize = 36)
-		screen.draw.text("9", (1005, 220), color = "black", fontname = "arial", fontsize = 36)
+		for number in range(9):
+			if number <= 4:
+				screen.draw.text(str(number), (765 + number * 60, 165), color = "black", fontname = "arial", fontsize = 36)
+			else:
+				screen.draw.text(str(number), (765 + (number-5) * 60, 220), color = "black", fontname = "arial", fontsize = 36)    
 		screen.draw.text("HINT", (855, 300), color = "black", fontname = "arial", fontsize = 42)
 		screen.draw.text("CHECK", (832, 425), color = "black", fontname = "arial", fontsize = 42)
 		screen.draw.text("RAGE QUIT", (785, 550), color = "black", fontname = "arial", fontsize = 42)
@@ -302,14 +288,13 @@ def draw():
 		screen.clear()
 		screen.fill((255, 255, 255))
 		normal_title = Rect((750, 50), (300, 100))
-		screen.draw.filled_rect(normal_title, purple)
-		screen.draw.rect(normal_title, black)
-		enter_number = Rect((750, 175), (175, 75))
-		screen.draw.filled_rect(enter_number, white)
-		screen.draw.rect(enter_number, black)
-		number = Rect((950, 175), (100, 75))
-		screen.draw.filled_rect(number, white)
-		screen.draw.rect(number, black)
+		for count in range(9):
+			if count <= 4:
+				button_box = Rect((750 + count * 60, 160), (50, 50))
+				screen.draw.rect(button_box, black)
+			else:
+				button_box = Rect((750 + (count-5) * 60, 215), (50, 50))
+				screen.draw.rect(button_box, black)
 		hint_button = Rect((750, 275), (300, 100))
 		screen.draw.filled_rect(hint_button, blue)
 		screen.draw.rect(hint_button, black)
@@ -321,7 +306,11 @@ def draw():
 		screen.draw.rect(ragequit_button, black)
 		#text on butttons and title
 		screen.draw.text("NORMAL", (815, 78), color = "black", fontname = "arial", fontsize = 42)
-		screen.draw.text("ENTER THE\n  NUMBER", (755, 180), color = "black", fontname = "arial", fontsize = 30)
+		for number in range(9):
+			if number <= 4:
+				screen.draw.text(str(number), (765 + number * 60, 165), color = "black", fontname = "arial", fontsize = 36)
+			else:
+				screen.draw.text(str(number), (765 + (number-5) * 60, 220), color = "black", fontname = "arial", fontsize = 36)     
 		screen.draw.text("HINT", (855, 300), color = "black", fontname = "arial", fontsize = 42)
 		screen.draw.text("CHECK", (832, 425), color = "black", fontname = "arial", fontsize = 42)
 		screen.draw.text("RAGE QUIT", (785, 550), color = "black", fontname = "arial", fontsize = 42)
@@ -369,12 +358,13 @@ def draw():
 		extreme_title = Rect((750, 50), (300, 100))
 		screen.draw.filled_rect(extreme_title, purple)
 		screen.draw.rect(extreme_title, black)
-		enter_number = Rect((750, 175), (175, 75))
-		screen.draw.filled_rect(enter_number, white)
-		screen.draw.rect(enter_number, black)
-		number = Rect((950, 175), (100, 75))
-		screen.draw.filled_rect(number, white)
-		screen.draw.rect(number, black)
+		for count in range(9):
+			if count <= 4:
+				button_box = Rect((750 + count * 60, 160), (50, 50))
+				screen.draw.rect(button_box, black)
+			else:
+				button_box = Rect((750 + (count-5) * 60, 215), (50, 50))
+				screen.draw.rect(button_box, black)
 		hint_button = Rect((750, 275), (300, 100))
 		screen.draw.filled_rect(hint_button, blue)
 		screen.draw.rect(hint_button, black)
@@ -386,7 +376,11 @@ def draw():
 		screen.draw.rect(ragequit_button, black)
 		#text on butttons and title
 		screen.draw.text("EXTREME", (800, 75), color = "black", fontname = "arial", fontsize = 42)
-		screen.draw.text("ENTER THE\n  NUMBER", (755, 180), color = "black", fontname = "arial", fontsize = 30)
+		for number in range(9):
+			if number <= 4:
+				screen.draw.text(str(number), (765 + number * 60, 165), color = "black", fontname = "arial", fontsize = 36)
+			else:
+				screen.draw.text(str(number), (765 + (number-5) * 60, 220), color = "black", fontname = "arial", fontsize = 36)    
 		screen.draw.text("HINT", (855, 300), color = "black", fontname = "arial", fontsize = 42)
 		screen.draw.text("CHECK", (832, 425), color = "black", fontname = "arial", fontsize = 42)
 		screen.draw.text("RAGE QUIT", (785, 550), color = "black", fontname = "arial", fontsize = 42)
