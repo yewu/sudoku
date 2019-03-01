@@ -536,48 +536,48 @@ def on_mouse_down(pos):
 		x_pos = pos[0]
 		y_pos = pos[1]
 	if HOME == 5 and pos[0]> ___ and pos[0] < ___ and pos[1] > ___ and pos[2] < ___:#number 1 button
-		if x_pos!= 0: and y_pos!= 0:
+		if x_pos!= 0 and y_pos!= 0:
 			y = int((x_pos-79)/66)
 			x = int((y_pos-29)/66)
 			current_board[x][y]=1
 	if HOME == 5 and pos[0]> ___ and pos[0] < ___ and pos[1] > ___ and pos[2] < ___:#number 2 button
-		if x_pos!= 0: and y_pos!= 0:
-		y = int((x_pos-79)/66)
-		x = int((y_pos-29)/66)
-		current_board[x][y]=2
+		if x_pos!= 0 and y_pos!= 0:
+			y = int((x_pos-79)/66)
+			x = int((y_pos-29)/66)
+			current_board[x][y]=2
 	if HOME == 5 and pos[0]> ___ and pos[0] < ___ and pos[1] > ___ and pos[2] < ___:#number 3 button
-		if x_pos!= 0: and y_pos!= 0:
-		y = int((x_pos-79)/66)
-		x = int((y_pos-29)/66)
-		current_board[x][y]=3
+		if x_pos!= 0 and y_pos!= 0:
+			y = int((x_pos-79)/66)
+			x = int((y_pos-29)/66)
+			current_board[x][y]=3
 	if HOME == 5 and pos[0]> ___ and pos[0] < ___ and pos[1] > ___ and pos[2] < ___:#number 4 button
-		if x_pos!= 0: and y_pos!= 0:
-		y = int((x_pos-79)/66)
-		x = int((y_pos-29)/66)
-		current_board[x][y]=4
+		if x_pos!= 0 and y_pos!= 0:
+			y = int((x_pos-79)/66)
+			x = int((y_pos-29)/66)
+			current_board[x][y]=4
 	if HOME == 5 and pos[0]> ___ and pos[0] < ___ and pos[1] > ___ and pos[2] < ___:#number 5 button
-		if x_pos!= 0: and y_pos!= 0:
-		y = int((x_pos-79)/66)
-		x = int((y_pos-29)/66)
-		current_board[x][y]=5
+		if x_pos!= 0 and y_pos!= 0:
+			y = int((x_pos-79)/66)
+			x = int((y_pos-29)/66)
+			current_board[x][y]=5
 	if HOME == 5 and pos[0]> ___ and pos[0] < ___ and pos[1] > ___ and pos[2] < ___:#number 6 button
-		if x_pos!= 0: and y_pos!= 0:
-		y = int((x_pos-79)/66)
-		x = int((y_pos-29)/66)
-		current_board[x][y]=6
+		if x_pos!= 0 and y_pos!= 0:
+			y = int((x_pos-79)/66)
+			x = int((y_pos-29)/66)
+			current_board[x][y]=6
 	if HOME == 5 and pos[0]> ___ and pos[0] < ___ and pos[1] > ___ and pos[2] < ___:#number 7 button
-		if x_pos!= 0: and y_pos!= 0:
-		y = int((x_pos-79)/66)
-		x = int((y_pos-29)/66)
-		current_board[x][y]=7
+		if x_pos!= 0 and y_pos!= 0:
+			y = int((x_pos-79)/66)
+			x = int((y_pos-29)/66)
+			current_board[x][y]=7
 	if HOME == 5 and pos[0]> ___ and pos[0] < ___ and pos[1] > ___ and pos[2] < ___:#number 8 button
-		if x_pos!= 0: and y_pos!= 0:
-		y = int((x_pos-79)/66)
-		x = int((y_pos-29)/66)
-		current_board[x][y]=8
+		if x_pos!= 0 and y_pos!= 0:
+			y = int((x_pos-79)/66)
+			x = int((y_pos-29)/66)
+			current_board[x][y]=8
 	if HOME == 5 and pos[0]> ___ and pos[0] < ___ and pos[1] > ___ and pos[2] < ___:#number 9 button
-		if x_pos!= 0: and y_pos!= 0:
-		y = int((x_pos-79)/66)
-		x = int((y_pos-29)/66)
-		current_board[x][y]=9
+		if x_pos!= 0 and y_pos!= 0:
+			y = int((x_pos-79)/66)
+			x = int((y_pos-29)/66)
+			current_board[x][y]=9
 pgzrun.go()
