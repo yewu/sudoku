@@ -12,8 +12,11 @@ LEVEL = 0
 EASY = 0
 NORMAL = 0
 EXTREME = 0
+x_pos = 0
+y_pos = 0
 #it has to be 650 for the screen to fit on the size of the computer screen
 #each box will be 66x66 in the board
+current_board = []
 
 def draw():
 	global HOME
@@ -26,7 +29,7 @@ def draw():
 	global EASY
 	global NORMAL
 	global EXTREME
-
+	global current_board
 	screen.fill((255, 255, 255))
 	blue = 190, 210, 230
 	purple = 229, 194, 237
@@ -179,16 +182,6 @@ def draw():
 				[1, 0, 1, 1, 0, 0, 0, 1, 0],
 				[0, 1, 0, 1, 0, 1, 1, 0, 0],
 				[0, 0, 1, 0, 0, 1, 1, 1, 0]]
-		
-		ans_ea = [[5, 2, 1, 3, 4, 9, 8, 7, 6],
-                         [9, 3, 7, 1, 8, 6, 5, 4, 2],
-                         [6, 8, 4, 2, 5, 7, 3, 1, 9],
-                         [1, 9, 2, 8, 6, 4, 7, 3, 5],
-                         [4, 6, 3, 7, 2, 5, 1, 9, 8],
-                         [8, 7, 5, 9, 3, 1, 6, 2, 4],
-                         [2, 5, 8, 4, 7, 3, 9, 6, 1],
-                         [3, 4, 9, 6, 1, 8, 2, 5, 7],
-                         [7, 1, 6, 5, 9, 2, 4, 8, 3]]
 
 		m = 79
 		n = 29
@@ -200,8 +193,8 @@ def draw():
 				if data_ea_shade[x][y] == 1 :
 					grey_box = Rect((m + y*q, n + x*q), (p, p))
 					screen.draw.filled_rect(grey_box, grey)
-				if data_ea[x][y] > 0:
-					screen.draw.text(str(data_ea[x][y]), (m + y*q + 16, n + x*q + 2), color = "black", fontname = "arial", fontsize = r)	
+				if current_board[x][y] > 0:
+					screen.draw.text(str(current_board[x][y]), (m + y*q + 16, n + x*q + 2), color = "black", fontname = "arial", fontsize = r)	
 		
 	elif NORMAL != 0:
 		HOME = 6
@@ -273,16 +266,6 @@ def draw():
 				[1, 1, 0, 1, 0, 1, 0, 0, 0],
 				[1, 0, 0, 0, 1, 0, 1, 1, 0],
 				[1, 0, 0, 0, 1, 0, 0, 1, 1]]
-		
-		ans_no = [[9, 5, 4, 7, 1, 6, 3, 2, 8],
-                          [3, 2, 6, 8, 4, 5, 1, 9, 7],
-                          [1, 7, 8, 2, 9, 3, 6, 5, 4],
-                          [7, 4, 3, 6, 8, 9, 2, 1, 5],
-                          [5, 8, 9, 1, 7, 2, 4, 3, 6],
-                          [6, 1, 2, 5, 3, 4, 7, 8, 9],
-                          [2, 6, 1, 4, 5, 8, 9, 7, 3],
-                          [4, 9, 5, 3, 2, 7, 8, 6, 1],
-                          [8, 3, 7, 9, 6, 1, 5, 4, 2]]
 
 		m = 79
 		n = 29
@@ -295,8 +278,8 @@ def draw():
 				if data_no_shade[x][y] == 1 :
 					grey_box = Rect((m + y*q, n + x*q), (p, p))
 					screen.draw.filled_rect(grey_box, grey)
-				if data_no[x][y] > 0:
-					screen.draw.text(str(data_no[x][y]), (m + y*q + 16, n + x*q + 2), color = "black", fontname = "arial", fontsize = r)
+				if current_board[x][y] > 0:
+					screen.draw.text(str(current_board[x][y]), (m + y*q + 16, n + x*q + 2), color = "black", fontname = "arial", fontsize = r)
 	elif EXTREME != 0:
 		HOME = 7
 		screen.clear()
@@ -348,24 +331,34 @@ def draw():
 				x += z
 			y += z
 		data_ex = [[0, 0, 0, 0, 0, 0, 0, 7, 5],
-			[4, 0, 0, 0, 6, 0, 0, 0, 0],
-			[0, 0, 0, 0, 6, 0, 0, 1, 0],
-			[0, 0, 2, 1, 0, 5, 0, 0, 0],
-			[0, 0, 0, 7, 0, 0, 0, 4, 0],
-			[9, 0, 0, 0, 0, 0, 0, 0, 0],
-			[0, 0, 0, 3, 9, 0, 8, 0, 0],
-			[0, 1, 0, 0, 0, 0, 0, 0, 0],
-			[0, 0, 0, 0, 0, 0, 2, 0, 0]]
+					[4, 0, 0, 0, 6, 0, 0, 0, 0],
+					[0, 0, 0, 0, 6, 0, 0, 1, 0],
+					[0, 0, 2, 1, 0, 5, 0, 0, 0],
+					[0, 0, 0, 7, 0, 0, 0, 4, 0],
+					[9, 0, 0, 0, 0, 0, 0, 0, 0],
+					[0, 0, 0, 3, 9, 0, 8, 0, 0],
+					[0, 1, 0, 0, 0, 0, 0, 0, 0],
+					[0, 0, 0, 0, 0, 0, 2, 0, 0]]
 
 		data_ex_shade = [[0, 0, 1, 1, 1, 0, 1, 0, 0],
-				[1, 0, 0, 1, 1, 0, 0, 1, 0],
-				[1, 0, 1, 0, 0, 0, 1, 0, 1],
-				[1, 1, 1, 0, 0, 0, 0, 1, 0],
-				[0, 1, 0, 0, 1, 0, 0, 1, 1],
-				[0, 0, 0, 1, 1, 1, 0, 0, 1],
-				[0, 1, 0, 0, 0, 1, 1, 1, 0],
-				[1, 0, 0, 1, 0, 1, 0, 0, 1],
-				[0, 1, 1, 0, 0, 1, 1, 0, 0]]					
+						[1, 0, 0, 1, 1, 0, 0, 1, 0],
+						[1, 0, 1, 0, 0, 0, 1, 0, 1],
+						[1, 1, 1, 0, 0, 0, 0, 1, 0],
+						[0, 1, 0, 0, 1, 0, 0, 1, 1],
+						[0, 0, 0, 1, 1, 1, 0, 0, 1],
+						[0, 1, 0, 0, 0, 1, 1, 1, 0],
+						[1, 0, 0, 1, 0, 1, 0, 0, 1],
+						[0, 1, 1, 0, 0, 1, 1, 0, 0]]
+
+		ans_ex = [[1, 9, 8, 2, 4, 3, 6, 7, 5],
+					[4, 5, 7, 8, 6, 1, 9, 2, 3],
+					[2, 3, 6, 9, 5, 7, 4, 1, 8],
+					[6, 4, 2, 1, 3, 5, 7, 8, 9],
+					[5, 8, 3, 7, 2, 9, 1, 4, 6],
+					[9, 7, 1, 4, 8, 6, 3, 5, 2],
+					[7, 2, 5, 3, 9, 4, 8, 6, 1],
+					[8, 1, 9, 6, 7, 2, 5, 3, 4],
+					[3, 6, 4, 5, 1, 8, 2, 9, 7]]
 
 		m = 79
 		n = 29
@@ -378,8 +371,8 @@ def draw():
 				if data_ex_shade[x][y] == 1 :
 					grey_box = Rect((m + y*q, n + x*q), (p, p))
 					screen.draw.filled_rect(grey_box, grey)
-				if data_ex[x][y] > 0:
-					screen.draw.text(str(data_ex[x][y]), (m + y*q + 16, n + x*q + 2), color = "black", fontname = "arial", fontsize = r)
+				if current_board[x][y] > 0:
+					screen.draw.text(str(current_board[x][y]), (m + y*q + 16, n + x*q + 2), color = "black", fontname = "arial", fontsize = r)
 					
 	elif BACK != 0 or CREDITS == 0 or HOWTO == 0 or PLAY ==0 or LEVEL == 0:
 		HOME = 1
@@ -418,6 +411,7 @@ def draw():
 			exit_popup = Rect((320, 170), (480, 350))
 			screen.draw.filled_rect(exit_popup, blue)
 			screen.draw.rect(exit_popup,black)
+			#Mom said all caps is LOOKING DUMB
 			screen.draw.text("Click anywhere\nto continue\npress control-Q;\ncommand-Q on Mac;\nto exit the game.", (360, 220), color = "black", fontname = "arial", fontsize = 42)
 			EXIT = 0
 			
@@ -433,6 +427,9 @@ def on_mouse_down(pos):
 	global EASY
 	global NORMAL
 	global EXTREME
+	global x_pos
+	global y_pos
+	global current_board
 	if pos[0]> 750 and pos[0] < 1050 and pos[1] > 50 and pos[1] < 150 and HOME == 1:
 		PLAY = 1
 	if pos[0]> 750 and pos[0] < 1050 and pos[1] > 50 and pos[1] < 150 and HOME == 2:
@@ -455,14 +452,17 @@ def on_mouse_down(pos):
 		EASY = 1
 		PLAY = 0
 		LEVEL = 0
+		current_board = data_ea
 	if pos[0] > 400 and pos[0] < 700 and pos[1] > 200 and pos[1] < 350 and LEVEL == 1:
-		NORMAL = 1
+		NORMAL = 1	
 		PLAY = 0
-		LEVEL = 0
+		LEVEL = 0 
+		current_board = data_no
 	if pos[0] > 750 and pos[0] < 1050 and pos[1] > 200 and pos[1] < 350 and LEVEL == 1:
 		EXTREME = 1
 		PLAY = 0
 		LEVEL = 0
+		current_board = data_ex
 	if pos[0] > 750 and pos[0] < 1050 and pos[1] > 525 and pos[1] < 625 and HOME > 4 and HOME < 8:
 		EASY = 0
 		NORMAL = 0
@@ -470,9 +470,9 @@ def on_mouse_down(pos):
 		LEVEL = 0
 		PLAY = 0
 		BACK = 1
-		#one single box is 66x66
+	#one single box is 66x66
 	if HOME = 5 and pos[0]> 79 and pos[0] < 673 and pos[1] > 29 and pos[1] < 623:
 		x_pos = pos[0]
-		y_pos = pos[1]	
+		y_pos = pos[1]
 
 pgzrun.go()
