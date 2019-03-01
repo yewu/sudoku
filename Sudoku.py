@@ -454,12 +454,15 @@ def on_mouse_down(pos):
 	if pos[0] > 50 and pos[0] < 350 and pos[1] > 200 and pos[1] < 350 and LEVEL == 1:
 		EASY = 1
 		PLAY = 0
+		LEVEL = 2
 	if pos[0] > 400 and pos[0] < 700 and pos[1] > 200 and pos[1] < 350 and LEVEL == 1:
 		NORMAL = 1
 		PLAY = 0
+		LEVEL = 3
 	if pos[0] > 750 and pos[0] < 1050 and pos[1] > 200 and pos[1] < 350 and LEVEL == 1:
 		EXTREME = 1
 		PLAY = 0
+		LEVEL = 4
 	if pos[0] > 750 and pos[0] < 1050 and pos[1] > 525 and pos[1] < 625 and HOME > 4 and HOME < 8:
 		EASY = 0
 		NORMAL = 0
