@@ -409,6 +409,15 @@ def draw():
 					screen.draw.text(str(current_board[x][y]), (m + y*q + 16, n + x*q + 2), color = "black", fontname = "arial", fontsize = r)
 					
 	elif BACK != 0 or CREDITS == 0 or HOWTO == 0 or PLAY ==0 or LEVEL == 0:
+		current_board = [[0, 0, 0, 0, 0, 0, 0, 0, 0],
+						[0, 0, 0, 0, 0, 0, 0, 0, 0],
+						[0, 0, 0, 0, 0, 0, 0, 0, 0],
+						[0, 0, 0, 0, 0, 0, 0, 0, 0],
+						[0, 0, 0, 0, 0, 0, 0, 0, 0],
+						[0, 0, 0, 0, 0, 0, 0, 0, 0],
+						[0, 0, 0, 0, 0, 0, 0, 0, 0],
+						[0, 0, 0, 0, 0, 0, 0, 0, 0],
+						[0, 0, 0, 0, 0, 0, 0, 0, 0]]
 		HOME = 1
 		screen.clear()
 		screen.fill((255, 255, 255))
@@ -509,12 +518,53 @@ def on_mouse_down(pos):
 		PLAY = 0
 		BACK = 1
 	#one single box is 66x66
+	#the next few lines can be repeated for the other two levels the blanks are the where the mouse pos goes
 	if HOME == 5 and pos[0]> 79 and pos[0] < 673 and pos[1] > 29 and pos[1] < 623:
 		x_pos = pos[0]
 		y_pos = pos[1]
-	#if HOME == 5 and pos[0]> ___ and pos[0] < ___ and pos[1] > ___ and pos[2] < ___:#number 1 button
-		#if x_pos!= 0: and y_pos!= 0:
-		x = int(x_pos/66)
-		y = int(y_pos/66)
-		current_board[x][y]=1
+	if HOME == 5 and pos[0]> ___ and pos[0] < ___ and pos[1] > ___ and pos[2] < ___:#number 1 button
+		if x_pos!= 0: and y_pos!= 0:
+			y = int((x_pos-79)/66)
+			x = int((y_pos-29)/66)
+			current_board[x][y]=1
+	if HOME == 5 and pos[0]> ___ and pos[0] < ___ and pos[1] > ___ and pos[2] < ___:#number 2 button
+		if x_pos!= 0: and y_pos!= 0:
+		y = int((x_pos-79)/66)
+		x = int((y_pos-29)/66)
+		current_board[x][y]=2
+	if HOME == 5 and pos[0]> ___ and pos[0] < ___ and pos[1] > ___ and pos[2] < ___:#number 3 button
+		if x_pos!= 0: and y_pos!= 0:
+		y = int((x_pos-79)/66)
+		x = int((y_pos-29)/66)
+		current_board[x][y]=3
+	if HOME == 5 and pos[0]> ___ and pos[0] < ___ and pos[1] > ___ and pos[2] < ___:#number 4 button
+		if x_pos!= 0: and y_pos!= 0:
+		y = int((x_pos-79)/66)
+		x = int((y_pos-29)/66)
+		current_board[x][y]=4
+	if HOME == 5 and pos[0]> ___ and pos[0] < ___ and pos[1] > ___ and pos[2] < ___:#number 5 button
+		if x_pos!= 0: and y_pos!= 0:
+		y = int((x_pos-79)/66)
+		x = int((y_pos-29)/66)
+		current_board[x][y]=5
+	if HOME == 5 and pos[0]> ___ and pos[0] < ___ and pos[1] > ___ and pos[2] < ___:#number 6 button
+		if x_pos!= 0: and y_pos!= 0:
+		y = int((x_pos-79)/66)
+		x = int((y_pos-29)/66)
+		current_board[x][y]=6
+	if HOME == 5 and pos[0]> ___ and pos[0] < ___ and pos[1] > ___ and pos[2] < ___:#number 7 button
+		if x_pos!= 0: and y_pos!= 0:
+		y = int((x_pos-79)/66)
+		x = int((y_pos-29)/66)
+		current_board[x][y]=7
+	if HOME == 5 and pos[0]> ___ and pos[0] < ___ and pos[1] > ___ and pos[2] < ___:#number 8 button
+		if x_pos!= 0: and y_pos!= 0:
+		y = int((x_pos-79)/66)
+		x = int((y_pos-29)/66)
+		current_board[x][y]=8
+	if HOME == 5 and pos[0]> ___ and pos[0] < ___ and pos[1] > ___ and pos[2] < ___:#number 9 button
+		if x_pos!= 0: and y_pos!= 0:
+		y = int((x_pos-79)/66)
+		x = int((y_pos-29)/66)
+		current_board[x][y]=9
 pgzrun.go()
