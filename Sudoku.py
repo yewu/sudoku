@@ -281,6 +281,10 @@ def draw():
 				if data_ea_shade[x][y] == 1 :
 					grey_box = Rect((m + y*q, n + x*q), (p, p))
 					screen.draw.filled_rect(grey_box, grey)
+				if current_board[x][y] == -1:
+					highlight = Rect((x*66 + 79,y*66 +29), (66,66))
+					screen.draw.rect(highlight, (26, 15, 251))
+					current_board[x][y] = 0
 				if current_board[x][y] > 0:
 					screen.draw.text(str(current_board[x][y]), (m + y*q + 16, n + x*q + 2), color = "black", fontname = "arial", fontsize = r)	
 		
@@ -353,6 +357,10 @@ def draw():
 				if data_no_shade[x][y] == 1 :
 					grey_box = Rect((m + y*q, n + x*q), (p, p))
 					screen.draw.filled_rect(grey_box, grey)
+				if current_board[x][y] == -1:
+					highlight = Rect((x*66 + 79,y*66 +29), (66,66))
+					screen.draw.rect(highlight, (26, 15, 251))
+					current_board[x][y] = 0
 				if current_board[x][y] > 0:
 					screen.draw.text(str(current_board[x][y]), (m + y*q + 16, n + x*q + 2), color = "black", fontname = "arial", fontsize = r)
 	elif EXTREME != 0:
@@ -423,6 +431,10 @@ def draw():
 				if data_ex_shade[x][y] == 1 :
 					grey_box = Rect((m + y*q, n + x*q), (p, p))
 					screen.draw.filled_rect(grey_box, grey)
+				if current_board[x][y] == -1:
+					highlight = Rect((x*66 + 79,y*66 +29), (66,66))
+					screen.draw.rect(highlight, (26, 15, 251))
+					current_board[x][y] = 0
 				if current_board[x][y] > 0:
 					screen.draw.text(str(current_board[x][y]), (m + y*q + 16, n + x*q + 2), color = "black", fontname = "arial", fontsize = r)
 					
@@ -494,7 +506,6 @@ def on_mouse_down(pos):
 	global data_ea
 	global data_no
 	global data_ex
-	print (data_ea)
 	if pos[0]> 750 and pos[0] < 1050 and pos[1] > 50 and pos[1] < 150 and HOME == 1:
 		PLAY = 1
 	if pos[0]> 750 and pos[0] < 1050 and pos[1] > 50 and pos[1] < 150 and HOME == 2:
@@ -540,6 +551,9 @@ def on_mouse_down(pos):
 	if HOME == 5 and pos[0]> 79 and pos[0] < 673 and pos[1] > 29 and pos[1] < 623:
 		x_pos = pos[0]
 		y_pos = pos[1]
+		x = int((x_pos-79)/66)
+		y = int((y_pos-29)/66)
+		current_board[x][y]=-1
 	if HOME == 5 and pos[0]> 750 and pos[0] < 800 and pos[1] > 160 and pos[1] < 210:#number 1 button
 		if x_pos!= 0 and y_pos!= 0:
 			y = int((x_pos-79)/66)
@@ -585,4 +599,111 @@ def on_mouse_down(pos):
 			y = int((x_pos-79)/66)
 			x = int((y_pos-29)/66)
 			current_board[x][y]=9
+	
+	
+	if HOME == 6 and pos[0]> 79 and pos[0] < 673 and pos[1] > 29 and pos[1] < 623:
+		x_pos = pos[0]
+		y_pos = pos[1]
+		x = int((x_pos-79)/66)
+		y = int((y_pos-29)/66)
+		current_board[x][y]=-1
+	if HOME == 6 and pos[0]> 750 and pos[0] < 800 and pos[1] > 160 and pos[1] < 210:#number 1 button
+		if x_pos!= 0 and y_pos!= 0:
+			y = int((x_pos-79)/66)
+			x = int((y_pos-29)/66)
+			current_board[x][y]=1
+	if HOME == 6 and pos[0]> 810 and pos[0] < 860 and pos[1] > 160 and pos[1] < 210:#number 2 button
+		if x_pos!= 0 and y_pos!= 0:
+			y = int((x_pos-79)/66)
+			x = int((y_pos-29)/66)
+			current_board[x][y]=2
+	if HOME == 6 and pos[0]> 870 and pos[0] < 920 and pos[1] > 160 and pos[1] < 210:#number 3 button
+		if x_pos!= 0 and y_pos!= 0:
+			y = int((x_pos-79)/66)
+			x = int((y_pos-29)/66)
+			current_board[x][y]=3
+	if HOME == 6 and pos[0]> 930 and pos[0] < 980 and pos[1] > 160 and pos[1] < 210:#number 4 button
+		if x_pos!= 0 and y_pos!= 0:
+			y = int((x_pos-79)/66)
+			x = int((y_pos-29)/66)
+			current_board[x][y]=4
+	if HOME == 6 and pos[0]> 750 and pos[0] < 800 and pos[1] > 215 and pos[1] < 265:#number 5 button
+		if x_pos!= 0 and y_pos!= 0:
+			y = int((x_pos-79)/66)
+			x = int((y_pos-29)/66)
+			current_board[x][y]=5
+	if HOME == 6 and pos[0]> 810 and pos[0] < 860 and pos[1] > 215 and pos[1] < 265:#number 6 button
+		if x_pos!= 0 and y_pos!= 0:
+			y = int((x_pos-79)/66)
+			x = int((y_pos-29)/66)
+			current_board[x][y]=6
+	if HOME == 6 and pos[0]> 870 and pos[0] < 920 and pos[1] > 215 and pos[1] < 265:#number 7 button
+		if x_pos!= 0 and y_pos!= 0:
+			y = int((x_pos-79)/66)
+			x = int((y_pos-29)/66)
+			current_board[x][y]=7
+	if HOME == 6 and pos[0]> 930 and pos[0] < 980 and pos[1] > 215 and pos[1] < 265:#number 8 button
+		if x_pos!= 0 and y_pos!= 0:
+			y = int((x_pos-79)/66)
+			x = int((y_pos-29)/66)
+			current_board[x][y]=8
+	if HOME == 6 and pos[0]> 990 and pos[0] < 1040 and pos[1] > 215 and pos[1] < 265:#number 9 button
+		if x_pos!= 0 and y_pos!= 0:
+			y = int((x_pos-79)/66)
+			x = int((y_pos-29)/66)
+			current_board[x][y]=9
+			
+
+	if HOME == 7 and pos[0]> 79 and pos[0] < 673 and pos[1] > 29 and pos[1] < 623:
+		x_pos = pos[0]
+		y_pos = pos[1]
+		x = int((x_pos-79)/66)
+		y = int((y_pos-29)/66)
+		current_board[x][y]=-1
+	if HOME == 7 and pos[0]> 750 and pos[0] < 800 and pos[1] > 160 and pos[1] < 210:#number 1 button
+		if x_pos!= 0 and y_pos!= 0:
+			y = int((x_pos-79)/66)
+			x = int((y_pos-29)/66)
+			current_board[x][y]=1
+	if HOME == 7 and pos[0]> 810 and pos[0] < 860 and pos[1] > 160 and pos[1] < 210:#number 2 button
+		if x_pos!= 0 and y_pos!= 0:
+			y = int((x_pos-79)/66)
+			x = int((y_pos-29)/66)
+			current_board[x][y]=2
+	if HOME == 7 and pos[0]> 870 and pos[0] < 920 and pos[1] > 160 and pos[1] < 210:#number 3 button
+		if x_pos!= 0 and y_pos!= 0:
+			y = int((x_pos-79)/66)
+			x = int((y_pos-29)/66)
+			current_board[x][y]=3
+	if HOME == 7 and pos[0]> 930 and pos[0] < 980 and pos[1] > 160 and pos[1] < 210:#number 4 button
+		if x_pos!= 0 and y_pos!= 0:
+			y = int((x_pos-79)/66)
+			x = int((y_pos-29)/66)
+			current_board[x][y]=4
+	if HOME == 7 and pos[0]> 750 and pos[0] < 800 and pos[1] > 215 and pos[1] < 265:#number 5 button
+		if x_pos!= 0 and y_pos!= 0:
+			y = int((x_pos-79)/66)
+			x = int((y_pos-29)/66)
+			current_board[x][y]=5
+	if HOME == 7 and pos[0]> 810 and pos[0] < 860 and pos[1] > 215 and pos[1] < 265:#number 6 button
+		if x_pos!= 0 and y_pos!= 0:
+			y = int((x_pos-79)/66)
+			x = int((y_pos-29)/66)
+			current_board[x][y]=6
+	if HOME == 7 and pos[0]> 870 and pos[0] < 920 and pos[1] > 215 and pos[1] < 265:#number 7 button
+		if x_pos!= 0 and y_pos!= 0:
+			y = int((x_pos-79)/66)
+			x = int((y_pos-29)/66)
+			current_board[x][y]=7
+	if HOME == 7 and pos[0]> 930 and pos[0] < 980 and pos[1] > 215 and pos[1] < 265:#number 8 button
+		if x_pos!= 0 and y_pos!= 0:
+			y = int((x_pos-79)/66)
+			x = int((y_pos-29)/66)
+			current_board[x][y]=8
+	if HOME == 7 and pos[0]> 990 and pos[0] < 1040 and pos[1] > 215 and pos[1] < 265:#number 9 button
+		if x_pos!= 0 and y_pos!= 0:
+			y = int((x_pos-79)/66)
+			x = int((y_pos-29)/66)
+			current_board[x][y]=9
+			
 pgzrun.go()
