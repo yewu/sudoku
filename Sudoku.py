@@ -574,27 +574,27 @@ def on_mouse_down(pos):
 			y = int((x_pos-79)/66)
 			x = int((y_pos-29)/66)
 			current_board[x][y]=4
-	if HOME == 5 and pos[0]> 750 and pos[0] < 800 and pos[1] > 215 and pos[1] < 265:#number 5 button
+	if HOME == 5 and pos[0]> 990 and pos[0] < 1040 and pos[1] > 160 and pos[1] < 210:#number 5 button
 		if x_pos!= 0 and y_pos!= 0:
 			y = int((x_pos-79)/66)
 			x = int((y_pos-29)/66)
 			current_board[x][y]=5
-	if HOME == 5 and pos[0]> 810 and pos[0] < 860 and pos[1] > 215 and pos[1] < 265:#number 6 button
+	if HOME == 5 and pos[0]> 750 and pos[0] < 800 and pos[1] > 215 and pos[1] < 265:#number 6 button
 		if x_pos!= 0 and y_pos!= 0:
 			y = int((x_pos-79)/66)
 			x = int((y_pos-29)/66)
 			current_board[x][y]=6
-	if HOME == 5 and pos[0]> 870 and pos[0] < 920 and pos[1] > 215 and pos[1] < 265:#number 7 button
+	if HOME == 5 and pos[0]> 810 and pos[0] < 860 and pos[1] > 215 and pos[1] < 265:#number 7 button
 		if x_pos!= 0 and y_pos!= 0:
 			y = int((x_pos-79)/66)
 			x = int((y_pos-29)/66)
 			current_board[x][y]=7
-	if HOME == 5 and pos[0]> 930 and pos[0] < 980 and pos[1] > 215 and pos[1] < 265:#number 8 button
+	if HOME == 5 and pos[0]> 870 and pos[0] < 920 and pos[1] > 215 and pos[1] < 265:#number 8 button
 		if x_pos!= 0 and y_pos!= 0:
 			y = int((x_pos-79)/66)
 			x = int((y_pos-29)/66)
 			current_board[x][y]=8
-	if HOME == 5 and pos[0]> 990 and pos[0] < 1040 and pos[1] > 215 and pos[1] < 265:#number 9 button
+	if HOME == 5 and pos[0]> 930 and pos[0] < 980 and pos[1] > 215 and pos[1] < 265:#number 9 button
 		if x_pos!= 0 and y_pos!= 0:
 			y = int((x_pos-79)/66)
 			x = int((y_pos-29)/66)
@@ -627,27 +627,27 @@ def on_mouse_down(pos):
 			y = int((x_pos-79)/66)
 			x = int((y_pos-29)/66)
 			current_board[x][y]=4
-	if HOME == 6 and pos[0]> 750 and pos[0] < 800 and pos[1] > 215 and pos[1] < 265:#number 5 button
+	if HOME == 6 and pos[0]> 990 and pos[0] < 1040 and pos[1] > 160 and pos[1] < 210:#number 5 button
 		if x_pos!= 0 and y_pos!= 0:
 			y = int((x_pos-79)/66)
 			x = int((y_pos-29)/66)
 			current_board[x][y]=5
-	if HOME == 6 and pos[0]> 810 and pos[0] < 860 and pos[1] > 215 and pos[1] < 265:#number 6 button
+	if HOME == 6 and pos[0]> 750 and pos[0] < 800 and pos[1] > 215 and pos[1] < 265:#number 6 button
 		if x_pos!= 0 and y_pos!= 0:
 			y = int((x_pos-79)/66)
 			x = int((y_pos-29)/66)
 			current_board[x][y]=6
-	if HOME == 6 and pos[0]> 870 and pos[0] < 920 and pos[1] > 215 and pos[1] < 265:#number 7 button
+	if HOME == 6 and pos[0]> 810 and pos[0] < 860 and pos[1] > 215 and pos[1] < 265:#number 7 button
 		if x_pos!= 0 and y_pos!= 0:
 			y = int((x_pos-79)/66)
 			x = int((y_pos-29)/66)
 			current_board[x][y]=7
-	if HOME == 6 and pos[0]> 930 and pos[0] < 980 and pos[1] > 215 and pos[1] < 265:#number 8 button
+	if HOME == 6 and pos[0]> 870 and pos[0] < 920 and pos[1] > 215 and pos[1] < 265:#number 8 button
 		if x_pos!= 0 and y_pos!= 0:
 			y = int((x_pos-79)/66)
 			x = int((y_pos-29)/66)
 			current_board[x][y]=8
-	if HOME == 6 and pos[0]> 990 and pos[0] < 1040 and pos[1] > 215 and pos[1] < 265:#number 9 button
+	if HOME == 6 and pos[0]> 930 and pos[0] < 980 and pos[1] > 215 and pos[1] < 265:#number 9 button
 		if x_pos!= 0 and y_pos!= 0:
 			y = int((x_pos-79)/66)
 			x = int((y_pos-29)/66)
@@ -680,27 +680,27 @@ def on_mouse_down(pos):
 			y = int((x_pos-79)/66)
 			x = int((y_pos-29)/66)
 			current_board[x][y]=4
-	if HOME == 7 and pos[0]> 750 and pos[0] < 800 and pos[1] > 215 and pos[1] < 265:#number 5 button
+	if HOME == 7 and pos[0]> 990 and pos[0] < 1040 and pos[1] > 160 and pos[1] < 210:#number 5 button
 		if x_pos!= 0 and y_pos!= 0:
 			y = int((x_pos-79)/66)
 			x = int((y_pos-29)/66)
 			current_board[x][y]=5
-	if HOME == 7 and pos[0]> 810 and pos[0] < 860 and pos[1] > 215 and pos[1] < 265:#number 6 button
+	if HOME == 7 and pos[0]> 750 and pos[0] < 800 and pos[1] > 215 and pos[1] < 265:#number 6 button
 		if x_pos!= 0 and y_pos!= 0:
 			y = int((x_pos-79)/66)
 			x = int((y_pos-29)/66)
 			current_board[x][y]=6
-	if HOME == 7 and pos[0]> 870 and pos[0] < 920 and pos[1] > 215 and pos[1] < 265:#number 7 button
+	if HOME == 7 and pos[0]> 810 and pos[0] < 860 and pos[1] > 215 and pos[1] < 265:#number 7 button
 		if x_pos!= 0 and y_pos!= 0:
 			y = int((x_pos-79)/66)
 			x = int((y_pos-29)/66)
 			current_board[x][y]=7
-	if HOME == 7 and pos[0]> 930 and pos[0] < 980 and pos[1] > 215 and pos[1] < 265:#number 8 button
+	if HOME == 7 and pos[0]> 870 and pos[0] < 920 and pos[1] > 215 and pos[1] < 265:#number 8 button
 		if x_pos!= 0 and y_pos!= 0:
 			y = int((x_pos-79)/66)
 			x = int((y_pos-29)/66)
 			current_board[x][y]=8
-	if HOME == 7 and pos[0]> 990 and pos[0] < 1040 and pos[1] > 215 and pos[1] < 265:#number 9 button
+	if HOME == 7 and pos[0]> 930 and pos[0] < 980 and pos[1] > 215 and pos[1] < 265:#number 9 button
 		if x_pos!= 0 and y_pos!= 0:
 			y = int((x_pos-79)/66)
 			x = int((y_pos-29)/66)
