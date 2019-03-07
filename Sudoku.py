@@ -12,6 +12,7 @@ LEVEL = 0
 EASY = 0
 NORMAL = 0
 EXTREME = 0
+CHECK = 0
 x_pos = 0
 y_pos = 0
 #it has to be 650 for the screen to fit on the size of the computer screen
@@ -127,6 +128,7 @@ def draw():
 	global EASY
 	global NORMAL
 	global EXTREME
+	global CHECK
 	global current_board
 	global data_ea
 	global data_no
@@ -480,6 +482,24 @@ def draw():
 		screen.draw.text("ODD & EVEN", (150, 80), color = "black", fontname = "arial", fontsize = 65)
 		screen.draw.text("SUDOKU", (222, 165), color = "black", fontname = "arial", fontsize = 65)
                                  
+		if CHECK != 0:
+			wrong = 0
+			if HOME == 5:
+				answer_board = ans_ea
+			if HOME == 6:
+				answer_board = ans_no
+			if HOME == 7:
+				answer_board = ans_ex
+			for x in range (9):
+				for y in range (9):
+					if current_board[x][y] != answer_board[x][y]:
+						wrong += 1
+			wrong_count = Rect((350, 200), (390, 100))
+			screen.draw.filled_rect(wrong_count, blue)
+			screen.draw.rect(wrong_count, black)
+			screen.draw.text("There are " + str(wrong) + " errors.", (360, 220), color = "black", fontname = "arial", fontsize = 42)
+			CHECK = 0
+		
 		if EXIT != 0:
 			exit_popup = Rect((320, 170), (480, 350))
 			screen.draw.filled_rect(exit_popup, blue)
@@ -499,6 +519,7 @@ def on_mouse_down(pos):
 	global EASY
 	global NORMAL
 	global EXTREME
+	global CHECK
 	global x_pos
 	global y_pos
 	global current_board
@@ -545,6 +566,8 @@ def on_mouse_down(pos):
 		LEVEL = 0
 		PLAY = 0
 		BACK = 1
+	if pos[0] > 750 and pos[0] < 1050 and pos[1] > 400 and pos[1] < 500 and HOME > 4 and HOME < 8:
+		CHECK = 1
 	#one single box is 66x66
 	#the next few lines can be repeated for the other two levels the blanks are the where the mouse pos goes
 	if HOME == 5 and pos[0]> 79 and pos[0] < 673 and pos[1] > 29 and pos[1] < 623:
