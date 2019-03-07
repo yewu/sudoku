@@ -482,30 +482,30 @@ def draw():
 		screen.draw.text("ODD & EVEN", (150, 80), color = "black", fontname = "arial", fontsize = 65)
 		screen.draw.text("SUDOKU", (222, 165), color = "black", fontname = "arial", fontsize = 65)
                                  
-		if CHECK != 0:
-			wrong = 0
-			if HOME == 5:
-				answer_board = ans_ea
-			if HOME == 6:
-				answer_board = ans_no
-			if HOME == 7:
-				answer_board = ans_ex
-			for x in range (9):
-				for y in range (9):
-					if current_board[x][y] != answer_board[x][y]:
-						wrong += 1
-			wrong_count = Rect((350, 200), (390, 100))
-			screen.draw.filled_rect(wrong_count, blue)
-			screen.draw.rect(wrong_count, black)
-			screen.draw.text("There are " + str(wrong) + " errors.", (360, 220), color = "black", fontname = "arial", fontsize = 42)
-			CHECK = 0
+	if CHECK != 0:
+		wrong = 0
+		if HOME == 5:
+			answer_board = ans_ea
+		if HOME == 6:
+			answer_board = ans_no
+		if HOME == 7:
+			answer_board = ans_ex
+		for x in range (9):
+			for y in range (9):
+				if current_board[x][y] != answer_board[x][y]:
+					wrong += 1
+		wrong_count = Rect((350, 200), (390, 100))
+		screen.draw.filled_rect(wrong_count, blue)
+		screen.draw.rect(wrong_count, black)
+		screen.draw.text("There are " + str(wrong) + " errors.", (360, 220), color = "black", fontname = "arial", fontsize = 42)
+		CHECK = 0
 		
-		if EXIT != 0:
-			exit_popup = Rect((320, 170), (480, 350))
-			screen.draw.filled_rect(exit_popup, blue)
-			screen.draw.rect(exit_popup,black)
-			screen.draw.text("Click anywhere\nto continue.\nPress control-Q;\ncommand-Q on Mac;\nto exit the game.", (360, 220), color = "black", fontname = "arial", fontsize = 42)
-			EXIT = 0
+	if EXIT != 0:
+		exit_popup = Rect((320, 170), (480, 350))
+		screen.draw.filled_rect(exit_popup, blue)
+		screen.draw.rect(exit_popup,black)
+		screen.draw.text("Click anywhere\nto continue.\nPress control-Q;\ncommand-Q on Mac;\nto exit the game.", (360, 220), color = "black", fontname = "arial", fontsize = 42)
+		EXIT = 0
 			
 			
 def on_mouse_down(pos):
