@@ -149,10 +149,6 @@ def draw():
 	if HINT != 0:
 		y = int((x_pos-79)/66)
 		x = int((y_pos-29)/66)
-		print (x)
-		print (y)
-		print (current_board[1][0])
-		print (HOME)
 		if HOME == 5:
 			current_board[x][y] = ans_ea[x][y]
 		elif HOME == 6:
@@ -448,8 +444,6 @@ def draw():
 		r = 50
 		
 		
-		print("print H")
-		print(HIGHLIGHTX)
 		for x in range (9):
 			for y in range (9):
 				if data_ex_shade[x][y] == 1 :
@@ -713,14 +707,9 @@ def on_mouse_down(pos):
 		y_pos = pos[1]
 		y = int((x_pos-79)/66)
 		x = int((y_pos-29)/66)
-		print (x_pos)
-		print (y_pos)
-		print (x)
-		print (y)
 		HIGHLIGHTX = x
 		HIGHLIGHTY = y
-		print("Highlightx")
-		print(HIGHLIGHTX)
+
 
 	if HOME == 7 and pos[0]> 750 and pos[0] < 800 and pos[1] > 160 and pos[1] < 210:#number 1 button
 		if x_pos!= 0 and y_pos!= 0:
@@ -767,5 +756,6 @@ def on_mouse_down(pos):
 			y = int((x_pos-79)/66)
 			x = int((y_pos-29)/66)
 			current_board[x][y]=9
+
 
 pgzrun.go()
