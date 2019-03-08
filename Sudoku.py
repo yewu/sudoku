@@ -1,5 +1,6 @@
 import pgzrun #run pygame zero w/o using terminal!
 
+
 WIDTH = 1100
 HEIGHT = 650
 HOME = 0
@@ -443,7 +444,7 @@ def draw():
 		q = 66
 		r = 50
 		
-		
+
 		for x in range (9):
 			for y in range (9):
 				if data_ex_shade[x][y] == 1 :
@@ -569,17 +570,24 @@ def on_mouse_down(pos):
 		EASY = 1
 		PLAY = 0
 		LEVEL = 0
-		current_board = data_ea
+		for i in range (9):
+			for j in range (9):
+				current_board[i][j] = data_ea[i][j]
 	if pos[0] > 400 and pos[0] < 700 and pos[1] > 200 and pos[1] < 350 and LEVEL == 1:
 		NORMAL = 1	
 		PLAY = 0
 		LEVEL = 0 
-		current_board = data_no
+		for i in range (9):
+			for j in range (9):
+				current_board[i][j] = data_no[i][j]
 	if pos[0] > 750 and pos[0] < 1050 and pos[1] > 200 and pos[1] < 350 and LEVEL == 1:
 		EXTREME = 1
 		PLAY = 0
 		LEVEL = 0
-		current_board = data_ex
+		for i in range (9):
+			for j in range (9):
+				current_board[i][j] = data_ex[i][j]
+
 	if pos[0] > 750 and pos[0] < 1050 and pos[1] > 525 and pos[1] < 625 and HOME > 4 and HOME < 8:
 		EASY = 0
 		NORMAL = 0
@@ -587,6 +595,15 @@ def on_mouse_down(pos):
 		LEVEL = 0
 		PLAY = 0
 		BACK = 1
+		current_board = [[0, 0, 0, 0, 0, 0, 0, 0, 0],
+					[0, 0, 0, 0, 0, 0, 0, 0, 0],
+					[0, 0, 0, 0, 0, 0, 0, 0, 0],
+					[0, 0, 0, 0, 0, 0, 0, 0, 0],
+					[0, 0, 0, 0, 0, 0, 0, 0, 0],
+					[0, 0, 0, 0, 0, 0, 0, 0, 0],
+					[0, 0, 0, 0, 0, 0, 0, 0, 0],
+					[0, 0, 0, 0, 0, 0, 0, 0, 0],
+					[0, 0, 0, 0, 0, 0, 0, 0, 0]]
 	if pos[0] > 750 and pos[0] < 1050 and pos[1] > 275 and pos[1] < 375 and HOME > 4 and HOME < 8:
 		HINT = 1
 	if pos[0] > 750 and pos[0] < 1050 and pos[1] > 400 and pos[1] < 500 and HOME > 4 and HOME < 8:
@@ -771,6 +788,9 @@ def on_mouse_down(pos):
 			y = int((x_pos-79)/66)
 			x = int((y_pos-29)/66)
 			current_board[x][y]=0
+
+
+
 
 
 pgzrun.go()
