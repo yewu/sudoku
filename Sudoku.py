@@ -241,7 +241,7 @@ def draw():
 		easy_title = Rect((750, 50), (300, 100))
 		screen.draw.filled_rect(easy_title, purple)
 		screen.draw.rect(easy_title, black)
-		for count in range(9):
+		for count in range(10):
 			if count <= 4:
 				button_box = Rect((750 + count * 60, 160), (50, 50))
 				screen.draw.rect(button_box, black)
@@ -313,7 +313,7 @@ def draw():
 		normal_title = Rect((750, 50), (300, 100))
 		screen.draw.filled_rect(normal_title, purple)
 		screen.draw.rect(normal_title, black)
-		for count in range(9):
+		for count in range(10):
 			if count <= 4:
 				button_box = Rect((750 + count * 60, 160), (50, 50))
 				screen.draw.rect(button_box, black)
@@ -387,7 +387,7 @@ def draw():
 		extreme_title = Rect((750, 50), (300, 100))
 		screen.draw.filled_rect(extreme_title, purple)
 		screen.draw.rect(extreme_title, black)
-		for count in range(9):
+		for count in range(10):
 			if count <= 4:
 				button_box = Rect((750 + count * 60, 160), (50, 50))
 				screen.draw.rect(button_box, black)
