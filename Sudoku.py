@@ -16,6 +16,7 @@ HINT = 0
 CHECK = 0
 x_pos = 0
 y_pos = 0
+
 #it has to be 650 for the screen to fit on the size of the computer screen
 #each box will be 66x66 in the board
 current_board = [[0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -116,9 +117,11 @@ ans_no = [[9, 5, 4, 7, 1, 6, 3, 2, 8],
 			[2, 6, 1, 4, 5, 8, 9, 7, 3],
 			[4, 9, 5, 3, 2, 7, 8, 6, 1],
 			[8, 3, 7, 9, 6, 1, 5, 4, 0]]
-			
+HIGHLIGHTX = -1			
+HIGHLIGHTY = -1
 
 def draw():
+	global HINT
 	global HOME
 	global CREDITS
 	global HOWTO
@@ -129,8 +132,9 @@ def draw():
 	global EASY
 	global NORMAL
 	global EXTREME
-	global HINT
 	global CHECK
+	global HIGHLIGHTX
+	global HIGHLIGHTY
 	global current_board
 	global data_ea
 	global data_no
@@ -141,7 +145,22 @@ def draw():
 	black = 0, 0, 0
 	white = 255, 255, 255
 	grey = 238, 238, 238
-
+	
+	if HINT != 0:
+		y = int((x_pos-79)/66)
+		x = int((y_pos-29)/66)
+		print (x)
+		print (y)
+		print (current_board[1][0])
+		print (HOME)
+		if HOME == 5:
+			current_board[x][y] = ans_ea[x][y]
+		elif HOME == 6:
+			current_board[x][y] = ans_no[x][y]
+		else:
+			current_board[x][y] = ans_ex[x][y]
+		HINT =0
+	
 	if CREDITS != 0:
 		HOME = 2
 		screen.clear()
@@ -217,7 +236,7 @@ def draw():
 		screen.draw.rect(howto_text, black)
 		screen.draw.text("HOW TO PLAY", (75, 67), color = "black", fontname = "arial", fontsize = 65)
 		screen.draw.text("BACK", (850, 78), color = "black", fontname = "arial", fontsize = 42)
-		screen.draw.text("1.  Each row and column must contain the numbers from\n1-9 (cannot repeat numbers).\n2.  Each 3x3 box with a darker outline must also contain the\nnumbers from 1-9 (cannot repeat numbers).\n3.  In the shaded boxes, the number must be even. In the unshaded\nboxes, the numbers have to be odd.\n4.  If you need a hint, click the 'Hint' button.\n5.  If you want to check your answers after you are finished, press\nthe 'Check' button.\n6.  If you feel as if you cannot continue, please hit the 'Rage Quit'\nbutton.", (75, 200), color = "black", fontname = "arial", fontsize = 32)
+		screen.draw.text("1.  To enter a number, click the square and then the button with the\nnumber you would like to enter.\n2.  Each row and column must contain the numbers from\n1-9 (cannot repeat numbers).\n3.  Each 3x3 box with a darker outline must also contain the\nnumbers from 1-9 (cannot repeat numbers).\n4.  In the shaded boxes, the numbers must be even. In the unshaded\nboxes, the numbers have to be odd.\n5.  If you need a hint, click the square you want a hint in and the 'Hint'\nbutton.\n6.  If you want to check your answers, press the 'Check' button.\n7.  If you feel as if you cannot continue, hit the 'Rage Quit' button.", (75, 183), color = "black", fontname = "arial", fontsize = 32)
 	
 	elif EASY != 0:
 		HOME = 5
@@ -285,10 +304,9 @@ def draw():
 				if data_ea_shade[x][y] == 1 :
 					grey_box = Rect((m + y*q, n + x*q), (p, p))
 					screen.draw.filled_rect(grey_box, grey)
-				if current_board[x][y] == -1:
-					highlight = Rect((x*66 + 79,y*66 +29), (66,66))
+				if 	HIGHLIGHTX != -1 :
+					highlight = Rect((HIGHLIGHTY*66 + 79,HIGHLIGHTX*66 +29), (66,66))
 					screen.draw.rect(highlight, (26, 15, 251))
-					current_board[x][y] = 0
 				if current_board[x][y] > 0:
 					screen.draw.text(str(current_board[x][y]), (m + y*q + 16, n + x*q + 2), color = "black", fontname = "arial", fontsize = r)	
 		
@@ -361,10 +379,9 @@ def draw():
 				if data_no_shade[x][y] == 1 :
 					grey_box = Rect((m + y*q, n + x*q), (p, p))
 					screen.draw.filled_rect(grey_box, grey)
-				if current_board[x][y] == -1:
-					highlight = Rect((x*66 + 79,y*66 +29), (66,66))
+				if 	HIGHLIGHTX != -1 :
+					highlight = Rect((HIGHLIGHTY*66 + 79,HIGHLIGHTX*66 +29), (66,66))
 					screen.draw.rect(highlight, (26, 15, 251))
-					current_board[x][y] = 0
 				if current_board[x][y] > 0:
 					screen.draw.text(str(current_board[x][y]), (m + y*q + 16, n + x*q + 2), color = "black", fontname = "arial", fontsize = r)
 	elif EXTREME != 0:
@@ -430,15 +447,17 @@ def draw():
 		q = 66
 		r = 50
 		
+		
+		print("print H")
+		print(HIGHLIGHTX)
 		for x in range (9):
 			for y in range (9):
 				if data_ex_shade[x][y] == 1 :
 					grey_box = Rect((m + y*q, n + x*q), (p, p))
 					screen.draw.filled_rect(grey_box, grey)
-				if current_board[x][y] == -1:
-					highlight = Rect((x*66 + 79,y*66 +29), (66,66))
+				if 	HIGHLIGHTX != -1 :
+					highlight = Rect((HIGHLIGHTY*66 + 79,HIGHLIGHTX*66 +29), (66,66))
 					screen.draw.rect(highlight, (26, 15, 251))
-					current_board[x][y] = 0
 				if current_board[x][y] > 0:
 					screen.draw.text(str(current_board[x][y]), (m + y*q + 16, n + x*q + 2), color = "black", fontname = "arial", fontsize = r)
 					
@@ -494,10 +513,11 @@ def draw():
 			answer_board = ans_ex
 		for x in range (9):
 			for y in range (9):
-				if current_board[x][y] != answer_board[x][y]:
-					wrong += 1
+				if current_board[x][y] != 0:
+					if current_board[x][y] != answer_board[x][y]:
+						wrong += 1
 		wrong_count = Rect((350, 200), (390, 100))
-		screen.draw.filled_rect(wrong_count, blue)
+		screen.draw.filled_rect(wrong_count,blue)
 		screen.draw.rect(wrong_count, black)
 		screen.draw.text("There are " + str(wrong) + " errors.", (360, 220), color = "black", fontname = "arial", fontsize = 42)
 		CHECK = 0
@@ -508,6 +528,8 @@ def draw():
 		screen.draw.rect(exit_popup,black)
 		screen.draw.text("Click anywhere\nto continue.\nPress control-Q;\ncommand-Q on Mac;\nto exit the game.", (360, 220), color = "black", fontname = "arial", fontsize = 42)
 		EXIT = 0
+	
+
 			
 			
 def on_mouse_down(pos):
@@ -529,6 +551,8 @@ def on_mouse_down(pos):
 	global data_ea
 	global data_no
 	global data_ex
+	global HIGHLIGHTX
+	global HIGHLIGHTY
 	if pos[0]> 750 and pos[0] < 1050 and pos[1] > 50 and pos[1] < 150 and HOME == 1:
 		PLAY = 1
 	if pos[0]> 750 and pos[0] < 1050 and pos[1] > 50 and pos[1] < 150 and HOME == 2:
@@ -578,9 +602,10 @@ def on_mouse_down(pos):
 	if HOME == 5 and pos[0]> 79 and pos[0] < 673 and pos[1] > 29 and pos[1] < 623:
 		x_pos = pos[0]
 		y_pos = pos[1]
-		x = int((x_pos-79)/66)
-		y = int((y_pos-29)/66)
-		current_board[x][y]=-1
+		y = int((x_pos-79)/66)
+		x = int((y_pos-29)/66)
+		HIGHLIGHTX = x
+		HIGHLIGHTY = y
 	if HOME == 5 and pos[0]> 750 and pos[0] < 800 and pos[1] > 160 and pos[1] < 210:#number 1 button
 		if x_pos!= 0 and y_pos!= 0:
 			y = int((x_pos-79)/66)
@@ -631,9 +656,11 @@ def on_mouse_down(pos):
 	if HOME == 6 and pos[0]> 79 and pos[0] < 673 and pos[1] > 29 and pos[1] < 623:
 		x_pos = pos[0]
 		y_pos = pos[1]
-		x = int((x_pos-79)/66)
-		y = int((y_pos-29)/66)
-		current_board[x][y]=-1
+		y = int((x_pos-79)/66)
+		x = int((y_pos-29)/66)
+		HIGHLIGHTX = x
+		HIGHLIGHTY = y
+
 	if HOME == 6 and pos[0]> 750 and pos[0] < 800 and pos[1] > 160 and pos[1] < 210:#number 1 button
 		if x_pos!= 0 and y_pos!= 0:
 			y = int((x_pos-79)/66)
@@ -684,9 +711,17 @@ def on_mouse_down(pos):
 	if HOME == 7 and pos[0]> 79 and pos[0] < 673 and pos[1] > 29 and pos[1] < 623:
 		x_pos = pos[0]
 		y_pos = pos[1]
-		x = int((x_pos-79)/66)
-		y = int((y_pos-29)/66)
-		current_board[x][y]=-1
+		y = int((x_pos-79)/66)
+		x = int((y_pos-29)/66)
+		print (x_pos)
+		print (y_pos)
+		print (x)
+		print (y)
+		HIGHLIGHTX = x
+		HIGHLIGHTY = y
+		print("Highlightx")
+		print(HIGHLIGHTX)
+
 	if HOME == 7 and pos[0]> 750 and pos[0] < 800 and pos[1] > 160 and pos[1] < 210:#number 1 button
 		if x_pos!= 0 and y_pos!= 0:
 			y = int((x_pos-79)/66)
@@ -732,5 +767,5 @@ def on_mouse_down(pos):
 			y = int((x_pos-79)/66)
 			x = int((y_pos-29)/66)
 			current_board[x][y]=9
-			
+
 pgzrun.go()
