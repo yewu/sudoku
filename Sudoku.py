@@ -645,6 +645,11 @@ def on_mouse_down(pos):
 			y = int((x_pos-79)/66)
 			x = int((y_pos-29)/66)
 			current_board[x][y]=9
+	if HOME == 5 and pos[0]> 990 and pos[0] < 1040 and pos[1] > 215 and pos[1] < 265:#clear number button
+		if x_pos!= 0 and y_pos!= 0:
+			y = int((x_pos-79)/66)
+			x = int((y_pos-29)/66)
+			current_board[x][y]=0
 	
 	
 	if HOME == 6 and pos[0]> 79 and pos[0] < 673 and pos[1] > 29 and pos[1] < 623:
@@ -700,6 +705,11 @@ def on_mouse_down(pos):
 			y = int((x_pos-79)/66)
 			x = int((y_pos-29)/66)
 			current_board[x][y]=9
+	if HOME == 6 and pos[0]> 990 and pos[0] < 1040 and pos[1] > 215 and pos[1] < 265:#clear number button
+		if x_pos!= 0 and y_pos!= 0:
+			y = int((x_pos-79)/66)
+			x = int((y_pos-29)/66)
+			current_board[x][y]=0
 			
 
 	if HOME == 7 and pos[0]> 79 and pos[0] < 673 and pos[1] > 29 and pos[1] < 623:
@@ -756,6 +766,11 @@ def on_mouse_down(pos):
 			y = int((x_pos-79)/66)
 			x = int((y_pos-29)/66)
 			current_board[x][y]=9
+	if HOME == 7 and pos[0]> 990 and pos[0] < 1040 and pos[1] > 215 and pos[1] < 265:#clear number button
+		if x_pos!= 0 and y_pos!= 0:
+			y = int((x_pos-79)/66)
+			x = int((y_pos-29)/66)
+			current_board[x][y]=0
 
 
 pgzrun.go()
