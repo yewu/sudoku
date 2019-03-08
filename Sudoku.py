@@ -12,6 +12,7 @@ LEVEL = 0
 EASY = 0
 NORMAL = 0
 EXTREME = 0
+HINT = 0
 CHECK = 0
 x_pos = 0
 y_pos = 0
@@ -128,6 +129,7 @@ def draw():
 	global EASY
 	global NORMAL
 	global EXTREME
+	global HINT
 	global CHECK
 	global current_board
 	global data_ea
@@ -519,6 +521,7 @@ def on_mouse_down(pos):
 	global EASY
 	global NORMAL
 	global EXTREME
+	global HINT
 	global CHECK
 	global x_pos
 	global y_pos
@@ -566,6 +569,8 @@ def on_mouse_down(pos):
 		LEVEL = 0
 		PLAY = 0
 		BACK = 1
+	if pos[0] > 750 and pos[0] < 1050 and pos[1] > 275 and pos[1] < 375 and HOME > 4 and HOME < 8:
+		HINT = 1
 	if pos[0] > 750 and pos[0] < 1050 and pos[1] > 400 and pos[1] < 500 and HOME > 4 and HOME < 8:
 		CHECK = 1
 	#one single box is 66x66
