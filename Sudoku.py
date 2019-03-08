@@ -1,6 +1,7 @@
 import pgzrun #run pygame zero w/o using terminal!
 
 
+
 WIDTH = 1100
 HEIGHT = 650
 HOME = 0
@@ -29,7 +30,7 @@ current_board = [[0, 0, 0, 0, 0, 0, 0, 0, 0],
 					[0, 0, 0, 0, 0, 0, 0, 0, 0],
 					[0, 0, 0, 0, 0, 0, 0, 0, 0],
 					[0, 0, 0, 0, 0, 0, 0, 0, 0]]
-data_ex = [[0, 0, 0, 0, 0, 0, 0, 7, 5],
+data_ex1 = [[0, 0, 0, 0, 0, 0, 0, 7, 5],
 			[4, 0, 0, 0, 6, 0, 0, 0, 0],
 			[0, 0, 0, 0, 0, 0, 0, 1, 0],
 			[0, 0, 2, 1, 0, 5, 0, 0, 0],
@@ -39,7 +40,7 @@ data_ex = [[0, 0, 0, 0, 0, 0, 0, 7, 5],
 			[0, 1, 0, 0, 0, 0, 0, 0, 0],
 			[0, 0, 0, 0, 0, 0, 2, 0, 0]]
 
-data_ex_shade = [[0, 0, 1, 1, 1, 0, 1, 0, 0],
+data_ex1_shade = [[0, 0, 1, 1, 1, 0, 1, 0, 0],
 				[1, 0, 0, 1, 1, 0, 0, 1, 0],
 				[1, 0, 1, 0, 0, 0, 1, 0, 1],
 				[1, 1, 1, 0, 0, 0, 0, 1, 0],
@@ -49,7 +50,7 @@ data_ex_shade = [[0, 0, 1, 1, 1, 0, 1, 0, 0],
 				[1, 0, 0, 1, 0, 1, 0, 0, 1],
 				[0, 1, 1, 0, 0, 1, 1, 0, 0]]
 
-ans_ex = [[1, 9, 8, 2, 4, 3, 6, 7, 5],
+ans_ex1 = [[1, 9, 8, 2, 4, 3, 6, 7, 5],
 			[4, 5, 7, 8, 6, 1, 9, 2, 3],
 			[2, 3, 6, 9, 5, 7, 4, 1, 8],
 			[6, 4, 2, 1, 3, 5, 7, 8, 9],
@@ -58,7 +59,7 @@ ans_ex = [[1, 9, 8, 2, 4, 3, 6, 7, 5],
 			[7, 2, 5, 3, 9, 4, 8, 6, 1],
 			[8, 1, 9, 6, 7, 2, 5, 3, 4],
 			[3, 6, 4, 5, 1, 8, 2, 9, 7]]
-data_ea = [[0, 0, 0, 3, 4, 0, 8, 7, 6],
+data_ea1 = [[0, 0, 0, 3, 4, 0, 8, 7, 6],
 		[9, 0, 0, 1, 0, 0, 5, 0, 0],
 		[0, 0, 0, 0, 5, 7, 0, 0, 0],
 		[1, 0, 2, 0, 0, 0, 0, 3, 0],
@@ -69,7 +70,7 @@ data_ea = [[0, 0, 0, 3, 4, 0, 8, 7, 6],
 		[0, 0, 0, 0, 0, 0, 4, 0, 0]]
 
 
-data_ea_shade = [[0, 1, 0, 0, 1, 0, 1, 0, 1],
+data_ea1_shade = [[0, 1, 0, 0, 1, 0, 1, 0, 1],
 				[0, 0, 0, 0, 1, 1, 0, 1, 1],
 				[1, 1, 1, 1, 0, 0, 0, 0, 0],
 				[0, 0, 1, 1, 1, 1, 0, 0, 0],
@@ -79,7 +80,7 @@ data_ea_shade = [[0, 1, 0, 0, 1, 0, 1, 0, 1],
 				[0, 1, 0, 1, 0, 1, 1, 0, 0],
 				[0, 0, 1, 0, 0, 1, 1, 1, 0]]
 
-ans_ea = [[5, 2, 1, 3, 4, 9, 8, 7, 6],
+ans_ea1 = [[5, 2, 1, 3, 4, 9, 8, 7, 6],
 		[9, 3, 7, 1, 8, 6, 5, 4, 2],
 		[6, 8, 4, 2, 5, 7, 3, 1, 9],
 		[1, 9, 2, 8, 6, 4, 7, 3, 5],
@@ -89,7 +90,7 @@ ans_ea = [[5, 2, 1, 3, 4, 9, 8, 7, 6],
 		[3, 4, 9, 6, 1, 8, 2, 5, 7],
 		[7, 1, 6, 5, 9, 2, 4, 8, 3]]
 		
-data_no = [[9, 0, 0, 7, 0, 6, 3, 2, 0],
+data_no1 = [[9, 0, 0, 7, 0, 6, 3, 2, 0],
 			[3, 0, 0, 0, 0, 5, 0, 9, 0],
 			[1, 0, 8, 0, 0, 0, 0, 0, 0],
 			[0, 0, 0, 0, 8, 9, 0, 0, 0],
@@ -99,7 +100,7 @@ data_no = [[9, 0, 0, 7, 0, 6, 3, 2, 0],
 			[0, 9, 0, 0, 2, 0, 0, 0, 1],
 			[8, 0, 0, 0, 0, 1, 5, 0, 0]]
 
-data_no_shade = [[0, 0, 1, 0, 0, 1, 0, 1, 1],
+data_no1_shade = [[0, 0, 1, 0, 0, 1, 0, 1, 1],
 				[0, 1, 1, 1, 1, 0, 0, 0, 0],
 				[0, 0, 1, 1, 0, 0, 1, 0, 1],
 				[0, 1, 0, 1, 1, 0, 1, 0, 0],
@@ -109,7 +110,7 @@ data_no_shade = [[0, 0, 1, 0, 0, 1, 0, 1, 1],
 				[1, 0, 0, 0, 1, 0, 1, 1, 0],
 				[1, 0, 0, 0, 1, 0, 0, 1, 1]]				
 
-ans_no = [[9, 5, 4, 7, 1, 6, 3, 2, 8],
+ans_no1 = [[9, 5, 4, 7, 1, 6, 3, 2, 8],
 			[3, 2, 6, 8, 4, 5, 1, 9, 7],
 			[1, 7, 8, 2, 9, 3, 6, 5, 4],
 			[7, 4, 3, 6, 8, 9, 2, 1, 5],
@@ -118,6 +119,8 @@ ans_no = [[9, 5, 4, 7, 1, 6, 3, 2, 8],
 			[2, 6, 1, 4, 5, 8, 9, 7, 3],
 			[4, 9, 5, 3, 2, 7, 8, 6, 1],
 			[8, 3, 7, 9, 6, 1, 5, 4, 0]]
+			
+
 HIGHLIGHTX = -1			
 HIGHLIGHTY = -1
 
@@ -137,9 +140,9 @@ def draw():
 	global HIGHLIGHTX
 	global HIGHLIGHTY
 	global current_board
-	global data_ea
-	global data_no
-	global data_ex
+	global data_ea1
+	global data_no1
+	global data_ex1
 	screen.fill((255, 255, 255))
 	blue = 190, 210, 230
 	purple = 229, 194, 237
@@ -151,11 +154,11 @@ def draw():
 		y = int((x_pos-79)/66)
 		x = int((y_pos-29)/66)
 		if HOME == 5:
-			current_board[x][y] = ans_ea[x][y]
+			current_board[x][y] = ans_ea1[x][y]
 		elif HOME == 6:
-			current_board[x][y] = ans_no[x][y]
+			current_board[x][y] = ans_no1[x][y]
 		else:
-			current_board[x][y] = ans_ex[x][y]
+			current_board[x][y] = ans_ex1[x][y]
 		HINT =0
 	
 	if CREDITS != 0:
@@ -265,7 +268,8 @@ def draw():
 			if number <= 4:
 				screen.draw.text(str(num), (765 + number * 60, 165), color = "black", fontname = "arial", fontsize = 36)
 			else:
-				screen.draw.text(str(num), (765 + (number-5) * 60, 220), color = "black", fontname = "arial", fontsize = 36)    
+				screen.draw.text(str(num), (765 + (number-5) * 60, 220), color = "black", fontname = "arial", fontsize = 36) 
+		screen.draw.text("Clear", (991,227), color = "black", fontname = "arial", fontsize = 20)
 		screen.draw.text("HINT", (855, 300), color = "black", fontname = "arial", fontsize = 42)
 		screen.draw.text("CHECK", (832, 425), color = "black", fontname = "arial", fontsize = 42)
 		screen.draw.text("RAGE QUIT", (785, 550), color = "black", fontname = "arial", fontsize = 42)
@@ -298,7 +302,7 @@ def draw():
 		r = 50		
 		for x in range (9):
 			for y in range (9):
-				if data_ea_shade[x][y] == 1 :
+				if data_ea1_shade[x][y] == 1 :
 					grey_box = Rect((m + y*q, n + x*q), (p, p))
 					screen.draw.filled_rect(grey_box, grey)
 				if 	HIGHLIGHTX != -1 :
@@ -338,6 +342,7 @@ def draw():
 				screen.draw.text(str(num), (765 + number * 60, 165), color = "black", fontname = "arial", fontsize = 36)
 			else:
 				screen.draw.text(str(num), (765 + (number-5) * 60, 220), color = "black", fontname = "arial", fontsize = 36)     
+		screen.draw.text("Clear", (991,227), color = "black", fontname = "arial", fontsize = 20)
 		screen.draw.text("HINT", (855, 300), color = "black", fontname = "arial", fontsize = 42)
 		screen.draw.text("CHECK", (832, 425), color = "black", fontname = "arial", fontsize = 42)
 		screen.draw.text("RAGE QUIT", (785, 550), color = "black", fontname = "arial", fontsize = 42)
@@ -373,7 +378,7 @@ def draw():
 		
 		for x in range (9):
 			for y in range (9):
-				if data_no_shade[x][y] == 1 :
+				if data_no1_shade[x][y] == 1 :
 					grey_box = Rect((m + y*q, n + x*q), (p, p))
 					screen.draw.filled_rect(grey_box, grey)
 				if 	HIGHLIGHTX != -1 :
@@ -412,6 +417,7 @@ def draw():
 				screen.draw.text(str(num), (765 + number * 60, 165), color = "black", fontname = "arial", fontsize = 36)
 			else:
 				screen.draw.text(str(num), (765 + (number-5) * 60, 220), color = "black", fontname = "arial", fontsize = 36)    
+		screen.draw.text("Clear", (991,227), color = "black", fontname = "arial", fontsize = 20)
 		screen.draw.text("HINT", (855, 300), color = "black", fontname = "arial", fontsize = 42)
 		screen.draw.text("CHECK", (832, 425), color = "black", fontname = "arial", fontsize = 42)
 		screen.draw.text("RAGE QUIT", (785, 550), color = "black", fontname = "arial", fontsize = 42)
@@ -447,7 +453,7 @@ def draw():
 
 		for x in range (9):
 			for y in range (9):
-				if data_ex_shade[x][y] == 1 :
+				if data_ex1_shade[x][y] == 1 :
 					grey_box = Rect((m + y*q, n + x*q), (p, p))
 					screen.draw.filled_rect(grey_box, grey)
 				if 	HIGHLIGHTX != -1 :
@@ -456,7 +462,7 @@ def draw():
 				if current_board[x][y] > 0:
 					screen.draw.text(str(current_board[x][y]), (m + y*q + 16, n + x*q + 2), color = "black", fontname = "arial", fontsize = r)
 					
-	elif BACK != 0 or CREDITS == 0 or HOWTO == 0 or PLAY ==0 or LEVEL == 0:#on the home screen
+	elif BACK != 0 or CREDITS == 0 or HOWTO == 0 or PLAY ==0 or LEVEL == 0:
 		current_board = [[0, 0, 0, 0, 0, 0, 0, 0, 0],
 						[0, 0, 0, 0, 0, 0, 0, 0, 0],
 						[0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -501,11 +507,11 @@ def draw():
 	if CHECK != 0:
 		wrong = 0
 		if HOME == 5:
-			answer_board = ans_ea
+			answer_board = ans_ea1
 		if HOME == 6:
-			answer_board = ans_no
+			answer_board = ans_no1
 		if HOME == 7:
-			answer_board = ans_ex
+			answer_board = ans_ex1
 		for x in range (9):
 			for y in range (9):
 				if current_board[x][y] != 0:
@@ -543,9 +549,9 @@ def on_mouse_down(pos):
 	global x_pos
 	global y_pos
 	global current_board
-	global data_ea
-	global data_no
-	global data_ex
+	global data_ea1
+	global data_no1
+	global data_ex1
 	global HIGHLIGHTX
 	global HIGHLIGHTY
 	if pos[0]> 750 and pos[0] < 1050 and pos[1] > 50 and pos[1] < 150 and HOME == 1:
@@ -572,21 +578,21 @@ def on_mouse_down(pos):
 		LEVEL = 0
 		for i in range (9):
 			for j in range (9):
-				current_board[i][j] = data_ea[i][j]
+				current_board[i][j] = data_ea1[i][j]
 	if pos[0] > 400 and pos[0] < 700 and pos[1] > 200 and pos[1] < 350 and LEVEL == 1:
 		NORMAL = 1	
 		PLAY = 0
 		LEVEL = 0 
 		for i in range (9):
 			for j in range (9):
-				current_board[i][j] = data_no[i][j]
+				current_board[i][j] = data_no1[i][j]
 	if pos[0] > 750 and pos[0] < 1050 and pos[1] > 200 and pos[1] < 350 and LEVEL == 1:
 		EXTREME = 1
 		PLAY = 0
 		LEVEL = 0
 		for i in range (9):
 			for j in range (9):
-				current_board[i][j] = data_ex[i][j]
+				current_board[i][j] = data_ex1[i][j]
 
 	if pos[0] > 750 and pos[0] < 1050 and pos[1] > 525 and pos[1] < 625 and HOME > 4 and HOME < 8:
 		EASY = 0
@@ -595,6 +601,15 @@ def on_mouse_down(pos):
 		LEVEL = 0
 		PLAY = 0
 		BACK = 1
+		current_board = [[0, 0, 0, 0, 0, 0, 0, 0, 0],
+					[0, 0, 0, 0, 0, 0, 0, 0, 0],
+					[0, 0, 0, 0, 0, 0, 0, 0, 0],
+					[0, 0, 0, 0, 0, 0, 0, 0, 0],
+					[0, 0, 0, 0, 0, 0, 0, 0, 0],
+					[0, 0, 0, 0, 0, 0, 0, 0, 0],
+					[0, 0, 0, 0, 0, 0, 0, 0, 0],
+					[0, 0, 0, 0, 0, 0, 0, 0, 0],
+					[0, 0, 0, 0, 0, 0, 0, 0, 0]]
 	if pos[0] > 750 and pos[0] < 1050 and pos[1] > 275 and pos[1] < 375 and HOME > 4 and HOME < 8:
 		HINT = 1
 	if pos[0] > 750 and pos[0] < 1050 and pos[1] > 400 and pos[1] < 500 and HOME > 4 and HOME < 8:
@@ -779,6 +794,8 @@ def on_mouse_down(pos):
 			y = int((x_pos-79)/66)
 			x = int((y_pos-29)/66)
 			current_board[x][y]=0
+
+
 
 
 
