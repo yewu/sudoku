@@ -1,6 +1,6 @@
+#I GOT RANDOMIZING TO WOOORKKKKKKKKK!!
+#Elina is big happy
 import pgzrun #run pygame zero w/o using terminal!
-
-
 
 WIDTH = 1100
 HEIGHT = 650
@@ -18,108 +18,209 @@ HINT = 0
 CHECK = 0
 x_pos = 0
 y_pos = 0
+board_num = 0
 
-#it has to be 650 for the screen to fit on the size of the computer screen
+#height has to be 650 for the screen to fit on the size of the computer screen
 #each box will be 66x66 in the board
+
 current_board = [[0, 0, 0, 0, 0, 0, 0, 0, 0],
-					[0, 0, 0, 0, 0, 0, 0, 0, 0],
-					[0, 0, 0, 0, 0, 0, 0, 0, 0],
-					[0, 0, 0, 0, 0, 0, 0, 0, 0],
-					[0, 0, 0, 0, 0, 0, 0, 0, 0],
-					[0, 0, 0, 0, 0, 0, 0, 0, 0],
-					[0, 0, 0, 0, 0, 0, 0, 0, 0],
-					[0, 0, 0, 0, 0, 0, 0, 0, 0],
-					[0, 0, 0, 0, 0, 0, 0, 0, 0]]
-data_ex1 = [[0, 0, 0, 0, 0, 0, 0, 7, 5],
-			[4, 0, 0, 0, 6, 0, 0, 0, 0],
-			[0, 0, 0, 0, 0, 0, 0, 1, 0],
-			[0, 0, 2, 1, 0, 5, 0, 0, 0],
-			[0, 0, 0, 7, 0, 0, 0, 4, 0],
-			[9, 0, 0, 0, 0, 0, 0, 0, 0],
-			[0, 0, 0, 3, 9, 0, 8, 0, 0],
-			[0, 1, 0, 0, 0, 0, 0, 0, 0],
-			[0, 0, 0, 0, 0, 0, 2, 0, 0]]
+                 [0, 0, 0, 0, 0, 0, 0, 0, 0],
+                 [0, 0, 0, 0, 0, 0, 0, 0, 0],
+                 [0, 0, 0, 0, 0, 0, 0, 0, 0],
+                 [0, 0, 0, 0, 0, 0, 0, 0, 0],
+                 [0, 0, 0, 0, 0, 0, 0, 0, 0],
+                 [0, 0, 0, 0, 0, 0, 0, 0, 0],
+                 [0, 0, 0, 0, 0, 0, 0, 0, 0],
+                 [0, 0, 0, 0, 0, 0, 0, 0, 0]]
 
-data_ex1_shade = [[0, 0, 1, 1, 1, 0, 1, 0, 0],
-				[1, 0, 0, 1, 1, 0, 0, 1, 0],
-				[1, 0, 1, 0, 0, 0, 1, 0, 1],
-				[1, 1, 1, 0, 0, 0, 0, 1, 0],
-				[0, 1, 0, 0, 1, 0, 0, 1, 1],
-				[0, 0, 0, 1, 1, 1, 0, 0, 1],
-				[0, 1, 0, 0, 0, 1, 1, 1, 0],
-				[1, 0, 0, 1, 0, 1, 0, 0, 1],
-				[0, 1, 1, 0, 0, 1, 1, 0, 0]]
-
-ans_ex1 = [[1, 9, 8, 2, 4, 3, 6, 7, 5],
-			[4, 5, 7, 8, 6, 1, 9, 2, 3],
-			[2, 3, 6, 9, 5, 7, 4, 1, 8],
-			[6, 4, 2, 1, 3, 5, 7, 8, 9],
-			[5, 8, 3, 7, 2, 9, 1, 4, 6],
-			[9, 7, 1, 4, 8, 6, 3, 5, 2],
-			[7, 2, 5, 3, 9, 4, 8, 6, 1],
-			[8, 1, 9, 6, 7, 2, 5, 3, 4],
-			[3, 6, 4, 5, 1, 8, 2, 9, 7]]
 data_ea1 = [[0, 0, 0, 3, 4, 0, 8, 7, 6],
-		[9, 0, 0, 1, 0, 0, 5, 0, 0],
-		[0, 0, 0, 0, 5, 7, 0, 0, 0],
-		[1, 0, 2, 0, 0, 0, 0, 3, 0],
-		[0, 0, 0, 0, 0, 5, 0, 0, 0],
-		[8, 7, 0, 0, 0, 0, 0, 2, 4],
-		[0, 5, 8, 0, 7, 3, 0, 0, 1],
-		[3, 0, 9, 6, 1, 8, 0, 0, 7],
-		[0, 0, 0, 0, 0, 0, 4, 0, 0]]
+            [9, 0, 0, 1, 0, 0, 5, 0, 0],
+            [0, 0, 0, 0, 5, 7, 0, 0, 0],
+            [1, 0, 2, 0, 0, 0, 0, 3, 0],
+            [0, 0, 0, 0, 0, 5, 0, 0, 0],
+            [8, 7, 0, 0, 0, 0, 0, 2, 4],
+            [0, 5, 8, 0, 7, 3, 0, 0, 1],
+            [3, 0, 9, 6, 1, 8, 0, 0, 7],
+            [0, 0, 0, 0, 0, 0, 4, 0, 0]]
 
 
 data_ea1_shade = [[0, 1, 0, 0, 1, 0, 1, 0, 1],
-				[0, 0, 0, 0, 1, 1, 0, 1, 1],
-				[1, 1, 1, 1, 0, 0, 0, 0, 0],
-				[0, 0, 1, 1, 1, 1, 0, 0, 0],
-				[1, 1, 0, 0, 1, 0, 0, 0, 1],
-				[1, 0, 0, 0, 0, 0, 1, 1, 1],
-				[1, 0, 1, 1, 0, 0, 0, 1, 0],
-				[0, 1, 0, 1, 0, 1, 1, 0, 0],
-				[0, 0, 1, 0, 0, 1, 1, 1, 0]]
+                  [0, 0, 0, 0, 1, 1, 0, 1, 1],
+                  [1, 1, 1, 1, 0, 0, 0, 0, 0],
+                  [0, 0, 1, 1, 1, 1, 0, 0, 0],
+                  [1, 1, 0, 0, 1, 0, 0, 0, 1],
+                  [1, 0, 0, 0, 0, 0, 1, 1, 1],
+                  [1, 0, 1, 1, 0, 0, 0, 1, 0],
+                  [0, 1, 0, 1, 0, 1, 1, 0, 0],
+                  [0, 0, 1, 0, 0, 1, 1, 1, 0]]
 
 ans_ea1 = [[5, 2, 1, 3, 4, 9, 8, 7, 6],
-		[9, 3, 7, 1, 8, 6, 5, 4, 2],
-		[6, 8, 4, 2, 5, 7, 3, 1, 9],
-		[1, 9, 2, 8, 6, 4, 7, 3, 5],
-		[4, 6, 3, 7, 2, 5, 1, 9, 8],
-		[8, 7, 5, 9, 3, 1, 6, 2, 4],
-		[2, 5, 8, 4, 7, 3, 9, 6, 1],
-		[3, 4, 9, 6, 1, 8, 2, 5, 7],
-		[7, 1, 6, 5, 9, 2, 4, 8, 3]]
+           [9, 3, 7, 1, 8, 6, 5, 4, 2],
+           [6, 8, 4, 2, 5, 7, 3, 1, 9],
+           [1, 9, 2, 8, 6, 4, 7, 3, 5],
+           [4, 6, 3, 7, 2, 5, 1, 9, 8],
+           [8, 7, 5, 9, 3, 1, 6, 2, 4],
+           [2, 5, 8, 4, 7, 3, 9, 6, 1],
+           [3, 4, 9, 6, 1, 8, 2, 5, 7],
+           [7, 1, 6, 5, 9, 2, 4, 8, 3]]
+		
+data_ea2 = [[0, 0, 8, 4, 0, 7, 6, 0, 0],
+            [0, 0, 2, 0, 0, 0, 4, 1, 0],
+            [0, 5, 6, 0, 0, 3, 0, 0, 2],
+            [0, 0, 3, 0, 0, 8, 1, 2, 0],
+            [0, 0, 0, 0, 0, 0, 5, 0, 0],
+            [0, 1, 7, 0, 0, 2, 0, 8, 9],
+            [6, 0, 0, 0, 3, 9, 0, 0, 0],
+            [0, 7, 0, 0, 5, 0, 9, 0, 3],
+            [0, 2, 0, 0, 1, 0, 0, 0, 6]]
+
+data_ea2_shade = [[0, 0, 1, 1, 1, 0, 1, 0, 0],
+                  [0, 0, 1, 0, 1, 0, 1, 0, 1],
+                  [1, 0, 1, 0, 1, 0, 0, 0, 1],
+                  [0, 1, 0, 0, 0, 1, 0, 1, 1],
+                  [1, 1, 1, 0, 0, 0, 0, 1, 0],
+                  [0, 0, 0, 1, 1, 1, 0, 1, 0],
+                  [1, 1, 0, 1, 0, 0, 1, 0, 0],
+                  [1, 0, 0, 1, 0, 1, 0, 1, 0],
+                  [0, 1, 0, 0, 0, 1, 1, 0, 1]]
+
+ans_ea2 = [[1, 9, 8, 4, 2, 7, 6, 3, 5],
+           [7, 3, 2, 9, 6, 5, 4, 1, 8],
+           [4, 5, 6, 1, 8, 3, 7, 9, 2],
+           [9, 6, 3, 5, 7, 8, 1, 2, 4],
+           [2, 8, 4, 3, 9, 1, 5, 6, 7],
+           [5, 1, 7, 6, 4, 2, 3, 8, 9],
+           [6, 4, 5, 8, 3, 9, 2, 7, 1],
+           [8, 7, 1, 2, 5, 6, 9, 4, 3],
+           [3, 2, 9, 7, 1, 4, 8, 5, 6]]
 		
 data_no1 = [[9, 0, 0, 7, 0, 6, 3, 2, 0],
-			[3, 0, 0, 0, 0, 5, 0, 9, 0],
-			[1, 0, 8, 0, 0, 0, 0, 0, 0],
-			[0, 0, 0, 0, 8, 9, 0, 0, 0],
-			[0, 0, 9, 0, 0, 2, 4, 0, 0],
-			[6, 0, 2, 5, 0, 0, 0, 0, 0],
-			[2, 6, 0, 0, 0, 8, 9, 0, 0],
-			[0, 9, 0, 0, 2, 0, 0, 0, 1],
-			[8, 0, 0, 0, 0, 1, 5, 0, 0]]
+            [3, 0, 0, 0, 0, 5, 0, 9, 0],
+            [1, 0, 8, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 8, 9, 0, 0, 0],
+            [0, 0, 9, 0, 0, 2, 4, 0, 0],
+            [6, 0, 2, 5, 0, 0, 0, 0, 0],
+            [2, 6, 0, 0, 0, 8, 9, 0, 0],
+            [0, 9, 0, 0, 2, 0, 0, 0, 1],
+            [8, 0, 0, 0, 0, 1, 5, 0, 0]]
 
 data_no1_shade = [[0, 0, 1, 0, 0, 1, 0, 1, 1],
-				[0, 1, 1, 1, 1, 0, 0, 0, 0],
-				[0, 0, 1, 1, 0, 0, 1, 0, 1],
-				[0, 1, 0, 1, 1, 0, 1, 0, 0],
-				[0, 1, 0, 0, 0, 1, 1, 0, 1],
-				[1, 0, 1, 0, 0, 1, 0, 1, 0],
-				[1, 1, 0, 1, 0, 1, 0, 0, 0],
-				[1, 0, 0, 0, 1, 0, 1, 1, 0],
-				[1, 0, 0, 0, 1, 0, 0, 1, 1]]				
+                  [0, 1, 1, 1, 1, 0, 0, 0, 0],
+                  [0, 0, 1, 1, 0, 0, 1, 0, 1],
+                  [0, 1, 0, 1, 1, 0, 1, 0, 0],
+                  [0, 1, 0, 0, 0, 1, 1, 0, 1],
+                  [1, 0, 1, 0, 0, 1, 0, 1, 0],
+                  [1, 1, 0, 1, 0, 1, 0, 0, 0],
+                  [1, 0, 0, 0, 1, 0, 1, 1, 0],
+                  [1, 0, 0, 0, 1, 0, 0, 1, 1]]				
 
 ans_no1 = [[9, 5, 4, 7, 1, 6, 3, 2, 8],
-			[3, 2, 6, 8, 4, 5, 1, 9, 7],
-			[1, 7, 8, 2, 9, 3, 6, 5, 4],
-			[7, 4, 3, 6, 8, 9, 2, 1, 5],
-			[5, 8, 9, 1, 7, 2, 4, 3, 6],
-			[6, 1, 2, 5, 3, 4, 7, 8, 9],
-			[2, 6, 1, 4, 5, 8, 9, 7, 3],
-			[4, 9, 5, 3, 2, 7, 8, 6, 1],
-			[8, 3, 7, 9, 6, 1, 5, 4, 2]]
+           [3, 2, 6, 8, 4, 5, 1, 9, 7],
+           [1, 7, 8, 2, 9, 3, 6, 5, 4],
+           [7, 4, 3, 6, 8, 9, 2, 1, 5],
+           [5, 8, 9, 1, 7, 2, 4, 3, 6],
+           [6, 1, 2, 5, 3, 4, 7, 8, 9],
+           [2, 6, 1, 4, 5, 8, 9, 7, 3],
+           [4, 9, 5, 3, 2, 7, 8, 6, 1],
+           [8, 3, 7, 9, 6, 1, 5, 4, 2]]
 			
+data_no2 = [[6, 1, 0, 0, 2, 0, 9, 0, 3],
+            [9, 4, 2, 8, 0, 0, 0, 1, 0],
+            [0, 0, 0, 0, 0, 0, 0, 2, 6],
+            [0, 0, 4, 0, 0, 0, 8, 6, 0],
+            [5, 0, 0, 0, 0, 1, 0, 0, 0],
+            [0, 0, 0, 0, 8, 5, 0, 0, 0],
+            [0, 0, 0, 7, 0, 0, 0, 0, 2],
+            [7, 0, 1, 6, 0, 0, 0, 4, 0],
+            [2, 0, 0, 0, 0, 0, 1, 0, 0]]
+
+data_no2_shade = [[1, 0, 0, 0, 1, 1, 0, 1, 0],
+                  [0, 1, 1, 1, 0, 1, 0, 0, 0],
+                  [1, 0, 0, 0, 0, 0, 1, 1, 1],
+                  [0, 1, 1, 0, 0, 0, 1, 1, 0],
+                  [0, 1, 0, 1, 1, 0, 0, 0, 1],
+                  [0, 0, 1, 1, 1, 0, 1, 0, 0],
+                  [1, 0, 1, 0, 0, 0, 1, 0, 1],
+                  [0, 0, 0, 1, 0, 1, 0, 1, 1],
+                  [1, 1, 0, 0, 1, 1, 0, 0, 0]]				
+
+ans_no2 = [[6, 1, 7, 5, 2, 4, 9, 8, 3],
+           [9, 4, 2, 8, 3, 6, 5, 1, 7],
+           [8, 5, 3, 1, 9, 7, 4, 2, 6],
+           [1, 2, 4, 9, 7, 3, 8, 6, 5],
+           [5, 8, 9, 2, 6, 1, 7, 3, 4],
+           [3, 7, 6, 4, 8, 5, 2, 9, 1],
+           [4, 3, 8, 7, 1, 9, 6, 5, 2],
+           [7, 9, 1, 6, 5, 2, 3, 4, 8],
+           [2, 6, 5, 3, 4, 8, 1, 7, 9]]
+			
+data_ex1 = [[0, 0, 0, 0, 0, 0, 0, 7, 5],
+            [4, 0, 0, 0, 6, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 1, 0],
+            [0, 0, 2, 1, 0, 5, 0, 0, 0],
+            [0, 0, 0, 7, 0, 0, 0, 4, 0],
+            [9, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 3, 9, 0, 8, 0, 0],
+            [0, 1, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 2, 0, 0]]
+
+data_ex1_shade = [[0, 0, 1, 1, 1, 0, 1, 0, 0],
+                  [1, 0, 0, 1, 1, 0, 0, 1, 0],
+                  [1, 0, 1, 0, 0, 0, 1, 0, 1],
+                  [1, 1, 1, 0, 0, 0, 0, 1, 0],
+                  [0, 1, 0, 0, 1, 0, 0, 1, 1],
+                  [0, 0, 0, 1, 1, 1, 0, 0, 1],
+                  [0, 1, 0, 0, 0, 1, 1, 1, 0],
+                  [1, 0, 0, 1, 0, 1, 0, 0, 1],
+                  [0, 1, 1, 0, 0, 1, 1, 0, 0]]
+
+ans_ex1 = [[1, 9, 8, 2, 4, 3, 6, 7, 5],
+           [4, 5, 7, 8, 6, 1, 9, 2, 3],
+           [2, 3, 6, 9, 5, 7, 4, 1, 8],
+           [6, 4, 2, 1, 3, 5, 7, 8, 9],
+           [5, 8, 3, 7, 2, 9, 1, 4, 6],
+           [9, 7, 1, 4, 8, 6, 3, 5, 2],
+           [7, 2, 5, 3, 9, 4, 8, 6, 1],
+           [8, 1, 9, 6, 7, 2, 5, 3, 4],
+           [3, 6, 4, 5, 1, 8, 2, 9, 7]]
+
+data_ex2 = [[1, 0, 0, 0, 4, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 3, 0, 8],
+            [0, 0, 0, 0, 0, 7, 0, 0, 0],
+            [7, 0, 0, 6, 0, 0, 0, 1, 0],
+            [0, 0, 0, 8, 0, 5, 2, 0, 0],
+            [4, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 5, 0, 0, 2, 0, 0, 0, 0],
+            [0, 8, 0, 3, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 4, 0]]
+
+data_ex2_shade = [[0, 0, 0, 0, 1, 1, 0, 1, 1],
+                  [0, 1, 0, 0, 1, 1, 0, 0, 1],
+                  [1, 1, 1, 0, 0, 0, 1, 0, 0],
+                  [0, 1, 1, 1, 0, 1, 0, 0, 0],
+                  [0, 0, 1, 1, 0, 0, 1, 0, 1],
+                  [1, 0, 0, 1, 0, 0, 0, 1, 1],
+                  [1, 0, 0, 1, 1, 0, 1, 0, 0],
+                  [0, 1, 1, 0, 0, 1, 0, 1, 0],
+                  [1, 0, 0, 0, 1, 0, 1, 1, 0]]
+
+ans_ex2 = [[1, 7, 3, 5, 4, 8, 9, 6, 2],
+           [5, 4, 9, 1, 6, 2, 3, 7, 8],
+           [8, 6, 2, 9, 3, 7, 4, 5, 1],
+           [7, 2, 8, 6, 9, 4, 5, 1, 3],
+           [3, 1, 6, 8, 7, 5, 2, 9, 4],
+           [4, 9, 5, 2, 1, 3, 7, 8, 6],
+           [6, 5, 7, 4, 2, 1, 8, 3, 9],
+           [9, 8, 4, 3, 5, 6, 1, 2, 7],
+           [2, 3, 1, 7, 8, 9, 6, 4, 5]]
+
+#add to the following data and ans sets when new boards are added
+data_ea = [data_ea1, data_ea2]
+data_no = [data_no1, data_no2]
+data_ex = [data_ex1, data_ex2]
+ans_ea = [ans_ea1, ans_ea2]
+ans_no = [ans_no1, ans_no2]
+ans_ex = [ans_ex1, ans_ex2]
 
 HIGHLIGHTX = -1			
 HIGHLIGHTY = -1
@@ -140,9 +241,13 @@ def draw():
 	global HIGHLIGHTX
 	global HIGHLIGHTY
 	global current_board
-	global data_ea1
-	global data_no1
-	global data_ex1
+	global board_num
+	global data_ea
+	global data_no
+	global data_ex
+	global ans_ea
+	global ans_no
+	global ans_ex
 	screen.fill((255, 255, 255))
 	blue = 190, 210, 230
 	purple = 229, 194, 237
@@ -154,12 +259,12 @@ def draw():
 		y = int((x_pos-79)/66)
 		x = int((y_pos-29)/66)
 		if HOME == 5:
-			current_board[x][y] = ans_ea1[x][y]
+			current_board[x][y] = ans_ea[board_num][x][y]
 		elif HOME == 6:
-			current_board[x][y] = ans_no1[x][y]
+			current_board[x][y] = ans_no[board_num][x][y]
 		else:
-			current_board[x][y] = ans_ex1[x][y]
-		HINT =0
+			current_board[x][y] = ans_ex[board_num][x][y]
+		HINT = 0
 	
 	if CREDITS != 0:
 		HOME = 2
@@ -177,7 +282,7 @@ def draw():
 		credits_text = Rect ((50, 180), (1000, 450))
 		screen.draw.filled_rect(credits_text, white)
 		screen.draw.rect(credits_text, black)
-		screen.draw.text("-  Home screen image: https://tinyurl.com/y9cbazvx\n-  Play screen examples: https://tinyurl.com/ybzp7bjw\n-  Boards: https://tinyurl.com/y9onnnsp\n-  Inspiration: https://tinyurl.com/ycw6n2hv", (75, 200), color = "black", fontname = "arial", fontsize = 38)
+		screen.draw.text("-  Home screen image: https://tinyurl.com/y9cbazvx\n-  Play screen examples: https://tinyurl.com/ybzp7bjw\n-  Boards: https://tinyurl.com/y9onnnsp\n-  More boards: https://tinyurl.com/y6844rhf\n-  Inspiration: https://tinyurl.com/ycw6n2hv", (75, 200), color = "black", fontname = "arial", fontsize = 38)
 		screen.draw.text("Made by: Elina Lee, Sophia Liang, Celine Wu", (270, 550), color = "black", fontname = "arial", fontsize = 38)
 	
 	elif PLAY != 0:
@@ -299,7 +404,8 @@ def draw():
 		n = 29
 		p = 64
 		q = 66
-		r = 50		
+		r = 50
+		
 		for x in range (9):
 			for y in range (9):
 				if data_ea1_shade[x][y] == 1 :
@@ -368,7 +474,6 @@ def draw():
 				screen.draw.rect(b, (0,0,0))
 				x += z
 			y += z
-
 
 		m = 79
 		n = 29
@@ -450,7 +555,6 @@ def draw():
 		q = 66
 		r = 50
 		
-
 		for x in range (9):
 			for y in range (9):
 				if data_ex1_shade[x][y] == 1 :
@@ -463,15 +567,6 @@ def draw():
 					screen.draw.text(str(current_board[x][y]), (m + y*q + 16, n + x*q + 2), color = "black", fontname = "arial", fontsize = r)
 					
 	elif BACK != 0 or CREDITS == 0 or HOWTO == 0 or PLAY ==0 or LEVEL == 0:
-		current_board = [[0, 0, 0, 0, 0, 0, 0, 0, 0],
-						[0, 0, 0, 0, 0, 0, 0, 0, 0],
-						[0, 0, 0, 0, 0, 0, 0, 0, 0],
-						[0, 0, 0, 0, 0, 0, 0, 0, 0],
-						[0, 0, 0, 0, 0, 0, 0, 0, 0],
-						[0, 0, 0, 0, 0, 0, 0, 0, 0],
-						[0, 0, 0, 0, 0, 0, 0, 0, 0],
-						[0, 0, 0, 0, 0, 0, 0, 0, 0],
-						[0, 0, 0, 0, 0, 0, 0, 0, 0]]
 		HOME = 1
 		screen.clear()
 		screen.fill((255, 255, 255))
@@ -503,20 +598,22 @@ def draw():
 		screen.draw.text("EXIT", (858, 525), color = "black", fontname = "arial", fontsize = 42)
 		screen.draw.text("ODD & EVEN", (150, 80), color = "black", fontname = "arial", fontsize = 65)
 		screen.draw.text("SUDOKU", (222, 165), color = "black", fontname = "arial", fontsize = 65)
-                                 
+
 	if CHECK != 0:
-		wrong = 0
 		if HOME == 5:
-			answer_board = ans_ea1
+			answer_board = ans_ea[board_num]
 		if HOME == 6:
-			answer_board = ans_no1
+			answer_board = ans_no[board_num]
 		if HOME == 7:
-			answer_board = ans_ex1
+			answer_board = ans_ex[board_num]
+
+		wrong = 0
 		for x in range (9):
 			for y in range (9):
 				if current_board[x][y] != 0:
 					if current_board[x][y] != answer_board[x][y]:
 						wrong += 1
+
 		wrong_count = Rect((350, 200), (390, 100))
 		screen.draw.filled_rect(wrong_count,blue)
 		screen.draw.rect(wrong_count, black)
@@ -530,275 +627,268 @@ def draw():
 		screen.draw.text("Click anywhere\nto continue.\nPress control-Q;\ncommand-Q on Mac;\nto exit the game.", (360, 220), color = "black", fontname = "arial", fontsize = 42)
 		EXIT = 0
 	
-
-			
-			
 def on_mouse_down(pos):
-	global HOME
-	global CREDITS
-	global HOWTO
-	global EXIT
-	global BACK
-	global PLAY
-	global LEVEL
-	global EASY
-	global NORMAL
-	global EXTREME
-	global HINT
-	global CHECK
-	global x_pos
-	global y_pos
-	global current_board
-	global data_ea1
-	global data_no1
-	global data_ex1
-	global HIGHLIGHTX
-	global HIGHLIGHTY
-	if pos[0]> 750 and pos[0] < 1050 and pos[1] > 50 and pos[1] < 150 and HOME == 1:
-		PLAY = 1
-	if pos[0]> 750 and pos[0] < 1050 and pos[1] > 50 and pos[1] < 150 and HOME == 2:
-		BACK = 1
-		CREDITS = 0
-	if pos[0]> 750 and pos[0] < 1050 and pos[1] > 50 and pos[1] < 150 and HOME == 3:
-		BACK = 1
-		HOWTO = 0
-	if pos[0]> 750 and pos[0] < 1050 and pos[1] > 50 and pos[1] < 150 and HOME == 4:
-		BACK = 1
-		PLAY = 0
-		LEVEL = 0
-	if pos[0]> 750 and pos[0] < 1050 and pos[1] > 200 and pos[1] < 300 and HOME == 1 and LEVEL == 0:
-		HOWTO = 1
-	if pos[0]> 750 and pos[0] < 1050 and pos[1] > 350 and pos[1] < 450 and HOME == 1 and LEVEL == 0:
-		CREDITS = 1
-	if pos[0]> 750 and pos[0] < 1050 and pos[1] > 500 and pos[1] < 600 and HOME == 1:
-		EXIT = 1
-	if pos[0] > 50 and pos[0] < 350 and pos[1] > 200 and pos[1] < 350 and LEVEL == 1:
-		EASY = 1
-		PLAY = 0
-		LEVEL = 0
-		for i in range (9):
-			for j in range (9):
-				current_board[i][j] = data_ea1[i][j]
-	if pos[0] > 400 and pos[0] < 700 and pos[1] > 200 and pos[1] < 350 and LEVEL == 1:
-		NORMAL = 1	
-		PLAY = 0
-		LEVEL = 0 
-		for i in range (9):
-			for j in range (9):
-				current_board[i][j] = data_no1[i][j]
-	if pos[0] > 750 and pos[0] < 1050 and pos[1] > 200 and pos[1] < 350 and LEVEL == 1:
-		EXTREME = 1
-		PLAY = 0
-		LEVEL = 0
-		for i in range (9):
-			for j in range (9):
-				current_board[i][j] = data_ex1[i][j]
+        from random import randint
+        global HOME
+        global CREDITS
+        global HOWTO
+        global EXIT
+        global BACK
+        global PLAY
+        global LEVEL
+        global EASY
+        global NORMAL
+        global EXTREME
+        global HINT
+        global CHECK
+        global x_pos
+        global y_pos
+        global current_board
+        global board_num
+        global data_ea
+        global data_no
+        global data_ex
+        global HIGHLIGHTX
+        global HIGHLIGHTY
+        if pos[0]> 750 and pos[0] < 1050 and pos[1] > 50 and pos[1] < 150 and HOME == 1:
+                PLAY = 1
+        if pos[0]> 750 and pos[0] < 1050 and pos[1] > 50 and pos[1] < 150 and HOME == 2:
+                BACK = 1
+                CREDITS = 0
+        if pos[0]> 750 and pos[0] < 1050 and pos[1] > 50 and pos[1] < 150 and HOME == 3:
+                BACK = 1
+                HOWTO = 0
+        if pos[0]> 750 and pos[0] < 1050 and pos[1] > 50 and pos[1] < 150 and HOME == 4:
+                BACK = 1
+                PLAY = 0
+                LEVEL = 0
+        if pos[0]> 750 and pos[0] < 1050 and pos[1] > 200 and pos[1] < 300 and HOME == 1 and LEVEL == 0:
+                HOWTO = 1
+        if pos[0]> 750 and pos[0] < 1050 and pos[1] > 350 and pos[1] < 450 and HOME == 1 and LEVEL == 0:
+                CREDITS = 1
+        if pos[0]> 750 and pos[0] < 1050 and pos[1] > 500 and pos[1] < 600 and HOME == 1:
+                EXIT = 1
+        if pos[0] > 50 and pos[0] < 350 and pos[1] > 200 and pos[1] < 350 and LEVEL == 1:
+                EASY = 1
+                PLAY = 0
+                LEVEL = 0
+                board_num = randint(0, len(data_ea)-1)
+                for i in range (9):
+                        for j in range (9):
+                                current_board[i][j] = data_ea[board_num][i][j]
+        if pos[0] > 400 and pos[0] < 700 and pos[1] > 200 and pos[1] < 350 and LEVEL == 1:
+                NORMAL = 1
+                PLAY = 0
+                LEVEL = 0
+                board_num = randint(0, len(data_no)-1)
+                for i in range (9):
+                        for j in range (9):
+                                current_board[i][j] = data_no[board_num][i][j]
+        if pos[0] > 750 and pos[0] < 1050 and pos[1] > 200 and pos[1] < 350 and LEVEL == 1:
+                EXTREME = 1
+                PLAY = 0
+                LEVEL = 0
+                board_num = randint(0, len(data_ex)-1)
+                for i in range (9):
+                        for j in range (9):
+                                current_board[i][j] = data_ex[board_num][i][j]
 
-	if pos[0] > 750 and pos[0] < 1050 and pos[1] > 525 and pos[1] < 625 and HOME > 4 and HOME < 8:
-		EASY = 0
-		NORMAL = 0
-		EXTREME = 0
-		LEVEL = 0
-		PLAY = 0
-		BACK = 1
-		current_board = [[0, 0, 0, 0, 0, 0, 0, 0, 0],
-					[0, 0, 0, 0, 0, 0, 0, 0, 0],
-					[0, 0, 0, 0, 0, 0, 0, 0, 0],
-					[0, 0, 0, 0, 0, 0, 0, 0, 0],
-					[0, 0, 0, 0, 0, 0, 0, 0, 0],
-					[0, 0, 0, 0, 0, 0, 0, 0, 0],
-					[0, 0, 0, 0, 0, 0, 0, 0, 0],
-					[0, 0, 0, 0, 0, 0, 0, 0, 0],
-					[0, 0, 0, 0, 0, 0, 0, 0, 0]]
-	if pos[0] > 750 and pos[0] < 1050 and pos[1] > 275 and pos[1] < 375 and HOME > 4 and HOME < 8:
-		HINT = 1
-	if pos[0] > 750 and pos[0] < 1050 and pos[1] > 400 and pos[1] < 500 and HOME > 4 and HOME < 8:
-		CHECK = 1
-	#one single box is 66x66
-	#the next few lines can be repeated for the other two levels the blanks are the where the mouse pos goes
-	if HOME == 5 and pos[0]> 79 and pos[0] < 673 and pos[1] > 29 and pos[1] < 623:
-		x_pos = pos[0]
-		y_pos = pos[1]
-		y = int((x_pos-79)/66)
-		x = int((y_pos-29)/66)
-		HIGHLIGHTX = x
-		HIGHLIGHTY = y
-	if HOME == 5 and pos[0]> 750 and pos[0] < 800 and pos[1] > 160 and pos[1] < 210:#number 1 button
-		if x_pos!= 0 and y_pos!= 0:
-			y = int((x_pos-79)/66)
-			x = int((y_pos-29)/66)
-			current_board[x][y]=1
-	if HOME == 5 and pos[0]> 810 and pos[0] < 860 and pos[1] > 160 and pos[1] < 210:#number 2 button
-		if x_pos!= 0 and y_pos!= 0:
-			y = int((x_pos-79)/66)
-			x = int((y_pos-29)/66)
-			current_board[x][y]=2
-	if HOME == 5 and pos[0]> 870 and pos[0] < 920 and pos[1] > 160 and pos[1] < 210:#number 3 button
-		if x_pos!= 0 and y_pos!= 0:
-			y = int((x_pos-79)/66)
-			x = int((y_pos-29)/66)
-			current_board[x][y]=3
-	if HOME == 5 and pos[0]> 930 and pos[0] < 980 and pos[1] > 160 and pos[1] < 210:#number 4 button
-		if x_pos!= 0 and y_pos!= 0:
-			y = int((x_pos-79)/66)
-			x = int((y_pos-29)/66)
-			current_board[x][y]=4
-	if HOME == 5 and pos[0]> 990 and pos[0] < 1040 and pos[1] > 160 and pos[1] < 210:#number 5 button
-		if x_pos!= 0 and y_pos!= 0:
-			y = int((x_pos-79)/66)
-			x = int((y_pos-29)/66)
-			current_board[x][y]=5
-	if HOME == 5 and pos[0]> 750 and pos[0] < 800 and pos[1] > 215 and pos[1] < 265:#number 6 button
-		if x_pos!= 0 and y_pos!= 0:
-			y = int((x_pos-79)/66)
-			x = int((y_pos-29)/66)
-			current_board[x][y]=6
-	if HOME == 5 and pos[0]> 810 and pos[0] < 860 and pos[1] > 215 and pos[1] < 265:#number 7 button
-		if x_pos!= 0 and y_pos!= 0:
-			y = int((x_pos-79)/66)
-			x = int((y_pos-29)/66)
-			current_board[x][y]=7
-	if HOME == 5 and pos[0]> 870 and pos[0] < 920 and pos[1] > 215 and pos[1] < 265:#number 8 button
-		if x_pos!= 0 and y_pos!= 0:
-			y = int((x_pos-79)/66)
-			x = int((y_pos-29)/66)
-			current_board[x][y]=8
-	if HOME == 5 and pos[0]> 930 and pos[0] < 980 and pos[1] > 215 and pos[1] < 265:#number 9 button
-		if x_pos!= 0 and y_pos!= 0:
-			y = int((x_pos-79)/66)
-			x = int((y_pos-29)/66)
-			current_board[x][y]=9
-	if HOME == 5 and pos[0]> 990 and pos[0] < 1040 and pos[1] > 215 and pos[1] < 265:#clear number button
-		if x_pos!= 0 and y_pos!= 0:
-			y = int((x_pos-79)/66)
-			x = int((y_pos-29)/66)
-			current_board[x][y]=0
+        if pos[0] > 750 and pos[0] < 1050 and pos[1] > 525 and pos[1] < 625 and HOME > 4 and HOME < 8:
+                EASY = 0
+                NORMAL = 0
+                EXTREME = 0
+                LEVEL = 0
+                PLAY = 0
+                BACK = 1
+                current_board = [[0, 0, 0, 0, 0, 0, 0, 0, 0],
+                                 [0, 0, 0, 0, 0, 0, 0, 0, 0],
+                                 [0, 0, 0, 0, 0, 0, 0, 0, 0],
+                                 [0, 0, 0, 0, 0, 0, 0, 0, 0],
+                                 [0, 0, 0, 0, 0, 0, 0, 0, 0],
+                                 [0, 0, 0, 0, 0, 0, 0, 0, 0],
+                                 [0, 0, 0, 0, 0, 0, 0, 0, 0],
+                                 [0, 0, 0, 0, 0, 0, 0, 0, 0],
+                                 [0, 0, 0, 0, 0, 0, 0, 0, 0]]
+        if pos[0] > 750 and pos[0] < 1050 and pos[1] > 275 and pos[1] < 375 and HOME > 4 and HOME < 8:
+                HINT = 1
+        if pos[0] > 750 and pos[0] < 1050 and pos[1] > 400 and pos[1] < 500 and HOME > 4 and HOME < 8:
+                CHECK = 1
+
+        #the following are the 1-9 and clear buttons
+        if HOME == 5 and pos[0]> 79 and pos[0] < 673 and pos[1] > 29 and pos[1] < 623:
+                x_pos = pos[0]
+                y_pos = pos[1]
+                y = int((x_pos-79)/66)
+                x = int((y_pos-29)/66)
+                HIGHLIGHTX = x
+                HIGHLIGHTY = y
+        if HOME == 5 and pos[0]> 750 and pos[0] < 800 and pos[1] > 160 and pos[1] < 210:#number 1 button
+                if x_pos!= 0 and y_pos!= 0:
+                        y = int((x_pos-79)/66)
+                        x = int((y_pos-29)/66)
+                        current_board[x][y]=1
+        if HOME == 5 and pos[0]> 810 and pos[0] < 860 and pos[1] > 160 and pos[1] < 210:#number 2 button
+                if x_pos!= 0 and y_pos!= 0:
+                        y = int((x_pos-79)/66)
+                        x = int((y_pos-29)/66)
+                        current_board[x][y]=2
+        if HOME == 5 and pos[0]> 870 and pos[0] < 920 and pos[1] > 160 and pos[1] < 210:#number 3 button
+                if x_pos!= 0 and y_pos!= 0:
+                        y = int((x_pos-79)/66)
+                        x = int((y_pos-29)/66)
+                        current_board[x][y]=3
+        if HOME == 5 and pos[0]> 930 and pos[0] < 980 and pos[1] > 160 and pos[1] < 210:#number 4 button
+                if x_pos!= 0 and y_pos!= 0:
+                        y = int((x_pos-79)/66)
+                        x = int((y_pos-29)/66)
+                        current_board[x][y]=4
+        if HOME == 5 and pos[0]> 990 and pos[0] < 1040 and pos[1] > 160 and pos[1] < 210:#number 5 button
+                if x_pos!= 0 and y_pos!= 0:
+                        y = int((x_pos-79)/66)
+                        x = int((y_pos-29)/66)
+                        current_board[x][y]=5
+        if HOME == 5 and pos[0]> 750 and pos[0] < 800 and pos[1] > 215 and pos[1] < 265:#number 6 button
+                if x_pos!= 0 and y_pos!= 0:
+                        y = int((x_pos-79)/66)
+                        x = int((y_pos-29)/66)
+                        current_board[x][y]=6
+        if HOME == 5 and pos[0]> 810 and pos[0] < 860 and pos[1] > 215 and pos[1] < 265:#number 7 button
+                if x_pos!= 0 and y_pos!= 0:
+                        y = int((x_pos-79)/66)
+                        x = int((y_pos-29)/66)
+                        current_board[x][y]=7
+        if HOME == 5 and pos[0]> 870 and pos[0] < 920 and pos[1] > 215 and pos[1] < 265:#number 8 button
+                if x_pos!= 0 and y_pos!= 0:
+                        y = int((x_pos-79)/66)
+                        x = int((y_pos-29)/66)
+                        current_board[x][y]=8
+        if HOME == 5 and pos[0]> 930 and pos[0] < 980 and pos[1] > 215 and pos[1] < 265:#number 9 button
+                if x_pos!= 0 and y_pos!= 0:
+                        y = int((x_pos-79)/66)
+                        x = int((y_pos-29)/66)
+                        current_board[x][y]=9
+        if HOME == 5 and pos[0]> 990 and pos[0] < 1040 and pos[1] > 215 and pos[1] < 265:#clear number button
+                if x_pos!= 0 and y_pos!= 0:
+                        y = int((x_pos-79)/66)
+                        x = int((y_pos-29)/66)
+                        current_board[x][y]=0
 	
-	
-	if HOME == 6 and pos[0]> 79 and pos[0] < 673 and pos[1] > 29 and pos[1] < 623:
-		x_pos = pos[0]
-		y_pos = pos[1]
-		y = int((x_pos-79)/66)
-		x = int((y_pos-29)/66)
-		HIGHLIGHTX = x
-		HIGHLIGHTY = y
+        if HOME == 6 and pos[0]> 79 and pos[0] < 673 and pos[1] > 29 and pos[1] < 623:
+                x_pos = pos[0]
+                y_pos = pos[1]
+                y = int((x_pos-79)/66)
+                x = int((y_pos-29)/66)
+                HIGHLIGHTX = x
+                HIGHLIGHTY = y
 
-	if HOME == 6 and pos[0]> 750 and pos[0] < 800 and pos[1] > 160 and pos[1] < 210:#number 1 button
-		if x_pos!= 0 and y_pos!= 0:
-			y = int((x_pos-79)/66)
-			x = int((y_pos-29)/66)
-			current_board[x][y]=1
-	if HOME == 6 and pos[0]> 810 and pos[0] < 860 and pos[1] > 160 and pos[1] < 210:#number 2 button
-		if x_pos!= 0 and y_pos!= 0:
-			y = int((x_pos-79)/66)
-			x = int((y_pos-29)/66)
-			current_board[x][y]=2
-	if HOME == 6 and pos[0]> 870 and pos[0] < 920 and pos[1] > 160 and pos[1] < 210:#number 3 button
-		if x_pos!= 0 and y_pos!= 0:
-			y = int((x_pos-79)/66)
-			x = int((y_pos-29)/66)
-			current_board[x][y]=3
-	if HOME == 6 and pos[0]> 930 and pos[0] < 980 and pos[1] > 160 and pos[1] < 210:#number 4 button
-		if x_pos!= 0 and y_pos!= 0:
-			y = int((x_pos-79)/66)
-			x = int((y_pos-29)/66)
-			current_board[x][y]=4
-	if HOME == 6 and pos[0]> 990 and pos[0] < 1040 and pos[1] > 160 and pos[1] < 210:#number 5 button
-		if x_pos!= 0 and y_pos!= 0:
-			y = int((x_pos-79)/66)
-			x = int((y_pos-29)/66)
-			current_board[x][y]=5
-	if HOME == 6 and pos[0]> 750 and pos[0] < 800 and pos[1] > 215 and pos[1] < 265:#number 6 button
-		if x_pos!= 0 and y_pos!= 0:
-			y = int((x_pos-79)/66)
-			x = int((y_pos-29)/66)
-			current_board[x][y]=6
-	if HOME == 6 and pos[0]> 810 and pos[0] < 860 and pos[1] > 215 and pos[1] < 265:#number 7 button
-		if x_pos!= 0 and y_pos!= 0:
-			y = int((x_pos-79)/66)
-			x = int((y_pos-29)/66)
-			current_board[x][y]=7
-	if HOME == 6 and pos[0]> 870 and pos[0] < 920 and pos[1] > 215 and pos[1] < 265:#number 8 button
-		if x_pos!= 0 and y_pos!= 0:
-			y = int((x_pos-79)/66)
-			x = int((y_pos-29)/66)
-			current_board[x][y]=8
-	if HOME == 6 and pos[0]> 930 and pos[0] < 980 and pos[1] > 215 and pos[1] < 265:#number 9 button
-		if x_pos!= 0 and y_pos!= 0:
-			y = int((x_pos-79)/66)
-			x = int((y_pos-29)/66)
-			current_board[x][y]=9
-	if HOME == 6 and pos[0]> 990 and pos[0] < 1040 and pos[1] > 215 and pos[1] < 265:#clear number button
-		if x_pos!= 0 and y_pos!= 0:
-			y = int((x_pos-79)/66)
-			x = int((y_pos-29)/66)
-			current_board[x][y]=0
-			
+        if HOME == 6 and pos[0]> 750 and pos[0] < 800 and pos[1] > 160 and pos[1] < 210:#number 1 button
+                if x_pos!= 0 and y_pos!= 0:
+                        y = int((x_pos-79)/66)
+                        x = int((y_pos-29)/66)
+                        current_board[x][y]=1
+        if HOME == 6 and pos[0]> 810 and pos[0] < 860 and pos[1] > 160 and pos[1] < 210:#number 2 button
+                if x_pos!= 0 and y_pos!= 0:
+                        y = int((x_pos-79)/66)
+                        x = int((y_pos-29)/66)
+                        current_board[x][y]=2
+        if HOME == 6 and pos[0]> 870 and pos[0] < 920 and pos[1] > 160 and pos[1] < 210:#number 3 button
+                if x_pos!= 0 and y_pos!= 0:
+                        y = int((x_pos-79)/66)
+                        x = int((y_pos-29)/66)
+                        current_board[x][y]=3
+        if HOME == 6 and pos[0]> 930 and pos[0] < 980 and pos[1] > 160 and pos[1] < 210:#number 4 button
+                if x_pos!= 0 and y_pos!= 0:
+                        y = int((x_pos-79)/66)
+                        x = int((y_pos-29)/66)
+                        current_board[x][y]=4
+        if HOME == 6 and pos[0]> 990 and pos[0] < 1040 and pos[1] > 160 and pos[1] < 210:#number 5 button
+                if x_pos!= 0 and y_pos!= 0:
+                        y = int((x_pos-79)/66)
+                        x = int((y_pos-29)/66)
+                        current_board[x][y]=5
+        if HOME == 6 and pos[0]> 750 and pos[0] < 800 and pos[1] > 215 and pos[1] < 265:#number 6 button
+                if x_pos!= 0 and y_pos!= 0:
+                        y = int((x_pos-79)/66)
+                        x = int((y_pos-29)/66)
+                        current_board[x][y]=6
+        if HOME == 6 and pos[0]> 810 and pos[0] < 860 and pos[1] > 215 and pos[1] < 265:#number 7 button
+                if x_pos!= 0 and y_pos!= 0:
+                        y = int((x_pos-79)/66)
+                        x = int((y_pos-29)/66)
+                        current_board[x][y]=7
+        if HOME == 6 and pos[0]> 870 and pos[0] < 920 and pos[1] > 215 and pos[1] < 265:#number 8 button
+                if x_pos!= 0 and y_pos!= 0:
+                        y = int((x_pos-79)/66)
+                        x = int((y_pos-29)/66)
+                        current_board[x][y]=8
+        if HOME == 6 and pos[0]> 930 and pos[0] < 980 and pos[1] > 215 and pos[1] < 265:#number 9 button
+                if x_pos!= 0 and y_pos!= 0:
+                        y = int((x_pos-79)/66)
+                        x = int((y_pos-29)/66)
+                        current_board[x][y]=9
+        if HOME == 6 and pos[0]> 990 and pos[0] < 1040 and pos[1] > 215 and pos[1] < 265:#clear number button
+                if x_pos!= 0 and y_pos!= 0:
+                        y = int((x_pos-79)/66)
+                        x = int((y_pos-29)/66)
+                        current_board[x][y]=0	
 
-	if HOME == 7 and pos[0]> 79 and pos[0] < 673 and pos[1] > 29 and pos[1] < 623:
-		x_pos = pos[0]
-		y_pos = pos[1]
-		y = int((x_pos-79)/66)
-		x = int((y_pos-29)/66)
-		HIGHLIGHTX = x
-		HIGHLIGHTY = y
+        if HOME == 7 and pos[0]> 79 and pos[0] < 673 and pos[1] > 29 and pos[1] < 623:
+                x_pos = pos[0]
+                y_pos = pos[1]
+                y = int((x_pos-79)/66)
+                x = int((y_pos-29)/66)
+                HIGHLIGHTX = x
+                HIGHLIGHTY = y
 
-
-	if HOME == 7 and pos[0]> 750 and pos[0] < 800 and pos[1] > 160 and pos[1] < 210:#number 1 button
-		if x_pos!= 0 and y_pos!= 0:
-			y = int((x_pos-79)/66)
-			x = int((y_pos-29)/66)
-			current_board[x][y]=1
-	if HOME == 7 and pos[0]> 810 and pos[0] < 860 and pos[1] > 160 and pos[1] < 210:#number 2 button
-		if x_pos!= 0 and y_pos!= 0:
-			y = int((x_pos-79)/66)
-			x = int((y_pos-29)/66)
-			current_board[x][y]=2
-	if HOME == 7 and pos[0]> 870 and pos[0] < 920 and pos[1] > 160 and pos[1] < 210:#number 3 button
-		if x_pos!= 0 and y_pos!= 0:
-			y = int((x_pos-79)/66)
-			x = int((y_pos-29)/66)
-			current_board[x][y]=3
-	if HOME == 7 and pos[0]> 930 and pos[0] < 980 and pos[1] > 160 and pos[1] < 210:#number 4 button
-		if x_pos!= 0 and y_pos!= 0:
-			y = int((x_pos-79)/66)
-			x = int((y_pos-29)/66)
-			current_board[x][y]=4
-	if HOME == 7 and pos[0]> 990 and pos[0] < 1040 and pos[1] > 160 and pos[1] < 210:#number 5 button
-		if x_pos!= 0 and y_pos!= 0:
-			y = int((x_pos-79)/66)
-			x = int((y_pos-29)/66)
-			current_board[x][y]=5
-	if HOME == 7 and pos[0]> 750 and pos[0] < 800 and pos[1] > 215 and pos[1] < 265:#number 6 button
-		if x_pos!= 0 and y_pos!= 0:
-			y = int((x_pos-79)/66)
-			x = int((y_pos-29)/66)
-			current_board[x][y]=6
-	if HOME == 7 and pos[0]> 810 and pos[0] < 860 and pos[1] > 215 and pos[1] < 265:#number 7 button
-		if x_pos!= 0 and y_pos!= 0:
-			y = int((x_pos-79)/66)
-			x = int((y_pos-29)/66)
-			current_board[x][y]=7
-	if HOME == 7 and pos[0]> 870 and pos[0] < 920 and pos[1] > 215 and pos[1] < 265:#number 8 button
-		if x_pos!= 0 and y_pos!= 0:
-			y = int((x_pos-79)/66)
-			x = int((y_pos-29)/66)
-			current_board[x][y]=8
-	if HOME == 7 and pos[0]> 930 and pos[0] < 980 and pos[1] > 215 and pos[1] < 265:#number 9 button
-		if x_pos!= 0 and y_pos!= 0:
-			y = int((x_pos-79)/66)
-			x = int((y_pos-29)/66)
-			current_board[x][y]=9
-	if HOME == 7 and pos[0]> 990 and pos[0] < 1040 and pos[1] > 215 and pos[1] < 265:#clear number button
-		if x_pos!= 0 and y_pos!= 0:
-			y = int((x_pos-79)/66)
-			x = int((y_pos-29)/66)
-			current_board[x][y]=0
-
-
-
-
-
-
+        if HOME == 7 and pos[0]> 750 and pos[0] < 800 and pos[1] > 160 and pos[1] < 210:#number 1 button
+                if x_pos!= 0 and y_pos!= 0:
+                        y = int((x_pos-79)/66)
+                        x = int((y_pos-29)/66)
+                        current_board[x][y]=1
+        if HOME == 7 and pos[0]> 810 and pos[0] < 860 and pos[1] > 160 and pos[1] < 210:#number 2 button
+                if x_pos!= 0 and y_pos!= 0:
+                        y = int((x_pos-79)/66)
+                        x = int((y_pos-29)/66)
+                        current_board[x][y]=2
+        if HOME == 7 and pos[0]> 870 and pos[0] < 920 and pos[1] > 160 and pos[1] < 210:#number 3 button
+                if x_pos!= 0 and y_pos!= 0:
+                        y = int((x_pos-79)/66)
+                        x = int((y_pos-29)/66)
+                        current_board[x][y]=3
+        if HOME == 7 and pos[0]> 930 and pos[0] < 980 and pos[1] > 160 and pos[1] < 210:#number 4 button
+                if x_pos!= 0 and y_pos!= 0:
+                        y = int((x_pos-79)/66)
+                        x = int((y_pos-29)/66)
+                        current_board[x][y]=4
+        if HOME == 7 and pos[0]> 990 and pos[0] < 1040 and pos[1] > 160 and pos[1] < 210:#number 5 button
+                if x_pos!= 0 and y_pos!= 0:
+                        y = int((x_pos-79)/66)
+                        x = int((y_pos-29)/66)
+                        current_board[x][y]=5
+        if HOME == 7 and pos[0]> 750 and pos[0] < 800 and pos[1] > 215 and pos[1] < 265:#number 6 button
+                if x_pos!= 0 and y_pos!= 0:
+                        y = int((x_pos-79)/66)
+                        x = int((y_pos-29)/66)
+                        current_board[x][y]=6
+        if HOME == 7 and pos[0]> 810 and pos[0] < 860 and pos[1] > 215 and pos[1] < 265:#number 7 button
+                if x_pos!= 0 and y_pos!= 0:
+                        y = int((x_pos-79)/66)
+                        x = int((y_pos-29)/66)
+                        current_board[x][y]=7
+        if HOME == 7 and pos[0]> 870 and pos[0] < 920 and pos[1] > 215 and pos[1] < 265:#number 8 button
+                if x_pos!= 0 and y_pos!= 0:
+                        y = int((x_pos-79)/66)
+                        x = int((y_pos-29)/66)
+                        current_board[x][y]=8
+        if HOME == 7 and pos[0]> 930 and pos[0] < 980 and pos[1] > 215 and pos[1] < 265:#number 9 button
+                if x_pos!= 0 and y_pos!= 0:
+                        y = int((x_pos-79)/66)
+                        x = int((y_pos-29)/66)
+                        current_board[x][y]=9
+        if HOME == 7 and pos[0]> 990 and pos[0] < 1040 and pos[1] > 215 and pos[1] < 265:#clear number button
+                if x_pos!= 0 and y_pos!= 0:
+                        y = int((x_pos-79)/66)
+                        x = int((y_pos-29)/66)
+                        current_board[x][y]=0
 
 pgzrun.go()
