@@ -14,6 +14,7 @@ LEVEL = 0
 EASY = 0
 NORMAL = 0
 EXTREME = 0
+INSTRUCTIONS = 0
 HINT = 0
 CHECK = 0
 x_pos = 0
@@ -238,6 +239,7 @@ def draw():
 	global NORMAL
 	global EXTREME
 	global CHECK
+	global INSTRUCTIONS
 	global HIGHLIGHTX
 	global HIGHLIGHTY
 	global current_board
@@ -347,9 +349,12 @@ def draw():
 		HOME = 5
 		screen.clear()
 		screen.fill((255, 255, 255))
-		easy_title = Rect((750, 50), (300, 100))
+		easy_title = Rect((750, 50), (230, 100))
 		screen.draw.filled_rect(easy_title, purple)
 		screen.draw.rect(easy_title, black)
+		easy_howto = Rect((990, 50), (60, 100))
+		screen.draw.filled_rect(easy_howto, blue)
+		screen.draw.rect(easy_howto, black)
 		for count in range(10):
 			if count <= 4:
 				button_box = Rect((750 + count * 60, 160), (50, 50))
@@ -367,7 +372,8 @@ def draw():
 		screen.draw.filled_rect(ragequit_button, blue)
 		screen.draw.rect(ragequit_button, black)
 		#text on butttons and title
-		screen.draw.text("EASY", (845, 78), color = "black", fontname = "arial", fontsize = 42)
+		screen.draw.text("EASY", (810, 78), color = "black", fontname = "arial", fontsize = 42)
+		screen.draw.text("?", (1010, 78), color = "black", fontname = "arial", fontsize = 42)
 		for number in range(9):
 			num = number + 1
 			if number <= 4:
@@ -421,9 +427,12 @@ def draw():
 		HOME = 6
 		screen.clear()
 		screen.fill((255, 255, 255))
-		normal_title = Rect((750, 50), (300, 100))
+		normal_title = Rect((750, 50), (230, 100))
 		screen.draw.filled_rect(normal_title, purple)
 		screen.draw.rect(normal_title, black)
+		normal_howto = Rect((990, 50), (60, 100))
+		screen.draw.filled_rect(normal_howto, blue)
+		screen.draw.rect(normal_howto, black)
 		for count in range(10):
 			if count <= 4:
 				button_box = Rect((750 + count * 60, 160), (50, 50))
@@ -441,7 +450,8 @@ def draw():
 		screen.draw.filled_rect(ragequit_button, blue)
 		screen.draw.rect(ragequit_button, black)
 		#text on butttons and title
-		screen.draw.text("NORMAL", (815, 78), color = "black", fontname = "arial", fontsize = 42)
+		screen.draw.text("NORMAL", (780, 78), color = "black", fontname = "arial", fontsize = 42)
+		screen.draw.text("?", (1010, 78), color = "black", fontname = "arial", fontsize = 42)
 		for number in range(9):
 			num = number + 1
 			if number <= 4:
@@ -495,9 +505,12 @@ def draw():
 		HOME = 7
 		screen.clear()
 		screen.fill((255, 255, 255))
-		extreme_title = Rect((750, 50), (300, 100))
+		extreme_title = Rect((750, 50), (230, 100))
 		screen.draw.filled_rect(extreme_title, purple)
 		screen.draw.rect(extreme_title, black)
+		extreme_howto = Rect((990, 50), (60, 100))
+		screen.draw.filled_rect(extreme_howto, blue)
+		screen.draw.rect(extreme_howto, black)
 		for count in range(10):
 			if count <= 4:
 				button_box = Rect((750 + count * 60, 160), (50, 50))
@@ -515,7 +528,8 @@ def draw():
 		screen.draw.filled_rect(ragequit_button, blue)
 		screen.draw.rect(ragequit_button, black)
 		#text on butttons and title
-		screen.draw.text("EXTREME", (800, 75), color = "black", fontname = "arial", fontsize = 42)
+		screen.draw.text("EXTREME", (765, 75), color = "black", fontname = "arial", fontsize = 42)
+		screen.draw.text("?", (1010, 78), color = "black", fontname = "arial", fontsize = 42)
 		for number in range(9):
 			num = number + 1
 			if number <= 4:
@@ -620,6 +634,13 @@ def draw():
 		screen.draw.text("There are " + str(wrong) + " errors.", (360, 220), color = "black", fontname = "arial", fontsize = 42)
 		CHECK = 0
 		
+	if INSTRUCTIONS != 0:
+		instructions_text = Rect ((50, 50), (1000, 480))
+		screen.draw.filled_rect(instructions_text, white)
+		screen.draw.rect(instructions_text, black)
+		screen.draw.text("1. Click on an empty square, then click one of the\nnumbered boxes to the side to enter a number.\n2. Click the \"Clear\" box to erase a number from a square.\n3. Be aware that you can change the given values in the\nsquares, but it is suggested to not change them, as it will\nbe harder for you.\n4. Click on a square, then click \"Hint\" if you want to reveal\nthe correct number of the square.\n5. Click \"Check\" if you are done, and it will tell you how\nmany numbers you entered are wrong. ", (70, 70), color = "black", fontname = "arial", fontsize = 38)
+		INSTRUCTIONS = 0
+		
 	if EXIT != 0:
 		exit_popup = Rect((320, 170), (480, 350))
 		screen.draw.filled_rect(exit_popup, blue)
@@ -641,6 +662,7 @@ def on_mouse_down(pos):
         global EXTREME
         global HINT
         global CHECK
+        global INSTRUCTIONS
         global x_pos
         global y_pos
         global current_board
@@ -713,7 +735,9 @@ def on_mouse_down(pos):
                 HINT = 1
         if pos[0] > 750 and pos[0] < 1050 and pos[1] > 400 and pos[1] < 500 and HOME > 4 and HOME < 8:
                 CHECK = 1
-
+        if pos[0] > 750 and pos[0] < 1050 and pos[1] > 400 and pos[1] < 500 and HOME > 4 and HOME < 8:
+                CHECK = 1
+       
         #the following are the 1-9 and clear buttons
         if HOME == 5 and pos[0]> 79 and pos[0] < 673 and pos[1] > 29 and pos[1] < 623:
                 x_pos = pos[0]
