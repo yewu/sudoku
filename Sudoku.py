@@ -43,7 +43,7 @@ data_ea1 = [[0, 0, 0, 3, 4, 0, 8, 7, 6],
             [0, 0, 0, 0, 0, 0, 4, 0, 0]]
 
 
-data_ea1_shade = [[0, 1, 0, 0, 1, 0, 1, 0, 1],
+shade_ea1 = [[0, 1, 0, 0, 1, 0, 1, 0, 1],
                   [0, 0, 0, 0, 1, 1, 0, 1, 1],
                   [1, 1, 1, 1, 0, 0, 0, 0, 0],
                   [0, 0, 1, 1, 1, 1, 0, 0, 0],
@@ -73,7 +73,7 @@ data_ea2 = [[0, 0, 8, 4, 0, 7, 6, 0, 0],
             [0, 7, 0, 0, 5, 0, 9, 0, 3],
             [0, 2, 0, 0, 1, 0, 0, 0, 6]]
 
-data_ea2_shade = [[0, 0, 1, 1, 1, 0, 1, 0, 0],
+shade_ea2 = [[0, 0, 1, 1, 1, 0, 1, 0, 0],
                   [0, 0, 1, 0, 1, 0, 1, 0, 1],
                   [1, 0, 1, 0, 1, 0, 0, 0, 1],
                   [0, 1, 0, 0, 0, 1, 0, 1, 1],
@@ -103,7 +103,7 @@ data_no1 = [[9, 0, 0, 7, 0, 6, 3, 2, 0],
             [0, 9, 0, 0, 2, 0, 0, 0, 1],
             [8, 0, 0, 0, 0, 1, 5, 0, 0]]
 
-data_no1_shade = [[0, 0, 1, 0, 0, 1, 0, 1, 1],
+shade_no1 = [[0, 0, 1, 0, 0, 1, 0, 1, 1],
                   [0, 1, 1, 1, 1, 0, 0, 0, 0],
                   [0, 0, 1, 1, 0, 0, 1, 0, 1],
                   [0, 1, 0, 1, 1, 0, 1, 0, 0],
@@ -133,7 +133,7 @@ data_no2 = [[6, 1, 0, 0, 2, 0, 9, 0, 3],
             [7, 0, 1, 6, 0, 0, 0, 4, 0],
             [2, 0, 0, 0, 0, 0, 1, 0, 0]]
 
-data_no2_shade = [[1, 0, 0, 0, 1, 1, 0, 1, 0],
+shade_no2 = [[1, 0, 0, 0, 1, 1, 0, 1, 0],
                   [0, 1, 1, 1, 0, 1, 0, 0, 0],
                   [1, 0, 0, 0, 0, 0, 1, 1, 1],
                   [0, 1, 1, 0, 0, 0, 1, 1, 0],
@@ -163,7 +163,7 @@ data_ex1 = [[0, 0, 0, 0, 0, 0, 0, 7, 5],
             [0, 1, 0, 0, 0, 0, 0, 0, 0],
             [0, 0, 0, 0, 0, 0, 2, 0, 0]]
 
-data_ex1_shade = [[0, 0, 1, 1, 1, 0, 1, 0, 0],
+shade_ex1 = [[0, 0, 1, 1, 1, 0, 1, 0, 0],
                   [1, 0, 0, 1, 1, 0, 0, 1, 0],
                   [1, 0, 1, 0, 0, 0, 1, 0, 1],
                   [1, 1, 1, 0, 0, 0, 0, 1, 0],
@@ -193,7 +193,7 @@ data_ex2 = [[1, 0, 0, 0, 4, 0, 0, 0, 0],
             [0, 8, 0, 3, 0, 0, 0, 0, 0],
             [0, 0, 0, 0, 0, 0, 0, 4, 0]]
 
-data_ex2_shade = [[0, 0, 0, 0, 1, 1, 0, 1, 1],
+shade_ex2 = [[0, 0, 0, 0, 1, 1, 0, 1, 1],
                   [0, 1, 0, 0, 1, 1, 0, 0, 1],
                   [1, 1, 1, 0, 0, 0, 1, 0, 0],
                   [0, 1, 1, 1, 0, 1, 0, 0, 0],
@@ -217,6 +217,9 @@ ans_ex2 = [[1, 7, 3, 5, 4, 8, 9, 6, 2],
 data_ea = [data_ea1, data_ea2]
 data_no = [data_no1, data_no2]
 data_ex = [data_ex1, data_ex2]
+shade_ea = [shade_ea1, shade_ea2]
+shade_no = [shade_no1, shade_no2]
+shade_ex = [shade_ex1, shade_ex2]
 ans_ea = [ans_ea1, ans_ea2]
 ans_no = [ans_no1, ans_no2]
 ans_ex = [ans_ex1, ans_ex2]
@@ -412,7 +415,7 @@ def draw():
 		
 		for x in range (9):
 			for y in range (9):
-				if data_ea1_shade[x][y] == 1 :
+				if shade_ea[board_num][x][y] == 1 :
 					grey_box = Rect((m + y*q, n + x*q), (p, p))
 					screen.draw.filled_rect(grey_box, grey)
 				if 	HIGHLIGHTX != -1 :
@@ -491,7 +494,7 @@ def draw():
 		
 		for x in range (9):
 			for y in range (9):
-				if data_no1_shade[x][y] == 1 :
+				if shade_no[board_num][x][y] == 1 :
 					grey_box = Rect((m + y*q, n + x*q), (p, p))
 					screen.draw.filled_rect(grey_box, grey)
 				if 	HIGHLIGHTX != -1 :
@@ -569,7 +572,7 @@ def draw():
 		
 		for x in range (9):
 			for y in range (9):
-				if data_ex1_shade[x][y] == 1 :
+				if shade_ex[board_num][x][y] == 1 :
 					grey_box = Rect((m + y*q, n + x*q), (p, p))
 					screen.draw.filled_rect(grey_box, grey)
 				if 	HIGHLIGHTX != -1 :
