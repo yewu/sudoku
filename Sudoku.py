@@ -1,5 +1,3 @@
-#I GOT RANDOMIZING TO WOOORKKKKKKKKK!!
-#Elina is big happy
 import pgzrun #run pygame zero w/o using terminal!
 
 WIDTH = 1100
