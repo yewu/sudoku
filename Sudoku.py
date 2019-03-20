@@ -623,18 +623,34 @@ def draw():
 			answer_board = ans_ex[board_num]
 
 		wrong = 0
+		correct = 0
 		for x in range (9):
 			for y in range (9):
 				if current_board[x][y] != 0:
 					if current_board[x][y] != answer_board[x][y]:
 						wrong += 1
+					else:
+						correct += 1
 
-		wrong_count = Rect((350, 200), (390, 100))
-		screen.draw.filled_rect(wrong_count,blue)
-		screen.draw.rect(wrong_count, black)
-		screen.draw.text("There are " + str(wrong) + " errors.", (360, 220), color = "black", fontname = "arial", fontsize = 42)
-		CHECK = 0
-		
+		if correct != 81:
+			wrong_count = Rect((350, 200), (390, 100))
+			screen.draw.filled_rect(wrong_count,blue)
+			screen.draw.rect(wrong_count, black)
+			screen.draw.text("There are " + str(wrong) + " errors.", (360, 220), color = "black", fontname = "arial", fontsize = 42)
+			CHECK = 0
+		else:
+			congrats = Rect((150, 160), (700, 400))
+			screen.draw.filled_rect(congrats,white)
+			screen.draw.rect(congrats, black)
+			screen.draw.text("CONGRATULATIONS!", (300, 200), color = "black", fontname = "arial", fontsize = 42)
+			screen.draw.text("You have correctly solved this \nsudoku! Hit the button below to go \nback to the home screen.", (190, 260), color = "black", fontname = "arial", fontsize = 42)
+			CHECK = 0
+			home_button = Rect((358, 430), (300, 70))
+			screen.draw.filled_rect(home_button, blue)
+			screen.draw.rect(home_button, black)
+			screen.draw.text("HOME", (455, 442), color = "black", fontname = "arial", fontsize = 42)
+			HOME = 8
+			
 	if INSTRUCTIONS != 0:
 		instructions_text = Rect ((50, 50), (1000, 480))
 		screen.draw.filled_rect(instructions_text, white)
@@ -915,5 +931,13 @@ def on_mouse_down(pos):
                         y = int((x_pos-79)/66)
                         x = int((y_pos-29)/66)
                         current_board[x][y]=0
+        if HOME == 8 and pos[0] > 358 and pos[0] < 658 and pos[1] > 430 and pos[1] < 500:
+                EASY = 0
+                NORMAL = 0
+                EXTREME = 0
+                LEVEL = 0
+                PLAY = 0
+                BACK = 1
+		
 
 pgzrun.go()
