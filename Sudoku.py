@@ -734,8 +734,8 @@ def on_mouse_down(pos):
                                  [0, 0, 0, 0, 0, 0, 0, 0, 0]]
         if pos[0] > 990 and pos[0] < 1050 and pos[1] > 50 and pos[1] < 150 and HOME > 4 and HOME < 8:
                 INSTRUCTIONS = 1
-        if pos[0] > 750 and pos[0] < 1050 and pos[1] > 400 and pos[1] < 500 and HOME > 4 and HOME < 8:
-                CHECK = 1
+        if pos[0] > 750 and pos[0] < 1050 and pos[1] > 275 and pos[1] < 375 and HOME > 4 and HOME < 8:
+                HINT = 1
         if pos[0] > 750 and pos[0] < 1050 and pos[1] > 400 and pos[1] < 500 and HOME > 4 and HOME < 8:
                 CHECK = 1
        
