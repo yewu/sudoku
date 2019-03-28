@@ -18,7 +18,7 @@ CHECK = 0
 x_pos = 0
 y_pos = 0
 board_num = 0
-
+hints = 0
 #height has to be 650 for the screen to fit on the size of the computer screen
 #each box will be 66x66 in the board
 
@@ -251,6 +251,7 @@ def draw():
 	global ans_ea
 	global ans_no
 	global ans_ex
+	global hints
 	screen.fill((255, 255, 255))
 	blue = 190, 210, 230
 	purple = 229, 194, 237
@@ -259,12 +260,6 @@ def draw():
 	grey = 238, 238, 238
 	
 	if HINT != 0:
-		if HOME == 5:
-			hints = 3
-		elif HOME == 6:
-			hints = 2
-		else:
-			hints = 1
 		if hints != 0:
 			y = int((x_pos-79)/66)
 			x = int((y_pos-29)/66)
@@ -274,11 +269,13 @@ def draw():
 				current_board[x][y] = ans_no[board_num][x][y]
 			else:
 				current_board[x][y] = ans_ex[board_num][x][y]
+			hints -= 1
 			left = Rect((150, 160), (700, 400))
 			screen.draw.filled_rect(left, white)
 			screen.draw.rect(left, black)
 			screen.draw.text("You have " + str(hints) + " remaining hints.", (190, 260), color = "black", fontname = "arial", fontsize = 42)
-			hints -= 1
+			
+
 		else:
 			left = Rect((150, 160), (700, 400))
 			screen.draw.filled_rect(left, white)
@@ -706,6 +703,7 @@ def on_mouse_down(pos):
         global data_ex
         global HIGHLIGHTX
         global HIGHLIGHTY
+        global hints
         if pos[0]> 750 and pos[0] < 1050 and pos[1] > 50 and pos[1] < 150 and HOME == 1:
                 PLAY = 1
         if pos[0]> 750 and pos[0] < 1050 and pos[1] > 50 and pos[1] < 150 and HOME == 2:
@@ -732,6 +730,7 @@ def on_mouse_down(pos):
                 for i in range (9):
                         for j in range (9):
                                 current_board[i][j] = data_ea[board_num][i][j]
+                                hints = 3
         if pos[0] > 400 and pos[0] < 700 and pos[1] > 200 and pos[1] < 350 and LEVEL == 1:
                 NORMAL = 1
                 PLAY = 0
@@ -740,6 +739,7 @@ def on_mouse_down(pos):
                 for i in range (9):
                         for j in range (9):
                                 current_board[i][j] = data_no[board_num][i][j]
+                                hints = 2
         if pos[0] > 750 and pos[0] < 1050 and pos[1] > 200 and pos[1] < 350 and LEVEL == 1:
                 EXTREME = 1
                 PLAY = 0
@@ -748,6 +748,7 @@ def on_mouse_down(pos):
                 for i in range (9):
                         for j in range (9):
                                 current_board[i][j] = data_ex[board_num][i][j]
+                                hints = 1
 
         if pos[0] > 750 and pos[0] < 1050 and pos[1] > 525 and pos[1] < 625 and HOME > 4 and HOME < 8:
                 EASY = 0
@@ -954,6 +955,7 @@ def on_mouse_down(pos):
                 EXTREME = 0
                 LEVEL = 0
                 PLAY = 0
-                BACK = 1		
-
+                BACK = 1
+		
+		
 pgzrun.go()
