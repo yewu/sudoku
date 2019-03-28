@@ -279,7 +279,6 @@ def draw():
 			screen.draw.rect(left, black)
 			screen.draw.text("You have " + str(hints) + " remaining hints.", (190, 260), color = "black", fontname = "arial", fontsize = 42)
 			hints -= 1
-			print(str(hints))
 		else:
 			left = Rect((150, 160), (700, 400))
 			screen.draw.filled_rect(left, white)
@@ -287,7 +286,7 @@ def draw():
 			screen.draw.text("You have no remaining hints.", (190, 260), color = "black", fontname = "arial", fontsize = 42)
 		HINT = 0
 	
-	if CREDITS != 0:
+	elif CREDITS != 0:
 		HOME = 2
 		screen.clear()
 		screen.fill((255, 255, 255))
@@ -955,7 +954,6 @@ def on_mouse_down(pos):
                 EXTREME = 0
                 LEVEL = 0
                 PLAY = 0
-                BACK = 1
-		
+                BACK = 1		
 
 pgzrun.go()
