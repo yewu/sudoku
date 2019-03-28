@@ -259,14 +259,32 @@ def draw():
 	grey = 238, 238, 238
 	
 	if HINT != 0:
-		y = int((x_pos-79)/66)
-		x = int((y_pos-29)/66)
 		if HOME == 5:
-			current_board[x][y] = ans_ea[board_num][x][y]
+			hints = 3
 		elif HOME == 6:
-			current_board[x][y] = ans_no[board_num][x][y]
+			hints = 2
 		else:
-			current_board[x][y] = ans_ex[board_num][x][y]
+			hints = 1
+		if hints != 0:
+			y = int((x_pos-79)/66)
+			x = int((y_pos-29)/66)
+			if HOME == 5:
+				current_board[x][y] = ans_ea[board_num][x][y]
+			elif HOME == 6:
+				current_board[x][y] = ans_no[board_num][x][y]
+			else:
+				current_board[x][y] = ans_ex[board_num][x][y]
+			left = Rect((150, 160), (700, 400))
+			screen.draw.filled_rect(left, white)
+			screen.draw.rect(left, black)
+			screen.draw.text("You have " + str(hints) + " remaining hints.", (190, 260), color = "black", fontname = "arial", fontsize = 42)
+			hints -= 1
+			print(str(hints))
+		else:
+			left = Rect((150, 160), (700, 400))
+			screen.draw.filled_rect(left, white)
+			screen.draw.rect(left, black)
+			screen.draw.text("You have no remaining hints.", (190, 260), color = "black", fontname = "arial", fontsize = 42)
 		HINT = 0
 	
 	if CREDITS != 0:
