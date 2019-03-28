@@ -270,17 +270,15 @@ def draw():
 			else:
 				current_board[x][y] = ans_ex[board_num][x][y]
 			hints -= 1
-			left = Rect((150, 160), (700, 400))
+			left = Rect((270, 200), (540, 100))
 			screen.draw.filled_rect(left, white)
 			screen.draw.rect(left, black)
-			screen.draw.text("You have " + str(hints) + " remaining hints.", (190, 260), color = "black", fontname = "arial", fontsize = 42)
-			
-
+			screen.draw.text("You have " + str(hints) + " remaining hints.", (280, 225), color = "black", fontname = "arial", fontsize = 42)
 		else:
-			left = Rect((150, 160), (700, 400))
+			left = Rect((240, 200), (630, 100))
 			screen.draw.filled_rect(left, white)
 			screen.draw.rect(left, black)
-			screen.draw.text("You have no remaining hints.", (190, 260), color = "black", fontname = "arial", fontsize = 42)
+			screen.draw.text("You have no remaining hints left.", (250, 225), color = "black", fontname = "arial", fontsize = 42)
 		HINT = 0
 	
 	elif CREDITS != 0:
