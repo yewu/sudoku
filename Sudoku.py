@@ -273,16 +273,48 @@ ans_ex2 = [[1, 7, 3, 5, 4, 8, 9, 6, 2],
            [9, 8, 4, 3, 5, 6, 1, 2, 7],
            [2, 3, 1, 7, 8, 9, 6, 4, 5]]
 
+
+data_ex3 = [[0, 0, 0, 0, 8, 0, 0, 3, 4],
+            [0, 0, 2, 7, 0, 0, 0, 0, 0],
+            [0, 1, 0, 0, 0, 0, 0, 0, 0],
+            [8, 0, 0, 0, 3, 0, 9, 0, 0],
+            [0, 0, 0, 0, 0, 4, 2, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 2, 0, 0, 5, 7, 0],
+            [3, 0, 0, 0, 0, 0, 0, 0, 6],
+            [0, 0, 0, 1, 0, 0, 0, 0, 0]]
+
+	
+shade_ex3 = [[0, 0, 0, 1, 1, 1, 0, 0, 1],
+            [1, 0, 1, 0, 0, 0, 1, 1, 0],
+            [1, 0, 1, 0, 1, 0, 0, 0, 1],
+            [1, 1, 1, 0, 0, 0, 0, 1, 0],
+            [0, 0, 0, 1, 0, 1, 1, 1, 0],
+            [0, 1, 0, 0, 1, 1, 0, 0, 1],
+            [0, 1, 1, 1, 1, 0, 0, 0, 0],
+            [0, 0, 0, 1, 0, 0, 1, 1, 1],
+            [1, 1, 0, 0, 0, 1, 1, 0, 0]]
+
+ans_ex3 = [[5, 7, 9, 6, 8, 2, 1, 3, 4],
+           [4, 3, 2, 7, 1, 5, 6, 8, 9],
+           [6, 1, 8, 3, 4, 9, 7, 5, 2],
+           [8, 2, 6, 5, 3, 1, 9, 4, 7],
+           [1, 9, 3, 8, 7, 4, 2, 6, 5],
+           [7, 4, 5, 9, 2, 6, 3, 1, 8],
+           [9, 8, 4, 2, 6, 3, 5, 7, 1],
+           [3, 5, 1, 4, 9, 7, 8, 2, 6],
+           [2, 6, 7, 1, 5, 8, 4, 9, 3]]
+
 #add to the following data and ans sets when new boards are added
 data_ea = [data_ea1, data_ea2, data_ea3]
 data_no = [data_no1, data_no2, data_no3]
-data_ex = [data_ex1, data_ex2]
+data_ex = [data_ex1, data_ex2, data_ex3]
 shade_ea = [shade_ea1, shade_ea2, shad_ea3]
 shade_no = [shade_no1, shade_no2, shade_no3]
-shade_ex = [shade_ex1, shade_ex2]
+shade_ex = [shade_ex1, shade_ex2, shade_ex3]
 ans_ea = [ans_ea1, ans_ea2, ans_ea3]
 ans_no = [ans_no1, ans_no2, ans_no3]
-ans_ex = [ans_ex1, ans_ex2]
+ans_ex = [ans_ex1, ans_ex2, ans_ex3]
 
 HIGHLIGHTX = -1			
 HIGHLIGHTY = -1
