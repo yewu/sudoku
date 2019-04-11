@@ -398,13 +398,13 @@ ans_ex4 = [[3, 2, 8, 7, 1, 6, 5, 9, 4],
 #add to the following data and ans sets when new boards are added
 data_ea = [data_ea1, data_ea2, data_ea3, data_ea4]
 data_no = [data_no1, data_no2, data_no3, data_no4]
-data_ex = [data_ex1, data_ex2, data_ex3]
+data_ex = [data_ex1, data_ex2, data_ex3, data_ex4]
 shade_ea = [shade_ea1, shade_ea2, shade_ea3, shade_ea4]
 shade_no = [shade_no1, shade_no2, shade_no3, shade_no4]
-shade_ex = [shade_ex1, shade_ex2, shade_ex3]
+shade_ex = [shade_ex1, shade_ex2, shade_ex3, shade_ex4]
 ans_ea = [ans_ea1, ans_ea2, ans_ea3, ans_ea4]
 ans_no = [ans_no1, ans_no2, ans_no3, ans_no4]
-ans_ex = [ans_ex1, ans_ex2, ans_ex3]
+ans_ex = [ans_ex1, ans_ex2, ans_ex3, ans_ex4]
 
 HIGHLIGHTX = -1			
 HIGHLIGHTY = -1
