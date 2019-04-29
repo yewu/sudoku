@@ -363,6 +363,36 @@ ans_no5 = [[[2, 9, 7, 3, 8, 4, 5, 1, 6],
             [9, 5, 4, 6, 3, 8, 1, 2, 7],
             [3, 1, 8, 7, 4, 2, 6, 5, 9]] 
 	     
+data_no6 = [[1, 2, 0, 9, 0, 0, 0, 0, 0],
+            [5, 0, 6, 0, 8, 0, 2, 0, 0],
+            [9, 0, 0, 0, 0, 0, 0, 5, 0],
+            [0, 0, 5, 8, 0, 0, 0, 0, 9],
+            [0, 0, 4, 0, 5, 2, 0, 0, 0],
+            [0, 0, 0, 0, 7, 0, 0, 0, 0],
+            [0, 0, 0, 0, 6, 0, 0, 7, 0],
+            [0, 1, 0, 0, 3, 0, 4, 0, 0],
+            [0, 7, 0, 0, 0, 0, 8, 6, 3]]
+	    
+shade_no6 = [[0, 1, 0, 0, 1, 0, 0, 1, 1],
+             [0, 1, 1, 0, 1, 0, 1, 0, 0],
+             [0, 1, 0, 1, 1, 0, 0, 0, 1],
+             [1, 0, 0, 1, 0, 1, 0, 1, 0],
+             [0, 0, 1, 0, 0, 1, 1, 0, 1],
+             [1, 1, 0, 1, 0, 0, 0, 0, 1],
+             [0, 0, 1, 1, 1, 1, 0, 0, 0],
+             [1, 0, 0, 0, 0, 1, 1, 1, 0],
+             [1, 0, 1, 0, 0, 0, 1, 1, 0]]
+	    
+ans_no6 = [[1, 2, 7, 9, 4, 5, 3, 8, 6],
+           [5, 4, 6, 1, 8, 4, 2, 9, 7],
+           [9, 8, 3, 6, 2, 7, 1, 5, 4],
+           [2, 3, 5, 8, 1, 6, 7, 4, 9],
+           [7, 9, 4, 3, 5, 2, 6, 1, 8],
+           [8, 6, 1, 4, 7, 9, 5, 3, 2],
+           [3, 5, 8, 2, 6, 4, 9, 7, 1],
+           [6, 1, 9, 7, 3, 8, 4, 2, 5],
+           [4, 7, 2, 5, 9, 1, 8, 6, 3]]
+	   
 data_ex1 = [[0, 0, 0, 0, 0, 0, 0, 7, 5],
             [4, 0, 0, 0, 6, 0, 0, 0, 0],
             [0, 0, 0, 0, 0, 0, 0, 1, 0],
@@ -517,13 +547,13 @@ ans_ex5 = [[2, 1, 5, 6, 8, 9, 3, 4, 7],
 	   
 #add to the following data and ans sets when new boards are added
 data_ea = [data_ea1, data_ea2, data_ea3, data_ea4, data_ea5, data_ea6]
-data_no = [data_no1, data_no2, data_no3, data_no4, data_no5]
+data_no = [data_no1, data_no2, data_no3, data_no4, data_no5, data_no6]
 data_ex = [data_ex1, data_ex2, data_ex3, data_ex4, data_ex5]
 shade_ea = [shade_ea1, shade_ea2, shade_ea3, shade_ea4, shade_ea5, shade_ea6]
-shade_no = [shade_no1, shade_no2, shade_no3, shade_no4, shade_no5]
+shade_no = [shade_no1, shade_no2, shade_no3, shade_no4, shade_no5, shade_no6]
 shade_ex = [shade_ex1, shade_ex2, shade_ex3, shade_ex4, shade_ex5]
 ans_ea = [ans_ea1, ans_ea2, ans_ea3, ans_ea4, ans_ea5, ans_ea6]
-ans_no = [ans_no1, ans_no2, ans_no3, ans_no4, ans_no5]
+ans_no = [ans_no1, ans_no2, ans_no3, ans_no4, ans_no5, ans_no6]
 ans_ex = [ans_ex1, ans_ex2, ans_ex3, ans_ex4, ans_ex5]
 
 HIGHLIGHTX = -1			
