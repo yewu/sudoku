@@ -635,7 +635,11 @@ def draw():
 			left = Rect((270, 200), (540, 100))
 			screen.draw.filled_rect(left, white)
 			screen.draw.rect(left, black)
-			screen.draw.text("You have " + str(hints) + " remaining hints.", (280, 225), color = "black", fontname = "arial", fontsize = 42)
+	   		if hints != 1:
+	   			thing = "You have " + str(hints) + " remaining hints."
+	   		else:
+	   			thing = "You have one remaining hint."
+			screen.draw.text(thing, (280, 225), color = "black", fontname = "arial", fontsize = 42)
 		else:
 			left = Rect((240, 200), (630, 100))
 			screen.draw.filled_rect(left, white)
@@ -1010,7 +1014,11 @@ def draw():
 			wrong_count = Rect((350, 200), (390, 100))
 			screen.draw.filled_rect(wrong_count,blue)
 			screen.draw.rect(wrong_count, black)
-			screen.draw.text("There are " + str(wrong) + " errors.", (360, 220), color = "black", fontname = "arial", fontsize = 42)
+	   		if wrong != 1:
+	   			thing = "There are " + str(wrong) + " errors."
+	   		else:
+	   			thing = "There is one error."
+			screen.draw.text(thing, (360, 220), color = "black", fontname = "arial", fontsize = 42)
 			CHECK = 0
 		else:
 			congrats = Rect((150, 160), (700, 400))
