@@ -1,5 +1,10 @@
 import pgzrun #run pygame zero w/o using terminal!
 
+"""
+when hint is clicked, the screen is cleared to white
+need to fix that!!!
+"""
+
 WIDTH = 1100
 HEIGHT = 650
 HOME = 0
@@ -171,7 +176,7 @@ shade_ea5 = [[0, 0, 0, 0, 1, 1, 1, 1, 0],
              [0, 1, 1, 1, 0, 0, 0, 1, 0],
              [0, 1, 0, 0, 1, 0, 0, 1, 1],
              [1, 1, 0, 0, 0, 1, 0, 0, 1],
-             [0, 1, 0, 1, 0, 1, 0, 0, 1]
+             [0, 1, 0, 1, 0, 1, 0, 0, 1]]
 	    
 ans_ea5 = [[9, 1, 5, 7, 8, 4, 2, 6, 3],
 	   [8, 3, 2, 9, 6, 5, 1, 4, 7],
@@ -343,7 +348,7 @@ data_no5 = [[0, 0, 0, 0, 0, 0, 0, 1, 0],
             [0, 5, 0, 0, 0, 8, 0, 2, 0],
             [3, 1, 0, 0, 4, 0, 0, 0, 9]] 
 	     
-shad_no5 = [[1, 0, 0, 0, 1, 1, 0, 0, 1],
+shade_no5 = [[1, 0, 0, 0, 1, 1, 0, 0, 1],
             [1, 1, 0, 0, 1, 0, 1, 0, 0],
             [0, 1, 0, 1, 0, 0, 1, 0, 1],
             [0, 1, 0, 1, 0, 0, 1, 1, 0],
@@ -351,9 +356,9 @@ shad_no5 = [[1, 0, 0, 0, 1, 1, 0, 0, 1],
             [0, 0, 0, 1, 1, 1, 0, 1, 0],
             [1, 0, 1, 0, 0, 0, 0, 1, 1],
             [1, 0, 1, 1, 0, 1, 0, 1, 0],
-            [1, 0, 1, 0, 1, 1, 1, 0, 0],
+            [1, 0, 1, 0, 1, 1, 1, 0, 0]]
 	    
-ans_no5 = [[[2, 9, 7, 3, 8, 4, 5, 1, 6],
+ans_no5 = [[2, 9, 7, 3, 8, 4, 5, 1, 6],
             [4, 8, 1, 9, 6, 5, 2, 7, 3],
             [5, 6, 3, 2, 7, 1, 8, 9, 4],
             [7, 2, 5, 8, 9, 3, 4, 6, 1],
@@ -571,7 +576,7 @@ ans_ex6 = [[5, 3, 9, 8, 2, 1, 4, 6, 7],
            [7, 5, 1, 9, 4, 6, 2, 8, 3],
            [4, 9, 2, 7, 8, 3, 5, 1, 6],
            [3, 6, 8, 1, 5, 2, 9, 7, 4],
-           [9, 8, 4, 2, 3, 7, 6, 5, 1]
+           [9, 8, 4, 2, 3, 7, 6, 5, 1],
            [1, 2, 3, 5, 6, 9, 7, 4, 8],
            [6, 7, 5, 4, 1, 8, 3, 2, 9]]
 	   
@@ -633,16 +638,16 @@ def draw():
 				current_board[x][y] = ans_ex[board_num][x][y]
 			hints -= 1
 			left = Rect((270, 200), (540, 100))
-			screen.draw.filled_rect(left, white)
+			screen.draw.filled_rect(left, blue)
 			screen.draw.rect(left, black)
-	   		if hints != 1:
+			if hints != 1:
 	   			thing = "You have " + str(hints) + " remaining hints."
-	   		else:
+			else:
 	   			thing = "You have one remaining hint."
 			screen.draw.text(thing, (280, 225), color = "black", fontname = "arial", fontsize = 42)
 		else:
 			left = Rect((240, 200), (630, 100))
-			screen.draw.filled_rect(left, white)
+			screen.draw.filled_rect(left, blue)
 			screen.draw.rect(left, black)
 			screen.draw.text("You have no remaining hints left.", (250, 225), color = "black", fontname = "arial", fontsize = 42)
 		HINT = 0
@@ -722,7 +727,7 @@ def draw():
 		screen.draw.rect(howto_text, black)
 		screen.draw.text("HOW TO PLAY", (75, 67), color = "black", fontname = "arial", fontsize = 65)
 		screen.draw.text("BACK", (850, 78), color = "black", fontname = "arial", fontsize = 42)
-		screen.draw.text("1.  To enter a number, click the square and then the button with the\nnumber you would like to enter.\n2.  Each row and column must contain the numbers from\n1-9 (cannot repeat numbers).\n3.  Each 3x3 box with a darker outline must also contain the\nnumbers from 1-9 (cannot repeat numbers).\n4.  In the shaded boxes, the numbers must be even. In the unshaded\nboxes, the numbers have to be odd.\n5.  If you need a hint, click the square you want a hint in and the 'Hint'\nbutton.\n6.  If you want to check your answers, press the 'Check' button.\n7.  If you feel as if you cannot continue, hit the 'Rage Quit' button.", (75, 183), color = "black", fontname = "arial", fontsize = 32)
+		screen.draw.text("1.  To enter a number, click the square and then the button with the\nnumber you would like to enter.\n2.  Each row and column must contain the numbers from\n1-9 (cannot repeat numbers).\n3.  Each 3x3 box with a darker outline must also contain the\nnumbers from 1-9 (cannot repeat numbers).\n4.  In the shaded boxes, the numbers must be even. In the unshaded\nboxes, the numbers have to be odd.\n5.  If you need a hint, click the square you want a hint in and the 'Hint'\nbutton.\n6.  If you want to check your answers, press the 'Check' button.\n7.  If you feel as if you cannot continue, hit the 'Rage Quit' button.", (60, 183), color = "black", fontname = "arial", fontsize = 32)
 	
 	elif EASY != 0:
 		HOME = 5
@@ -1012,11 +1017,11 @@ def draw():
 
 		if correct != 81:
 			wrong_count = Rect((350, 200), (390, 100))
-			screen.draw.filled_rect(wrong_count,blue)
+			screen.draw.filled_rect(wrong_count, blue)
 			screen.draw.rect(wrong_count, black)
-	   		if wrong != 1:
+			if wrong != 1:
 	   			thing = "There are " + str(wrong) + " errors."
-	   		else:
+			else:
 	   			thing = "There is one error."
 			screen.draw.text(thing, (360, 220), color = "black", fontname = "arial", fontsize = 42)
 			CHECK = 0
