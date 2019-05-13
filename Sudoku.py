@@ -1,5 +1,7 @@
 import pgzrun #run pygame zero w/o using terminal!
 
+
+
 """
 when hint is clicked, the screen is cleared to white
 need to fix that!!!
@@ -625,34 +627,9 @@ def draw():
 	black = 0, 0, 0
 	white = 255, 255, 255
 	grey = 238, 238, 238
+
 	
-	if HINT != 0:
-		if hints != 0:
-			y = int((x_pos-79)/66)
-			x = int((y_pos-29)/66)
-			if HOME == 5:
-				current_board[x][y] = ans_ea[board_num][x][y]
-			elif HOME == 6:
-				current_board[x][y] = ans_no[board_num][x][y]
-			else:
-				current_board[x][y] = ans_ex[board_num][x][y]
-			hints -= 1
-			left = Rect((270, 200), (540, 100))
-			screen.draw.filled_rect(left, blue)
-			screen.draw.rect(left, black)
-			if hints != 1:
-	   			thing = "You have " + str(hints) + " remaining hints."
-			else:
-	   			thing = "You have one remaining hint."
-			screen.draw.text(thing, (280, 225), color = "black", fontname = "arial", fontsize = 42)
-		else:
-			left = Rect((240, 200), (630, 100))
-			screen.draw.filled_rect(left, blue)
-			screen.draw.rect(left, black)
-			screen.draw.text("You have no remaining hints left.", (250, 225), color = "black", fontname = "arial", fontsize = 42)
-		HINT = 0
-	
-	elif CREDITS != 0:
+	if CREDITS != 0:
 		HOME = 2
 		screen.clear()
 		screen.fill((255, 255, 255))
@@ -1045,12 +1022,39 @@ def draw():
 		screen.draw.text("1. Click on an empty square, then click one of the\nnumbered boxes to the side to enter a number.\n2. Click the \"Clear\" box to erase a number from a square.\n3. Be aware that you can change the given values in the\nsquares, but it is suggested to not change them, as it will\nbe harder for you.\n4. Click on a square, then click \"Hint\" if you want to reveal\nthe correct number of the square.\n5. Click \"Check\" if you are done, and it will tell you how\nmany numbers you entered are wrong. ", (70, 70), color = "black", fontname = "arial", fontsize = 38)
 		INSTRUCTIONS = 0
 		
+	if HINT != 0:
+		if hints != 0:
+			y = int((x_pos-79)/66)
+			x = int((y_pos-29)/66)
+			if HOME == 5:
+				current_board[x][y] = ans_ea[board_num][x][y]
+			elif HOME == 6:
+				current_board[x][y] = ans_no[board_num][x][y]
+			else:
+				current_board[x][y] = ans_ex[board_num][x][y]
+			hints -= 1
+			left = Rect((270, 200), (540, 100))
+			screen.draw.filled_rect(left, blue)
+			screen.draw.rect(left, black)
+			if hints != 1:
+	   			thing = "You have " + str(hints) + " remaining hints."
+			else:
+	   			thing = "You have one remaining hint."
+			screen.draw.text(thing, (280, 225), color = "black", fontname = "arial", fontsize = 42)
+		else:
+			left = Rect((240, 200), (630, 100))
+			screen.draw.filled_rect(left, blue)
+			screen.draw.rect(left, black)
+			screen.draw.text("You have no remaining hints left.", (250, 225), color = "black", fontname = "arial", fontsize = 42)
+		HINT = 0
+	
 	if EXIT != 0:
 		exit_popup = Rect((320, 170), (480, 350))
 		screen.draw.filled_rect(exit_popup, blue)
 		screen.draw.rect(exit_popup,black)
 		screen.draw.text("Click anywhere\nto continue.\nPress control-Q;\ncommand-Q on Mac;\nto exit the game.", (360, 220), color = "black", fontname = "arial", fontsize = 42)
 		EXIT = 0
+	
 	
 def on_mouse_down(pos):
         from random import randint
@@ -1329,6 +1333,5 @@ def on_mouse_down(pos):
                 LEVEL = 0
                 PLAY = 0
                 BACK = 1
-		
 		
 pgzrun.go()
