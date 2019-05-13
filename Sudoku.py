@@ -1,12 +1,5 @@
 import pgzrun #run pygame zero w/o using terminal!
 
-
-
-"""
-when hint is clicked, the screen is cleared to white
-need to fix that!!!
-"""
-
 WIDTH = 1100
 HEIGHT = 650
 HOME = 0
